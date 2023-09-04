@@ -38,7 +38,7 @@
 \posttitle{\end{center}}
 \preauthor{\begin{center}\large Författare\end{center}\begin{center}\normalsize}
 \postauthor{\end{center}\vfill}
-\predate{\begin{center}Höstterminen 2020\\\version{}\end{center}\begin{center}}
+\predate{\begin{center}Höstterminen 2023\\\version{}\end{center}\begin{center}}
 \postdate{\end{center}}
 \lhead{\thedate}
 \chead{\thetitle}
