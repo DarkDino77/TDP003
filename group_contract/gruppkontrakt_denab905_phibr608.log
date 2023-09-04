@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.8.29)  4 SEP 2023 10:36
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.8.29)  4 SEP 2023 10:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -752,15 +752,15 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `gruppkontrakt_denab905_phibr608.out' has not
  changed.
-(rerunfilecheck)             Checksum: 67D2E061050929708C48D69EBC57BF7F;641.
+(rerunfilecheck)             Checksum: 85AB1B675787037081D81B52448E15BF;641.
  ) 
 Here is how much of TeX's memory you used:
  23171 strings out of 476191
  479315 string characters out of 5812072
- 831179 words of memory out of 5000000
+ 831181 words of memory out of 5000000
  43540 multiletter control sequences out of 15000+600000
  471234 words of font info for 41 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  115i,12n,118p,705b,640s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on gruppkontrakt_denab905_phibr608.xdv (3 pages, 46888 bytes).
+Output written on gruppkontrakt_denab905_phibr608.xdv (3 pages, 46900 bytes).
