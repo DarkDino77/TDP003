@@ -1,9 +1,9 @@
 # Fdb version 3
-["xdvipdfmx"] 1693816496 "gruppkontrakt_denab905_phibr608.xdv" "gruppkontrakt_denab905_phibr608.pdf" "gruppkontrakt_denab905_phibr608" 1693816497
-  "gruppkontrakt_denab905_phibr608.xdv" 1693816496 46888 3123ae00fd98ee4a18401c76c741055d "xelatex"
+["xdvipdfmx"] 1693816568 "gruppkontrakt_denab905_phibr608.xdv" "gruppkontrakt_denab905_phibr608.pdf" "gruppkontrakt_denab905_phibr608" 1693816568
+  "gruppkontrakt_denab905_phibr608.xdv" 1693816568 46888 3c8e1e8121aa44247acd38cd13975e7b "xelatex"
   (generated)
   "gruppkontrakt_denab905_phibr608.pdf"
-["xelatex"] 1693816495 "gruppkontrakt_denab905_phibr608.tex" "gruppkontrakt_denab905_phibr608.xdv" "gruppkontrakt_denab905_phibr608" 1693816497
+["xelatex"] 1693816567 "gruppkontrakt_denab905_phibr608.tex" "gruppkontrakt_denab905_phibr608.xdv" "gruppkontrakt_denab905_phibr608" 1693816568
   "/etc/texmf/web2c/texmf.cnf" 1693305400 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -140,9 +140,9 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1693305435 5134032 4b9d12493e7174c46f9bbf3ae23dca2a ""
-  "gruppkontrakt_denab905_phibr608.aux" 1693816496 1394 2e3fa0a3b88b865b64cdc1a10628e4c3 "xelatex"
-  "gruppkontrakt_denab905_phibr608.out" 1693816496 641 67d2e061050929708c48d69ebc57bf7f "xelatex"
-  "gruppkontrakt_denab905_phibr608.tex" 1693816446 5732 28be16dfff956b6530bb66a49e8a0275 ""
+  "gruppkontrakt_denab905_phibr608.aux" 1693816568 1394 2e3fa0a3b88b865b64cdc1a10628e4c3 "xelatex"
+  "gruppkontrakt_denab905_phibr608.out" 1693816568 641 67d2e061050929708c48d69ebc57bf7f "xelatex"
+  "gruppkontrakt_denab905_phibr608.tex" 1693816565 5732 aa931c8f83419d6b09c85faefd412c87 ""
   "ida.png" 1693815988 7786 f8e6fdcd3fff5911dca9765ffa4de313 ""
   "lith.png" 1693815988 15882 4db45f42034d096c9aba5be88636d034 ""
   "mall.cls" 1693816494 1901 398cf4c2710522f6932cde7372659917 ""
