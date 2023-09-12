@@ -16,7 +16,7 @@
 \RequirePackage{lastpage}
 \RequirePackage{tikz}
 \RequirePackage{parskip}
-\RequirePackage[swedish]{babel}
+\RequirePackage[swedish, shorthands=off]{babel} % Added shorthands=off to remove shorthands with quotes; otherwise "o becomes ö.
 \setlength{\headsep}{20pt}
 \setlength{\headheight}{40pt}
 
