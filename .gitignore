@@ -1,1 +1,9 @@
 *.pdf
+LOFI*.png
+*.log
+*.aux
+*.out
+*.fls
+*.fdb_latexmk
+*.xdv
+
