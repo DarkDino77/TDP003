@@ -1,41 +1,70 @@
 import json
 import re
 import os
-# Opening JSON file
+
+# Loads a json file of a given path  
+# return None if path is invalid 
 def load(file):
+    # Check if path is valid 
     if os.path.isfile(file):
+
+        # Load database in from file and return in a numerical order
         with open(file) as json_file:
             data = json.load(json_file)
-            return data
+            return search(data)
+        
+    # If path is invalid return none     
     return None
 
+# returns the number of dictonarys in a given database
 def get_project_count(db):
     return len(db)
 
+# Searches the database for the asked for project based on its project id
+# returns a dict containg the given project id 
+# returns none if the id is invalid 
 def get_project(db, project_id):
     return next((element for element in db if element['project_id'] == project_id), None)   
 
+# Searches the datbase for all uniqe techniques that exists in a databes 
+# returns A list of techniques sorted in alphabetically order
 def get_techniques(db):
-    temp = []
-    # Finds the techniques_used in list
+    # Creates a empty list 
+    uniqe_techniques = []
+    # searches the list techniques that do not exist in the new list uniqe_techniques
     for dictonary in db:
         for techniques_used in dictonary["techniques_used"]:
-           #extracts techniques_used to new list
-            if techniques_used not in temp:
-                temp.append(techniques_used)
-    # sorterar listan i lexicographical order.
-    return sorted(temp)
+            if techniques_used not in uniqe_techniques:
 
+                # Adds technique to the new list 
+                uniqe_techniques.append(techniques_used)
+
+    # sorts the list in alphabetically order
+    return sorted(uniqe_techniques)
+
+# Searches the datbase for all occurrences of all techniques 
+# Makes them into a dict where the key are the techniques
+# The value is a list containing the project id and project name where the key technique is used 
+
+# returns a dict where the key are the techniques and the value is a list containing the project id and project name where the key technique is used
 def get_technique_stats(db):
-    temp = {}
-    # Finds the techniques_used in list
+    # Makes a empty dictonary
+    technique_stats = {}
+    
+    # Searches for the mention of a technique
     for dictonary in db:
         for technique in dictonary["techniques_used"]:
-            if technique not in temp:
-                temp[technique] = [{"id": dictonary["project_id"], "name": dictonary["project_name"]}]
+
+            # Adds a item into the dict where key the key is the technique and the value is a list containing the project id and project name where the key technique is used
+            if technique not in technique_stats:
+                technique_stats[technique] = [{"id": dictonary["project_id"], "name": dictonary["project_name"]}]
+
+            # Adds the appropriet value to the appropriet key  
             else:
-                temp[technique].append({"id": dictonary["project_id"], "name": dictonary["project_name"]})
-    return temp
+                technique_stats[technique].append({"id": dictonary["project_id"], "name": dictonary["project_name"]})
+
+    # returns a dict where the key are the techniques and the value is a list containing the project id and project name where the key technique is used
+    return technique_stats
 
 def search(db, sort_by = 'project_name', sort_order = 'desc', techniques = [], search = "", search_fields = None): # What is search_fields for?!
 
