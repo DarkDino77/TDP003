@@ -57,14 +57,14 @@ def search(db, sort_by = 'project_name', sort_order = 'desc', techniques_used = 
         filtered_db = [] # A new list of projects with qualified search results
         for project in db:
             for attribute in range(len(project)): # Iterate over attributes to find the course name
-                if list(project.keys())[attribute] == sort_by:
+                if list(project.keys())[attribute] == "project_name":
                     if len(re.findall(search.lower(), project.get(list(project.keys())[attribute]).lower())) > 0: # Parse the course name with RegEx
                         filtered_db.append(project)
                         break
         db = filtered_db # Update db with filtered db
 
     # Sort the list in ascending or descending order
-    # First create a new dictionary with course ID as key and sort attribute as value
+    # First create a new dictionary with project ID as key and sort attribute as value
     db_unsorted_metadata = {}
     for project in db:
         key = ""
