@@ -37,16 +37,16 @@ def get_technique_stats(db):
                 temp[technique].append({"id": dictonary["project_id"], "name": dictonary["project_name"]})
     return temp
 
-def search(db, sort_by = 'project_name', sort_order = 'desc', techniques_used = [], search = "", search_fields = None): # What is search_fields for?!
+def search(db, sort_by = 'project_name', sort_order = 'desc', techniques = [], search = "", search_fields = None): # What is search_fields for?!
 
     # Only parse techniques if asked to
-    if len(techniques_used) > 0:
+    if len(techniques) > 0:
         filtered_db = [] # A new list of projects with qualified search results
         for project in db:
             for attribute in range(len(project)): # Iterate over all attributes
                 if list(project.keys())[attribute] == "techniques_used": # Find the techniques_used attribute
                     for technique in project.get(list(project.keys())[attribute]): # Iterate over all techniques used to find matches
-                        if technique in techniques_used:
+                        if technique in techniques:
                             filtered_db.append(project)
                             break # If this project has any filtered techniques then add it to filtered db and break
         db = filtered_db # Update the working database to only contain the filtered db
