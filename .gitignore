@@ -6,4 +6,4 @@ LOFI*.png
 *.fls
 *.fdb_latexmk
 *.xdv
-
+*.pyc

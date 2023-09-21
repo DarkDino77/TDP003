@@ -66,10 +66,15 @@ def get_technique_stats(db):
     # returns a dict where the key are the techniques and the value is a list containing the project id and project name where the key technique is used
     return technique_stats
 
-def search(db, sort_by = 'project_name', sort_order = 'desc', techniques = [], search = "", search_fields = None): # What is search_fields for?!
+
+def search(db, sort_by = 'start_date', sort_order = 'desc', techniques = None, search = None, search_fields = None):
+
+    # Cheap workaround for empty search fields
+    if search_fields == []:
+        return []
 
     # Only parse techniques if asked to
-    if len(techniques) > 0:
+    if techniques != None:
         filtered_db = [] # A new list of projects with qualified search results
         for project in db:
             for attribute in range(len(project)): # Iterate over all attributes
@@ -80,14 +85,13 @@ def search(db, sort_by = 'project_name', sort_order = 'desc', techniques = [], s
                             break # If this project has any filtered techniques then add it to filtered db and break
         db = filtered_db # Update the working database to only contain the filtered db
 
-    
     # Only search the free text if there is anything to search for
-    if search != "":
+    if search != None:
         filtered_db = [] # A new list of projects with qualified search results
         for project in db:
-            for attribute in range(len(project)): # Iterate over attributes to find the course name
-                if list(project.keys())[attribute] == "project_name":
-                    if len(re.findall(search.lower(), project.get(list(project.keys())[attribute]).lower())) > 0: # Parse the course name with RegEx
+            for attribute in range(len(project)): # Iterate over attributes to find any qualified attribute
+                if search_fields == None or list(project.keys())[attribute] in search_fields: # Utilizing lazy evaluation to not search through 'None'
+                    if len(re.findall(search.lower(), str(project.get(list(project.keys())[attribute])).lower())) > 0: # Parse the attribute with RegEx
                         filtered_db.append(project)
                         break
         db = filtered_db # Update db with filtered db
@@ -137,7 +141,7 @@ def print_db(db):
 def main():
     db = load("data.json")
     #print_db(db)
-    print_db(search(db, "project_name", "desc", [], "e"))
+    print_db(search(db, "project_id", "desc", None, "e", ["lulz_had"]))
     #print(get_project_count(db))
     #print(get_project(db, 0))
     #print(get_project(db, 1))
