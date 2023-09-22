@@ -11,7 +11,8 @@ def load(file):
         # Load database in from file and return in a numerical order
         with open(file) as json_file:
             data = json.load(json_file)
-            return search(data)
+            #Sorts Database by project_id
+            return search(data, sort_by="project_id")
         
     # If path is invalid return none     
     return None
@@ -112,7 +113,7 @@ def search(db, sort_by = 'start_date', sort_order = 'desc', techniques = None, s
     db_sorted_metadata = dict(sorted(
         db_unsorted_metadata.items(),
         key = lambda input : input[1],
-        reverse = False if sort_order == "desc" else True))
+        reverse = False if sort_order == "asc" else True))
     # IMPORTANT: The use of sorted dictionaries requires minimum Python version of 3.7 !
 
     # Cross-reference the data to the metadata to place the projects correctly
@@ -140,7 +141,8 @@ def print_db(db):
 def main():
     db = load("data.json")
     #print_db(db)
-    print_db(search(db, techniques=[], search="okänt", search_fields=["project_id","project_name","course_name"]))
+    #print_db(search(db, techniques=[], search="okänt", search_fields=["project_id","project_name","course_name"]))
+    print_db(search(db, sort_by="end_date", search='okänt', search_fields=['project_id','project_name','course_name']))
     #print_db(search(db, "start_date", "desc", None, "e", ["lulz_had"]))
     #print(get_project_count(db))
     #print(get_project(db, 0))
