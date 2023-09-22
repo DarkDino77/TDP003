@@ -1,0 +1,18 @@
+LOFI notes:
+
+Pressing mail address: mailto
+Credits in footer might have links
+Clicking Welcome in homepage refreshes page (loads same page)
+
+Project search:
+Filter button shows tags
+Add new drop down for "Search_fields"
+Sort button (text) shows drop down for sorting
+Sort button (arrow) reverses sort order
+Click on image or text to go to project
+
+Project page:
+Clickable text in Project Data box
+
+Techniques:
+	Click image or technique name to go to project search with technique as search criteria
