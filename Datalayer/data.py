@@ -66,7 +66,6 @@ def get_technique_stats(db):
     # returns a dict where the key are the techniques and the value is a list containing the project id and project name where the key technique is used
     return technique_stats
 
-
 def search(db, sort_by = 'start_date', sort_order = 'desc', techniques = None, search = None, search_fields = None):
 
     # Cheap workaround for empty search fields
@@ -74,7 +73,7 @@ def search(db, sort_by = 'start_date', sort_order = 'desc', techniques = None, s
         return []
 
     # Only parse techniques if asked to
-    if techniques != None:
+    if techniques != None and techniques != []:
         filtered_db = [] # A new list of projects with qualified search results
         for project in db:
             for attribute in range(len(project)): # Iterate over all attributes
@@ -141,7 +140,8 @@ def print_db(db):
 def main():
     db = load("data.json")
     #print_db(db)
-    print_db(search(db, "project_id", "desc", None, "e", ["lulz_had"]))
+    print_db(search(db, techniques=[], search="okänt", search_fields=["project_id","project_name","course_name"]))
+    #print_db(search(db, "start_date", "desc", None, "e", ["lulz_had"]))
     #print(get_project_count(db))
     #print(get_project(db, 0))
     #print(get_project(db, 1))
