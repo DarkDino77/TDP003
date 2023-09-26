@@ -13,21 +13,24 @@ Projects
 
 <div id="Main">
   <H1>Projects</H1>
-  {% for data in data_base %}
-    <li>
-      <p><b>Name: </b>{{data.project_name}} <b>
-        Description: </b>{{data.short_description}} </p>  
-    </li>
-  {% endfor %}
-  <br>
- 
-
-  <br>
-
-  <form action={{ url_for('add') }} method="POST">
+  <div>
+    <form action="{{ url_for('add') }}" method="POST">
     <input name="data", id="data">
-    <input type="submit" value="Hej">
-  </form> 
+    <input type="submit" value="Search">
+    {% for technique in techniques_used %}
+      <input type="checkbox" id="{{technique}}" name="technique_box" value="{{technique}}">
+      <label for="{{technique}}">{{technique}}</label>
+    {% endfor %}
+    </form>
+  </div>
+  <div>
+    {% for data in data_base %}
+      <li>
+        <p><b>Name: </b>{{data.project_name}} <b>
+          Description: </b>{{data.short_description}} </p>  
+      </li>
+    {% endfor %}
+  </div> 
 </div>
 
 

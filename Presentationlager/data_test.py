@@ -175,7 +175,7 @@ class DataTest(unittest.TestCase):
 
         # Search for projects with csv as technique.
         # 1 project should be returned
-        self.assertEqual(len(data.search(self.loaded_data, techniques=['csv'])), 1)
+        self.assertEqual(len(data.search(self.loaded_data, techniques=['csv','python'])), 1)
 
         # Search for projects including Python and sort them in ascending order.
         # Ensure that returned projects are sorted by ascending dates

@@ -78,7 +78,7 @@ def search(db, sort_by = 'start_date', sort_order = 'desc', techniques = None, s
         filtered_db = [] # A new list of projects with qualified search results
         for project in db:
             # Gets all technique used in a project
-            project_techniques = project["technique_used"]
+            project_techniques = project["techniques_used"]
             # Cheacks if all asked for techniques exist in the project if true add techniques else false 
             if all(technique in project_techniques for technique in techniques):
                 filtered_db.append(project)
