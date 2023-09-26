@@ -95,7 +95,8 @@ def search(db, sort_by = 'start_date', sort_order = 'desc', techniques = None, s
                         filtered_db.append(project)
                         break
         db = filtered_db # Update db with filtered db
-
+    db = sorted(db, key= lambda x: x[sort_by],reverse = False if sort_order == "asc" else True)
+    """
     # Sort the list in ascending or descending order
     # First create a new dictionary with project ID as key and sort attribute as value
     db_unsorted_metadata = {}
@@ -105,7 +106,7 @@ def search(db, sort_by = 'start_date', sort_order = 'desc', techniques = None, s
         for attribute_iterator in range(len(project)):
             if list(project.keys())[attribute_iterator] == "project_id":
                 key = project.get(list(project.keys())[attribute_iterator])
-            elif list(project.keys())[attribute_iterator] == sort_by:
+            if list(project.keys())[attribute_iterator] == sort_by:
                 value = project.get(list(project.keys())[attribute_iterator])
         db_unsorted_metadata[key] = value
     
@@ -127,6 +128,7 @@ def search(db, sort_by = 'start_date', sort_order = 'desc', techniques = None, s
                         break
 
     db = filtered_db # Finally place filtered db back into db
+    """
     return db
     
 
@@ -140,9 +142,9 @@ def print_db(db):
 # Debug main function
 def main():
     db = load("data.json")
-    #print_db(db)
+    print_db(db)
     #print_db(search(db, techniques=[], search="okänt", search_fields=["project_id","project_name","course_name"]))
-    print_db(search(db, sort_by="end_date", search='okänt', search_fields=['project_id','project_name','course_name']))
+    #print_db(search(db, sort_by="end_date", search='okänt', search_fields=['project_id','project_name','course_name']))
     #print_db(search(db, "start_date", "desc", None, "e", ["lulz_had"]))
     #print(get_project_count(db))
     #print(get_project(db, 0))
