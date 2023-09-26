@@ -42,19 +42,14 @@ def techniques():
     techniques_used = data.get_technique_stats(data_base)
 
     return render_template("techniques.html", techniques_information = techniques_information, techniques_used = techniques_used)
-"""
-@app.route("/remove/<data_base>", methods=["GET"])
-def remove(data_base):
-    data_base.pop(0)
-    return redirect(url_for("projects", data_base = data_base))   
-"""
+
 @app.route("/add", methods=["POST"])
 def add():
     #Läsa in från projects alla filter som search ska ha 
     # och sicka dom till projects i redirect
-    sort_by = request.form.get("sort_by", 'start_date')
-    sort_order = request.form.get("sort_order", 'desc') 
-    search = request.form.get("search", None)
+    sort_by = request.form.get("sort_by")
+    sort_order = request.form.get("sort_order") 
+    search = request.form.get("search")
     search_fields = request.form.getlist("search_fields")
     techniques = request.form.getlist("technique_box")
     print(techniques)
