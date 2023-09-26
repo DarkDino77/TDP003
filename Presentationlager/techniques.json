@@ -1,5 +1,5 @@
 [
-    {   
+    {
         "project_id": 1,
         "python": {"description":"kapp", "photo": "placeholder.jpg"},
         "flask": {"description":"kapp", "photo": "placeholder.jpg"},
@@ -10,7 +10,13 @@
         "ada":{"description":"kapp", "photo": "placeholder.jpg"},
         "c++":{"description":"kapp", "photo": "placeholder.jpg"},
         "csv":{"description":"kapp", "photo": "placeholder.jpg"},
-        "css":{"description":"kapp", "photo": "placeholder.jpg"}
+        "css":{"description":"kapp", "photo": "placeholder.jpg"},
+        "java": {"description":"kapp", "photo": "placeholder.jpg"},
+        "javascript": {"description":"kapp", "photo": "placeholder.jpg"},
+        "tensorflow": {"description":"kapp", "photo": "placeholder.jpg"},
+        "numpy": {"description":"kapp", "photo": "placeholder.jpg"},
+        "sql": {"description":"kapp", "photo": "placeholder.jpg"},
+        "mysql": {"description":"kapp", "photo": "placeholder.jpg"},
+        "android": {"description":"kapp", "photo": "placeholder.jpg"}
     }
-
 ]

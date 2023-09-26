@@ -104,7 +104,7 @@ def search(db, sort_by = 'start_date', sort_order = 'desc', techniques = None, s
         for attribute_iterator in range(len(project)):
             if list(project.keys())[attribute_iterator] == "project_id":
                 key = project.get(list(project.keys())[attribute_iterator])
-            elif list(project.keys())[attribute_iterator] == sort_by:
+            if list(project.keys())[attribute_iterator] == sort_by:
                 value = project.get(list(project.keys())[attribute_iterator])
         db_unsorted_metadata[key] = value
     
@@ -139,11 +139,11 @@ def print_db(db):
 # Debug main function
 def main():
     db = load("data.json")
-    #print_db(db)
+    print_db(db)
     #print_db(search(db, techniques=[], search="okänt", search_fields=["project_id","project_name","course_name"]))
     #print_db(search(db, sort_by="end_date", search='okänt', search_fields=['project_id','project_name','course_name']))
     #print_db(search(db,sort_order='asc',techniques=["python", "c++"]))
-    print_db(search(db,techniques=['csv','python']))
+    #print_db(search(db,techniques=['csv','python']))
     
     #print_db(search(db, "start_date", "desc", None, "e", ["lulz_had"]))
     #print(get_project_count(db))

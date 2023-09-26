@@ -77,5 +77,126 @@
     "end_date": "2009-09-07",
     "project_id": 4,
     "big_image": "XXX"
+  },
+  {
+    "start_date": "2010-01-15",
+    "short_description": "no",
+    "course_name": "Computer Science Basics",
+    "long_description": "An introductory course to computer science concepts.",
+    "group_size": 3,
+    "academic_credits": "3",
+    "lulz_had": "some",
+    "external_link": "ZZ",
+    "small_image": "Y",
+    "techniques_used": [
+      "java"
+    ],
+    "project_name": "Java Programming Assignment",
+    "course_id": "CS101",
+    "end_date": "2010-01-25",
+    "project_id": 5,
+    "big_image": "YYY"
+  },
+  {
+    "start_date": "2010-02-10",
+    "short_description": "no",
+    "course_name": "Data Structures and Algorithms",
+    "long_description": "A course on advanced data structures and algorithms.",
+    "group_size": 5,
+    "academic_credits": "4",
+    "lulz_had": "few",
+    "external_link": "XX",
+    "small_image": "Z",
+    "techniques_used": [
+      "java",
+      "c++"
+    ],
+    "project_name": "Sorting Algorithm Implementation",
+    "course_id": "CS201",
+    "end_date": "2010-02-25",
+    "project_id": 6,
+    "big_image": "ZZZ"
+  },
+  {
+    "start_date": "2010-03-05",
+    "short_description": "no",
+    "course_name": "Web Development Fundamentals",
+    "long_description": "An introductory course to web development technologies.",
+    "group_size": 6,
+    "academic_credits": "3",
+    "lulz_had": "medium",
+    "external_link": "YY",
+    "small_image": "X",
+    "techniques_used": [
+      "html",
+      "css",
+      "javascript"
+    ],
+    "project_name": "Simple Website Creation",
+    "course_id": "WEB101",
+    "end_date": "2010-03-15",
+    "project_id": 7,
+    "big_image": "XXX"
+  },
+  {
+    "start_date": "2010-04-01",
+    "short_description": "no",
+    "course_name": "Artificial Intelligence",
+    "long_description": "A course on AI and machine learning techniques.",
+    "group_size": 4,
+    "academic_credits": "4",
+    "lulz_had": "many",
+    "external_link": "AA",
+    "small_image": "W",
+    "techniques_used": [
+      "python",
+      "tensorflow",
+      "numpy"
+    ],
+    "project_name": "Image Classification using CNN",
+    "course_id": "AI202",
+    "end_date": "2010-04-15",
+    "project_id": 8,
+    "big_image": "WWW"
+  },
+  {
+    "start_date": "2010-05-10",
+    "short_description": "no",
+    "course_name": "Database Management",
+    "long_description": "A course on database design and management.",
+    "group_size": 3,
+    "academic_credits": "3",
+    "lulz_had": "few",
+    "external_link": "BB",
+    "small_image": "V",
+    "techniques_used": [
+      "sql",
+      "mysql"
+    ],
+    "project_name": "Database Schema Design",
+    "course_id": "DB101",
+    "end_date": "2010-05-25",
+    "project_id": 9,
+    "big_image": "VVV"
+  },
+  {
+    "start_date": "2010-06-05",
+    "short_description": "no",
+    "course_name": "Mobile App Development",
+    "long_description": "A course on developing mobile applications.",
+    "group_size": 5,
+    "academic_credits": "4",
+    "lulz_had": "medium",
+    "external_link": "CC",
+    "small_image": "U",
+    "techniques_used": [
+      "java",
+      "android"
+    ],
+    "project_name": "Android To-Do App",
+    "course_id": "MOB201",
+    "end_date": "2010-06-20",
+    "project_id": 10,
+    "big_image": "UUU"
   }
 ]
