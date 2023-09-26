@@ -1,0 +1,14 @@
+[
+    {   "python": {"description":"kapp", "photo": "placeholder.jpg"},
+        "flask": {"description":"kapp", "photo": "placeholder.jpg"},
+        "jinja2": {"description":"kapp", "photo": "placeholder.jpg"},
+        "gimp": {"description":"kapp", "photo": "placeholder.jpg"},
+        "LateX":{"description":"kapp", "photo": "placeholder.jpg"},
+        "html":{"description":"kapp", "photo": "placeholder.jpg"},
+        "ada":{"description":"kapp", "photo": "placeholder.jpg"},
+        "c++":{"description":"kapp", "photo": "placeholder.jpg"},
+        "csv":{"description":"kapp", "photo": "placeholder.jpg"},
+        "css":{"description":"kapp", "photo": "placeholder.jpg"}
+    }
+
+]

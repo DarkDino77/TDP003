@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}
+Techniques
+{% endblock %}
+
+{% block body %}
+
+<div id="Header">
+  <a href="{{url_for('index')}}">index</a>
+  <a href="{{url_for('projects')}}">projects</a>
+  <a href="{{url_for('id')}}">id</a>
+  <a href="{{url_for('techniques')}}">techniques</a>
+</div>
+
+<div id="Main">
+  {% for technique, information in techniques_used.items() %}
+    <div class="technique">
+      <li>
+        Photo: <img src="{{ url_for('static', filename = 'images/'+techniques_information[technique].photo)}}" height="100" width="100">
+        <a href="{{url_for('projects')}}">Technique</a>: {{ technique }}
+        <div>
+        Techniquen används: {{(information|length)}} 
+        
+        Description: {{ techniques_information[technique].description }}
+        </div>
+      </li>
+    </div>
+  {% endfor %}
+</div>
+
+<div id="Fotter">
+
+</div>
+{% endblock %}

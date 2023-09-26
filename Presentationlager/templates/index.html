@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}
+Index
+{% endblock %}
+
+{% block body %}
+
+<div id="Header">
+<a href="{{url_for('index')}}">index</a>
+<a href="{{url_for('projects')}}">projects</a>
+<a href="{{url_for('id')}}">id</a>
+<a href="{{url_for('techniques')}}">techniques</a>
+</div>
+
+<div id="Main">
+    {% for developer in information_developers %}
+    <div class="user">
+        <div class="developers">
+            <p>{{developer.name}}</p>
+            <div>
+                <div>
+                    {% for i in range(developer.external_link|length) %}
+                        <p>{{developer.external_link[i]}}</p>  
+                    {% endfor %}
+                </div>
+                <div><p><img src="{{ url_for('static', filename = 'images/'+developer.photo)}}" height="100" width="100"></p></div>
+                
+            </div>
+            <p>{{developer.email}}</p>
+            <p><b>About me:</b></p>
+            <p>{{developer.about_me}}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<div id="Fotter">
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}
+Projects
+{% endblock %}
+
+{% block body %}
+<div id="Header">
+  <a href="{{url_for('index')}}">index</a>
+  <a href="{{url_for('projects')}}">projects</a>
+  <a href="{{url_for('id')}}">id</a>
+  <a href="{{url_for('techniques')}}">techniques</a>
+</div>
+
+<div id="Main">
+  <H1>Projects</H1>
+  {% for data in data_base %}
+    <li>
+      <p><b>Name: </b>{{data.project_name}} <b>
+        Description: </b>{{data.short_description}} </p>  
+    </li>
+  {% endfor %}
+  <br>
+ 
+
+  <br>
+
+  <form action={{ url_for('add') }} method="POST">
+    <input name="data", id="data">
+    <input type="submit" value="Hej">
+  </form> 
+</div>
+
+
+
+<div id="Fotter">
+
+</div>
+{% endblock %}
