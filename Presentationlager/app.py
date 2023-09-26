@@ -55,6 +55,13 @@ def add():
     #print(techniques)
     return redirect(url_for("projects",sort_by=sort_by, sort_order=sort_order, techniques=techniques, search=search, search_fields=search_fields))
 
+@app.route("/redirect/<index>", methods=["GET"])
+def redirect_techniques(index):
+    technique = [index]
+    print(technique)
+    return redirect(url_for("projects",techniques=technique))
+
+
 @app.route("/project/id")
 def id():
     return render_template("project/id.html", )
