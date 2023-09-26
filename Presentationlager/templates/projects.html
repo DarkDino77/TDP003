@@ -10,9 +10,8 @@ Projects
   <a href="{{url_for('id')}}">id</a>
   <a href="{{url_for('techniques')}}">techniques</a>
 </div>
-
+<br>
 <div id="Main">
-  <H1>Projects</H1>
   <div>
     <form action="{{ url_for('add') }}" method="POST">
       <div>
@@ -57,10 +56,13 @@ Projects
     </form>
   </div>
   <div>
+    <br>
+    <H1>Projects</H1>
     {% for data in data_base %}
       <li>
-        <p><b>Name: </b>{{data.project_name}} <b>
-          Description: </b>{{data.short_description}} </p>  
+        <div><b>Name: </b> <a href="">{{data.project_name}}</a> 
+            <b>Description: </b>{{data.short_description}} 
+        </div>  
       </li>
     {% endfor %}
   </div> 
