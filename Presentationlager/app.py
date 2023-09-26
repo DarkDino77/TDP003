@@ -58,7 +58,6 @@ def add():
 @app.route("/redirect/<index>", methods=["GET"])
 def redirect_techniques(index):
     technique = [index]
-    print(technique)
     return redirect(url_for("projects",techniques=technique))
 
 

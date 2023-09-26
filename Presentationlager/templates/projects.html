@@ -16,19 +16,39 @@ Projects
   <div>
     <form action="{{ url_for('add') }}" method="POST">
       <div>
-        <input name="search", id="search">
-        <input type="submit" value="search">
+          <input name="search", id="search">
+          <input type="submit" value="search">
       </div>
       <div>
-        {% for technique in techniques_used %}
-          <input type="checkbox" id="{{technique}}" name="technique_box" value="{{technique}}">
-          <label for="{{technique}}">{{technique}}</label>
-        {% endfor %}
+          {% for technique in techniques_used %}
+              <input type="checkbox" id="{{technique}}" name="technique_box" value="{{technique}}">
+              <label for="{{technique}}">{{technique}}</label>
+          {% endfor %}
       </div>
       <div>
-        <input type="checkbox" id="project_id" name="search_fields" value="project_id">
-        <label for="project_id">project id</label>
-      </div>
+            <input type="checkbox" id="project_id" name="search_fields" value="project_id">
+            <label for="project_id">project id</label>
+            <input type="checkbox" id="start_date" name="search_fields" value="start_date">
+            <label for="start_date">start_date</label>
+            <input type="checkbox" id="short_description" name="search_fields" value="short_description">
+            <label for="short_description">short_description</label>
+            <input type="checkbox" id="end_date" name="search_fields" value="end_date">
+            <label for="end_date">end_date</label>
+            <input type="checkbox" id="project_name" name="search_fields" value="project_name">
+            <label for="project_name">project_name</label>
+            <input type="checkbox" id="academic_credits" name="search_fields" value="academic_credits">
+            <label for="academic_credits">academic_credits</label>
+            <input type="checkbox" id="group_size" name="search_fields" value="group_size">
+            <label for="group_size">group_size</label>
+            <input type="checkbox" id="long_description" name="search_fields" value="long_description">
+            <label for="long_description">long_description</label>
+            <input type="checkbox" id="course_name" name="search_fields" value="course_name">
+            <label for="course_name">course_name</label>
+            <input type="checkbox" id="course_id" name="search_fields" value="course_id">
+            <label for="course_id">course_id</label>
+            
+      </div>  
+    </div>
     </form>
   </div>
   <div>
