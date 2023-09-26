@@ -61,11 +61,14 @@ def redirect_techniques(index):
     return redirect(url_for("projects",techniques=technique))
 
 
-@app.route("/project/id")
-def id():
-    return render_template("project/id.html", )
+@app.route("/project/<index>", methods=["GET"])
+def id(index):
+    data_base = data.load("data.json")
+    project = data.search(data_base, search=index, search_fields=["project_id"])
+    project = project.pop()
+    return render_template("id.html", project=project)
 
 
 if __name__ == '__main__':
-   app.run(debug = True, port=5000)
+   app.run(debug = True)
 

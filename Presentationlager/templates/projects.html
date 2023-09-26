@@ -7,7 +7,6 @@ Projects
 <div id="Header">
   <a href="{{url_for('index')}}">index</a>
   <a href="{{url_for('projects')}}">projects</a>
-  <a href="{{url_for('id')}}">id</a>
   <a href="{{url_for('techniques')}}">techniques</a>
 </div>
 <br>
@@ -60,7 +59,7 @@ Projects
     <H1>Projects</H1>
     {% for data in data_base %}
       <li>
-        <div><b>Name: </b> <a href="">{{data.project_name}}</a> 
+        <div><b>Name: </b> <a href="{{url_for('id', index = data.project_id)}}">{{data.project_name}}</a> 
             <b>Description: </b>{{data.short_description}} 
         </div>  
       </li>
