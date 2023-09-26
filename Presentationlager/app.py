@@ -22,12 +22,12 @@ def projects():
     search_fields = request.args.getlist("search_fields")
     if not search_fields:
         search_fields = None
-    print("Pass")
-    print(f"sort_by {sort_by}")
-    print(f"sort_order {sort_order}")
-    print(f"techniques {techniques}")
-    print(f"search {search}")
-    print(f"search_fields {search_fields}")
+    #print("Pass")
+    #print(f"sort_by {sort_by}")
+    #print(f"sort_order {sort_order}")
+    #print(f"techniques {techniques}")
+    #print(f"search {search}")
+    #print(f"search_fields {search_fields}")
 
     data_base = data.load("data.json")
     techniques_used = data.get_techniques(data_base)
@@ -52,7 +52,7 @@ def add():
     search = request.form.get("search")
     search_fields = request.form.getlist("search_fields")
     techniques = request.form.getlist("technique_box")
-    print(techniques)
+    #print(techniques)
     return redirect(url_for("projects",sort_by=sort_by, sort_order=sort_order, techniques=techniques, search=search, search_fields=search_fields))
 
 @app.route("/project/id")

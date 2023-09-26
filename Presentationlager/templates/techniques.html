@@ -19,8 +19,7 @@ Techniques
         Photo: <img src="{{ url_for('static', filename = 'images/'+techniques_information[technique].photo)}}" height="100" width="100">
         <a href="{{url_for('projects')}}">Technique</a>: {{ technique }}
         <div>
-        Techniquen används: {{(information|length)}} 
-        
+        Techniquen används: {{(information|length)}}
         Description: {{ techniques_information[technique].description }}
         </div>
       </li>
