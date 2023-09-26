@@ -175,7 +175,7 @@ class DataTest(unittest.TestCase):
 
         # Search for projects with csv as technique.
         # 1 project should be returned
-        self.assertEqual(len(data.search(self.loaded_data, techniques=['csv','python'])), 1)
+        self.assertEqual(len(data.search(self.loaded_data, techniques=['csv'])), 1)
 
         # Search for projects including Python and sort them in ascending order.
         # Ensure that returned projects are sorted by ascending dates
@@ -189,7 +189,7 @@ class DataTest(unittest.TestCase):
         # Ensure that projects are returned in the correct order.
         res = data.search(self.loaded_data,
                                      sort_by="end_date",
-                                     search='okÃ¤nt',
+                                     search='okänt',
                                      search_fields=['project_id','project_name','course_name'])
         self.assertEqual(len(res), 3)
         self.assertEqual(res[0]['project_id'], 2)
@@ -199,7 +199,7 @@ class DataTest(unittest.TestCase):
         # Search for 'okÃ¤nt' in specified search fields.
         # Ensure correct number of results
         res = data.search(self.loaded_data,
-                                     search="okÃ¤nt",
+                                     search="okänt",
                                      search_fields=["project_id","project_name","course_name"])
         self.assertEqual(len(res), 3)
 
@@ -207,13 +207,13 @@ class DataTest(unittest.TestCase):
         # Ensure correct number of results
         res = data.search(self.loaded_data,
                                      techniques=[],
-                                     search="okÃ¤nt",
+                                     search="okänt",
                                      search_fields=["project_id","project_name","course_name"])
         self.assertEqual(len(res), 3)
 
         # Search for 'okÃ¤nt', provide empty search fields list
         # Ensure 0 results
-        res = data.search(self.loaded_data, search="okÃ¤nt", search_fields=[])
+        res = data.search(self.loaded_data, search="okänt", search_fields=[])
         self.assertEqual(len(res), 0)
 
         # Search with results sorted by group size.
