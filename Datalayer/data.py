@@ -77,13 +77,13 @@ def search(db, sort_by = 'start_date', sort_order = 'desc', techniques = None, s
     if techniques != None and techniques != []:
         filtered_db = [] # A new list of projects with qualified search results
         for project in db:
-            for attribute in range(len(project)): # Iterate over all attributes
-                if list(project.keys())[attribute] == "techniques_used": # Find the techniques_used attribute
-                    for technique in project.get(list(project.keys())[attribute]): # Iterate over all techniques used to find matches
-                        if technique in techniques:
-                            filtered_db.append(project)
-                            break # If this project has any filtered techniques then add it to filtered db and break
+            # Gets all technique used in a project
+            project_techniques = project["techniques_used"]
+            # Cheacks if all asked for techniques exist in the project if true add techniques else false 
+            if all(technique in project_techniques for technique in techniques):
+                filtered_db.append(project)
         db = filtered_db # Update the working database to only contain the filtered db
+
 
     # Only search the free text if there is anything to search for
     if search != None:
