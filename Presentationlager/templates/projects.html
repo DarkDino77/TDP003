@@ -15,12 +15,20 @@ Projects
   <H1>Projects</H1>
   <div>
     <form action="{{ url_for('add') }}" method="POST">
-    <input name="data", id="data">
-    <input type="submit" value="Search">
-    {% for technique in techniques_used %}
-      <input type="checkbox" id="{{technique}}" name="technique_box" value="{{technique}}">
-      <label for="{{technique}}">{{technique}}</label>
-    {% endfor %}
+      <div>
+        <input name="search", id="search">
+        <input type="submit" value="search">
+      </div>
+      <div>
+        {% for technique in techniques_used %}
+          <input type="checkbox" id="{{technique}}" name="technique_box" value="{{technique}}">
+          <label for="{{technique}}">{{technique}}</label>
+        {% endfor %}
+      </div>
+      <div>
+        <input type="checkbox" id="project_id" name="search_fields" value="project_id">
+        <label for="project_id">project id</label>
+      </div>
     </form>
   </div>
   <div>
