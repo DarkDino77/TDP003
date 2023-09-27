@@ -13,17 +13,17 @@ Projects
 <div id="Main">
   <div>
     <form action="{{ url_for('add') }}" method="POST">
-      <div>
+      <div class="search">
           <input name="search", id="search">
           <input type="submit" value="search">
       </div>
-      <div>
+      <div class="techniques_used">
           {% for technique in techniques_used %}
               <input type="checkbox" id="{{technique}}" name="technique_box" value="{{technique}}">
               <label for="{{technique}}">{{technique}}</label>
           {% endfor %}
       </div>
-      <div>
+      <div class="search_fields">
             <input type="checkbox" id="project_id" name="search_fields" value="project_id">
             <label for="project_id">project id</label>
 
@@ -50,7 +50,23 @@ Projects
             <input type="checkbox" id="course_id" name="search_fields" value="course_id">
             <label for="course_id">course_id</label>
             
+      </div>
+      <div class="sort_by">
+            <input type="radio" id="project_id_radio" name="sort_by" value="project_id">project_id </input>
+            <input type="radio" id="group_size_radio" name="sort_by" value="group_size">group_size</input>
+            
+            <input type="radio" id="project_name_radio" name="sort_by" value="project_name">project_name</input>
+            <input type="radio" id="course_name_radio" name="sort_by" value="course_name">course_name</input>
+            <input type="radio" id="course_id_radio" name="sort_by" value="course_id">course_id</input>
+
+            <input type="radio" id="start_date_radio" name="sort_by" value="start_date">start_date</input>
+            <input type="radio" id="end_date_radio" name="sort_by" value="end_date">end_date</input>
+            
       </div>  
+      <div class="sort_order">
+        <input type="checkbox" id="sort_order" name="sort_order" value="asc">
+        <label for="sort_order">sort order</label>
+      </div>
     </div>
     </form>
   </div>
