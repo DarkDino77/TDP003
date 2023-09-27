@@ -100,6 +100,20 @@ body{
   .search-terms{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 50px;
+  }
+  header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 2cm;
+    border-bottom: solid 2px;
+  }
+
+  header a {
+
   }

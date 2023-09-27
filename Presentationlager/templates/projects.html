@@ -4,14 +4,13 @@ Projects
 {% endblock %}
 
 {% block body %}
-<div id="Header">
+<header>
   <a href="{{url_for('index')}}">index</a>
   <a href="{{url_for('projects')}}">projects</a>
   <a href="{{url_for('techniques')}}">techniques</a>
-</div>
+</header>
 <br>
-<div id="Main">
-  
+<main>
     <form action="{{ url_for('add') }}" method="POST" class="search-terms">
       <div class="search">
           <input name="search", id="search">
@@ -87,12 +86,13 @@ Projects
       </li>
     {% endfor %}
   </div>
-</div>
+</main>
 
 
 
 
-<div id="Fotter">
 
-</div>
+<footer>
+  
+</footer>
 {% endblock %}
