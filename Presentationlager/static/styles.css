@@ -1,0 +1,101 @@
+body{
+  display: flex;
+  flex-direction: column;
+
+
+}
+/* Here begins the non grid dropdowns*/
+/* Style for the dropdown container */
+ .dropdown-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Style for the dropdown button */
+  .dropdown-button {
+    background-color: #f1f1f1;
+    border: none;
+    color: #333;
+    padding: 10px;
+    text-align: left;
+    width: 200px;
+    cursor: pointer;
+  }
+
+  /* Style for the dropdown content */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  /* Style for the checkboxes and labels within the dropdown content */
+  .dropdown-content label {
+    display: block;
+    margin: 5px;
+  }
+
+  /* Show the dropdown content when the button is hovered */
+  .dropdown-container:hover .dropdown-content {
+    display: block;
+  }
+
+/*Here there is checkbox that appers as grids(many of these can be made as one)*/
+  .dropdown-container-grid {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Style for the dropdown button */
+  .dropdown-button-grid {
+    background-color: #f1f1f1;
+    border: none;
+    color: #333;
+    padding: 10px;
+    text-align: left;
+    width: 200px;
+    cursor: pointer;
+  }
+
+  /* Style for the dropdown content */
+  .dropdown-content-grid {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  /* Style for the checkboxes and labels within the dropdown content */
+  .checkbox-grid label {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+  }
+
+  /* Style the grid layout for checkboxes */
+  .checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* Adjust the number of columns as needed */
+    grid-gap: 5px;
+    padding: 10px;
+  }
+
+  /* Show the dropdown content when the button is hovered */
+  .dropdown-container-grid:hover .dropdown-content-grid {
+    display: block;
+  }
+   /* Style for the checkboxes */
+  .dropdown-content-grid input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  .search-terms{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+  }

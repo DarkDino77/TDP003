@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 import data
 
 app = Flask(__name__)
-
+app.static_folder = 'static' 
 
 @app.route("/")
 def index():
@@ -32,7 +32,7 @@ def projects():
     data_base = data.load("data.json")
     techniques_used = data.get_techniques(data_base)
     data_base = data.search(data_base, sort_by=sort_by, sort_order=sort_order, techniques=techniques, search=search, search_fields=search_fields)
-    return render_template("projects.html", data_base = data_base, techniques_used=techniques_used)
+    return render_template("projects.html", data_base = data_base, techniques_used=techniques_used , sort_by_search=sort_by, sort_order_search=sort_order, techniques_search=techniques, search_search=search, search_fields_search=search_fields)
 
 @app.route("/techniques")
 def techniques():
