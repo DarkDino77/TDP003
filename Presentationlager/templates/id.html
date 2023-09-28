@@ -4,15 +4,17 @@ id
 {% endblock %}
 
 
-{% block body %}
 
-<header>
+{% block header %}
+  
+
     <h1><a href="{{url_for('projects')}}"> Back to projects</a></h1>
     <h1><a href="{{url_for('id', index = project.project_id)}}">You are Viewing {{project.project_name}}</a></h1>
     <h1><a href="{{url_for('index')}}">HOME</a></h1>
-  </header>
+    {% endblock %} 
+  {% block main %}
+ 
 
-<div id="Main">
     <div><H1>{{project.project_name}}</H1></div>
     <div>{{project}}</div>
     <div>{{project.big_image}}</div>
@@ -23,9 +25,6 @@ id
     <div>{{project.long_description}}</div>
     <div>{{project.external_link}}</div>
     <div>{{project.techniques_used}}</div>
-</div>
 
-<div id="Fotter">
 
-</div>
-{% endblock %}
+{% endblock %}  
