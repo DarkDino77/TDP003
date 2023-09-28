@@ -73,6 +73,12 @@ body{
     align-items: center;
     gap: 0px;
   }
+  .dropdown-button-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
   .Delta{
     text-align: center;
     font-size: xx-large;
@@ -91,6 +97,7 @@ body{
     
     left: 50%;
     transform: translate(-50%);
+    border-radius: 10px;
   }
 
   /* Style for the checkboxes and labels within the dropdown content */
