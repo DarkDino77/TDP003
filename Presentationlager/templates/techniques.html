@@ -10,24 +10,31 @@ Techniques
   <a href="{{url_for('techniques')}}">techniques</a>
 </header>
 <main>
+  <div class="technique_posts">
   {% for technique, information in techniques_used.items() %}
-    <div class="technique">
-      <li>
-        {% if techniques_information[technique] %}
-        Photo: <img src="{{ url_for('static', filename = 'images/'+techniques_information[technique].photo)}}" height="100" width="100">
-        {% endif %}
-        <a href="{{url_for('redirect_techniques',index=technique)}}">Technique</a>: {{ technique }}
+    <div class="technique_class">
         <div>
-        Techniquen används: {{(information|length)}}
         {% if techniques_information[technique] %}
-        Description: {{ techniques_information[technique].description }}
+        <img src="{{ url_for('static', filename = 'images/'+techniques_information[technique].photo)}}" height="100" width="100">
         {% endif %}
         </div>
-      </li>
+        <div><h2><a href="{{url_for('redirect_techniques',index=technique)}}">Technique</a>: {{ technique }}</h2></div>
+        <div class="technique_information">
+        <div>
+          Techniquen används: {{(information|length)}}
+        </div>
+        <div>
+          {% if techniques_information[technique] %}
+          Description: {{ techniques_information[technique].description }}
+          {% endif %}
+        </div>
+      </div>
+      
     </div>
   {% endfor %}
+</div>
 </main>
 <footer>
-  
+
 </footer>
 {% endblock %}
