@@ -38,7 +38,7 @@ Projects
       <div class="techniques_used">
 
         <div class="dropdown-container-grid">
-         <button class="dropdown-button-grid">Techniques </button> &Delta;
+         <div class="dropdown-button-grid-text"><button class="dropdown-button-grid">Techniques </button> <div class="Delta">&Delta;</div></div>
           <div class="dropdown-content-grid">
             <div class="checkbox-grid">
           {% for technique in techniques_used %}
@@ -51,7 +51,7 @@ Projects
       <div class="search_fields">
         
         <div class="dropdown-container">
-          <button class="dropdown-button"> Search fields </button> &Delta;
+          <div class="dropdown-button-grid-text"><button class="dropdown-button"> Search fields </button> <div class="Delta">&Delta;</div></div>
           <div class="dropdown-content">
             <label><input type="checkbox" value="project_id" name="search_fields" {% if search_fields_search %} {{"checked"  if "project_id" in search_fields_search}} {% endif %}> Project ID</label>
             <label><input type="checkbox" value="start_date" name="search_fields" {% if search_fields_search %} {{"checked"  if "start_date" in search_fields_search}} {% endif %}> Start Date</label>
