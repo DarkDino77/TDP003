@@ -95,6 +95,10 @@ def search(db, sort_by = 'start_date', sort_order = 'desc', techniques = None, s
                         break
         db = filtered_db # Update db with filtered db
 
+    db = sorted(db, key= lambda x: x[sort_by],reverse = False if sort_order == "asc" else True)
+    
+    """
+    # This is Ungabonga mode
     # Sort the list in ascending or descending order
     # First create a new dictionary with project ID as key and sort attribute as value
     db_unsorted_metadata = {}
@@ -126,6 +130,7 @@ def search(db, sort_by = 'start_date', sort_order = 'desc', techniques = None, s
                         break
 
     db = filtered_db # Finally place filtered db back into db
+    """
     return db
     
 
@@ -144,7 +149,7 @@ def main():
     #print_db(search(db, sort_by="end_date", search='okänt', search_fields=['project_id','project_name','course_name']))
     #print_db(search(db,sort_order='asc',techniques=["python", "c++"]))
     #print_db(search(db,techniques=['csv','python']))
-    
+    #print_db(search(db, sort_by="nisse"))
     #print_db(search(db, "start_date", "desc", None, "e", ["lulz_had"]))
     #print(get_project_count(db))
     #print(get_project(db, 0))

@@ -145,7 +145,8 @@ def print_db(db):
 # Debug main function
 def main():
     db = load("data.json")
-    print_db(db)
+    #print_db(db)
+    #print_db(search(db, sort_by="nisse"))
     #print_db(search(db, techniques=[], search="okänt", search_fields=["project_id","project_name","course_name"]))
     #print_db(search(db, sort_by="end_date", search='okänt', search_fields=['project_id','project_name','course_name']))
     #print_db(search(db, "start_date", "desc", None, "e", ["lulz_had"]))
