@@ -5,20 +5,19 @@ Projects
 
 {% block body %}
 <header>
-  <a href="{{url_for('index')}}">index</a>
-  <a href="{{url_for('projects')}}">projects</a>
-  <a href="{{url_for('techniques')}}">techniques</a>
+  <h1><a href="{{url_for('index')}}">Index</a></h1>
+  <h1><a href="{{url_for('projects')}}">Projects</a></h1>
+  <h1><a href="{{url_for('techniques')}}">Techniques</a></h1>
 </header>
-<br>
 <main>
     <form action="{{ url_for('add') }}" method="POST" class="search-terms">
       <div class="search">
-          <input name="search", id="search">
-          <input type="submit" value="search">
+          <input name="search", id="search" class="search_input">
+         
       </div>
       <div class="sort_by">
         <div class="dropdown-container">
-          <button class="dropdown-button">Select Sort by</button>
+          <button class="dropdown-button">Sort</button>
           <div class="dropdown-content">
             <label><input type="radio" value="project_id" name="sort_by" {{"checked" if sort_by_search == "project_id"}}> Project ID</label>
             <label><input type="radio" value="start_date" name="sort_by" {{"checked" if sort_by_search == "start_date"}}> Start Date</label>
@@ -52,7 +51,7 @@ Projects
       <div class="search_fields">
         
         <div class="dropdown-container">
-          <button class="dropdown-button">Select Search fields </button>
+          <button class="dropdown-button"> Search fields </button>
           <div class="dropdown-content">
             <label><input type="checkbox" value="project_id" name="search_fields" {% if search_fields_search %} {{"checked"  if "project_id" in search_fields_search}} {% endif %}> Project ID</label>
             <label><input type="checkbox" value="start_date" name="search_fields" {% if search_fields_search %} {{"checked"  if "start_date" in search_fields_search}} {% endif %}> Start Date</label>

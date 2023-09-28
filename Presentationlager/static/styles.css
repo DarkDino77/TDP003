@@ -1,7 +1,7 @@
 body{
   display: flex;
   flex-direction: column;
-
+  margin: 0;
 
 }
 /* Here begins the non grid dropdowns*/
@@ -20,6 +20,7 @@ body{
     text-align: left;
     width: 200px;
     cursor: pointer;
+    text-align: center;
   }
 
   /* Style for the dropdown content */
@@ -36,6 +37,7 @@ body{
   .dropdown-content label {
     display: block;
     margin: 5px;
+
   }
 
   /* Show the dropdown content when the button is hovered */
@@ -58,6 +60,7 @@ body{
     text-align: left;
     width: 200px;
     cursor: pointer;
+    text-align: center;
   }
 
   /* Style for the dropdown content */
@@ -84,7 +87,7 @@ body{
   .checkbox-grid {
     
     display: grid;
-    grid-template-columns: repeat(7, 1fr); /* Adjust the number of columns as needed */
+    grid-template-columns: repeat(6, 1fr); /* Adjust the number of columns as needed */
     grid-gap: 5px;
     padding: 10px;
   }
@@ -101,9 +104,9 @@ body{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 50px;
     align-items: center;
+    margin-top: 10px;
   }
   
   header{
@@ -112,13 +115,24 @@ body{
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    font-size: xx-large;
     height: 2cm;
     border-bottom: solid 2px;
+    background-color: #555;
   }
 
   header a {
-    
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: 5px;
+
   }
+  
+a:link, a:visited {
+  text-decoration: none;
+  color: black;
+}
   .posts{
     display: flex;
     flex-direction: column;
@@ -143,7 +157,7 @@ body{
 .triangle::before {
   content: "";
   position: absolute;
-  transform: translateY(10%) rotate(90deg);
+  transform: translateY(10%) rotate(270deg);
   
   width: 0;
   height: 0;
@@ -153,7 +167,7 @@ body{
   margin-right: 10px; /* Adjust as needed for spacing */
 }
 #sort_order:checked + .triangle::before{
-  transform: translateY(10%) rotate(270deg);
+  transform: translateY(10%) rotate(90deg);
 }
 /* Style the checkbox label text */
 .sort_order label {
@@ -191,4 +205,13 @@ body{
   display: flex;
   flex-direction: column;
   
+}
+
+.search_input{
+  width: 40vW;
+  height: 1cm;
+}
+main{
+  margin-right: 10px;
+  margin-left: 10px;
 }
