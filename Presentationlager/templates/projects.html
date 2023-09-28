@@ -30,11 +30,12 @@ Projects
             <label><input type="radio" value="course_id" name="sort_by" {{"checked" if sort_by_search == "course_id"}}> Course ID</label>
           </div>
         </div>
+        <div class="sort_order">
+          <input type="checkbox" id="sort_order" name="sort_order" value="asc" {{"checked" if sort_order_search == "asc"}}>
+          <label for="sort_order" class="triangle"></label>
+        </div>
       </div>  
-      <div class="sort_order">
-        <input type="checkbox" id="sort_order" name="sort_order" value="asc" {{"checked" if sort_order_search == "asc"}}>
-        <label for="sort_order">sort order</label>
-      </div>
+
       <div class="techniques_used">
 
         <div class="dropdown-container-grid">
@@ -74,14 +75,13 @@ Projects
 
 
 
-  <div>
+  <div class="posts">
     <br>
-    <H1>Projects</H1>
     {% for data in data_base %}
       <li>
-        <div>
-            <b>Name: </b> <a href="{{url_for('id', index = data.project_id)}}">{{data.project_name}}</a> 
-            <b>Description: </b>{{data.short_description}} 
+        <div class="projects_class">
+            <h3><a href="{{url_for('id', index = data.project_id)}}">{{data.project_name}}</a> </h3>
+            <h4>{{data.short_description}} </h4>
         </div>  
       </li>
     {% endfor %}

@@ -104,6 +104,7 @@ body{
     justify-content: center;
     gap: 50px;
   }
+  
   header{
     display: flex;
     flex-direction: row;
@@ -115,5 +116,50 @@ body{
   }
 
   header a {
-
+    
   }
+  .posts{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .projects_class{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    column-gap: 50px;
+    border: solid 2px;
+    border-radius: 10px;
+  }
+  #sort_order{
+    display: none;
+  }
+
+  /* Style the label as a triangle */
+.triangle::before {
+  content: "";
+  position: absolute;
+  transform: translateY(10%) rotate(90deg);
+  
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 16px 24px 16px 0;
+  border-color: transparent #555 transparent transparent;
+  margin-right: 10px; /* Adjust as needed for spacing */
+}
+#sort_order:checked + .triangle::before{
+  transform: translateY(10%) rotate(270deg);
+}
+/* Style the checkbox label text */
+.sort_order label {
+  cursor: pointer;
+  user-select: none;
+}
+
+.sort_by{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
