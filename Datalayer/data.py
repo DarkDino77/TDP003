@@ -95,8 +95,10 @@ def search(db, sort_by = 'start_date', sort_order = 'desc', techniques = None, s
                         filtered_db.append(project)
                         break
         db = filtered_db # Update db with filtered db
-
-    db = sorted(db, key= lambda x: x[sort_by],reverse = False if sort_order == "asc" else True)
+    try:
+        db = sorted(db, key= lambda x: x[sort_by],reverse = False if sort_order == "asc" else True)
+    except:
+        db = sorted(db, key= lambda x: x["start_date"],reverse = False if sort_order == "asc" else True)
     
     """
     # This is Ungabonga mode
@@ -155,7 +157,7 @@ def main():
     #print(get_project(db, 1))
     #print(get_project(db, 2))
     #print(get_techniques(db))
-    #print(get_technique_stats(db))
+    print(get_technique_stats(db))
 
 if __name__ == "__main__":
     main()
