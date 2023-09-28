@@ -18,7 +18,7 @@ Techniques
         <img src="{{ url_for('static', filename = 'images/'+techniques_information[technique].photo)}}" height="100" width="100">
         {% endif %}
         </div>
-        <div><h2><a href="{{url_for('redirect_techniques',index=technique)}}">Technique</a>: {{ technique }}</h2></div>
+        <div><h2><a href="{{url_for('redirect_techniques',index=technique)}}">{{ technique }}</a></h2></div>
         <div class="technique_information">
         <div>
           Techniquen används: {{(information|length)}}
