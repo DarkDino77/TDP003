@@ -4,14 +4,12 @@ Techniques
 {% endblock %}
 
 {% block body %}
-
-<div id="Header">
+<header>
   <a href="{{url_for('index')}}">index</a>
   <a href="{{url_for('projects')}}">projects</a>
   <a href="{{url_for('techniques')}}">techniques</a>
-</div>
-
-<div id="Main">
+</header>
+<main>
   {% for technique, information in techniques_used.items() %}
     <div class="technique">
       <li>
@@ -28,9 +26,8 @@ Techniques
       </li>
     </div>
   {% endfor %}
-</div>
-
-<div id="Fotter">
-
-</div>
+</main>
+<footer>
+  
+</footer>
 {% endblock %}
