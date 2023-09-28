@@ -139,6 +139,7 @@ a:link, a:visited {
     flex-direction: column;
     gap: 10px;
     margin-top: 10px;
+    margin-bottom: 10px;
   }
   .projects_class{
     display: flex;
@@ -201,6 +202,7 @@ a:link, a:visited {
   flex-wrap: nowrap;
   justify-content: center;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .technique_class{
