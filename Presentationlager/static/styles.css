@@ -107,6 +107,7 @@ body{
     gap: 50px;
     align-items: center;
     margin-top: 10px;
+    margin-left: 8%;
   }
   
   header{
@@ -148,6 +149,18 @@ a:link, a:visited {
     border: solid 2px;
     border-radius: 10px;
     align-items: center;
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+  .projects_class > img {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 25px;
+  }
+  .projects_class > h2{
+    width: 15vW;
+    display: flex;
+    flex-wrap: wrap;
   }
   #sort_order{
     display: none;
@@ -194,11 +207,23 @@ a:link, a:visited {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: center;
+
   align-items: center;
   column-gap: 50px;
   border: solid 2px;
   border-radius: 10px;
+  margin-left: 8%;
+  margin-right: 8%;
+}
+.technique_class > img {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 25px;
+}
+.technique_class > h2{
+  width: 10vW;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .technique_information{
@@ -210,8 +235,4 @@ a:link, a:visited {
 .search_input{
   width: 40vW;
   height: 1cm;
-}
-main{
-  margin-right: 10px;
-  margin-left: 10px;
 }

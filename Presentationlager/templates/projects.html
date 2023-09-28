@@ -79,7 +79,8 @@ Projects
     {% for data in data_base %}
       <li>
         <div class="projects_class">
-            <h3><a href="{{url_for('id', index = data.project_id)}}">{{data.project_name}}</a> </h3>
+            <img src="{{ url_for('static', filename = 'images/'+data.small_image)}}" height="100" width="100">
+            <h2><a href="{{url_for('id', index = data.project_id)}}">{{data.project_name}}</a> </h2>
             <h4>{{data.short_description}} </h4>
         </div>  
       </li>
