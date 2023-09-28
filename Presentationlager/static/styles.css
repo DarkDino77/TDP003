@@ -229,9 +229,10 @@ a:link, a:visited {
 .technique_information{
   display: flex;
   flex-direction: column;
-  
 }
-
+.technique_information > div >h4{
+  margin: 0;
+}
 .search_input{
   width: 40vW;
   height: 1cm;
