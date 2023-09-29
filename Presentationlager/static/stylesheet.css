@@ -50,6 +50,12 @@ footer {
     padding-right: 5mm;
 }
 
+body{
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+
+}
 /* Here begins the non grid dropdowns*/
 /* Style for the dropdown container */
  .dropdown-container {
@@ -59,14 +65,16 @@ footer {
 
   /* Style for the dropdown button */
   .dropdown-button {
-    background-color: #f1f1f1;
+    background-color: white;
     border: none;
     color: #333;
     padding: 10px;
     text-align: left;
-    width: 200px;
+    width: 150px;
     cursor: pointer;
     text-align: center;
+    font-size: x-large;
+    padding-right: 0px;
   }
 
   /* Style for the dropdown content */
@@ -77,6 +85,8 @@ footer {
     min-width: 200px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    border: solid;
+    border-radius: 10px;
   }
 
   /* Style for the checkboxes and labels within the dropdown content */
@@ -99,15 +109,36 @@ footer {
 
   /* Style for the dropdown button */
   .dropdown-button-grid {
-    background-color: #f1f1f1;
+    background-color: white;
     border: none;
     color: #333;
     padding: 10px;
     text-align: left;
-    width: 200px;
+    width: 150px;
     cursor: pointer;
     text-align: center;
+    font-size: x-large;
+    padding-right: 0;
+
   }
+  .dropdown-button-grid-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0px;
+  }
+  .dropdown-button-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+  .Delta{
+    text-align: center;
+    font-size: xx-large;
+    transform: rotate(180deg) scaleX(-1) ;
+  }
+
 
   /* Style for the dropdown content */
   .dropdown-content-grid {
@@ -120,6 +151,8 @@ footer {
     
     left: 50%;
     transform: translate(-50%);
+    border-radius: 10px;
+    border: solid;
   }
 
   /* Style for the checkboxes and labels within the dropdown content */
@@ -128,6 +161,7 @@ footer {
     align-items: center;
     margin: 5px;
   }
+
 
   /* Style the grid layout for checkboxes */
   .checkbox-grid {
@@ -146,6 +180,7 @@ footer {
   .dropdown-content-grid input[type="checkbox"] {
     margin-right: 5px;
   }
+  
   .search-terms{
     display: flex;
     flex-direction: row;
@@ -154,9 +189,28 @@ footer {
     align-items: center;
     margin-top: 10px;
     margin-left: 8%;
+    margin-right: 8%;
   }
   
+  header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-size: xx-large;
+    height: 2cm;
+    border-bottom: solid 2px;
+    background-color: #555;
+  }
 
+  header a {
+    text-decoration: none;
+    display: inline-block;
+    border: 5px;
+  }
+  header h1 {
+    margin-top: 0;
+  }
   
 a:link, a:visited {
   text-decoration: none;
@@ -199,7 +253,7 @@ a:link, a:visited {
 .triangle::before {
   content: "";
   position: absolute;
-  transform: translateY(10%) rotate(270deg);
+  transform: translateY(35%) rotate(270deg) ;
   
   width: 0;
   height: 0;
@@ -209,7 +263,7 @@ a:link, a:visited {
   margin-right: 10px; /* Adjust as needed for spacing */
 }
 #sort_order:checked + .triangle::before{
-  transform: translateY(10%) rotate(90deg);
+  transform: translateY(35%) rotate(90deg);
 }
 /* Style the checkbox label text */
 .sort_order label {
@@ -220,7 +274,7 @@ a:link, a:visited {
 .sort_by{
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 1px;
 }
 
 .technique_posts{
@@ -266,4 +320,6 @@ a:link, a:visited {
 .search_input{
   width: 40vW;
   height: 1cm;
+  border-radius: 10px;
+  border: solid;
 }
