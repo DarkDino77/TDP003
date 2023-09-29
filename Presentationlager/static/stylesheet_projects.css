@@ -3,7 +3,7 @@
 .dropdown-container {
     position: relative;
     display: inline-block;
-  }
+}
 
   /* Style for the dropdown button */
   .dropdown-button {
@@ -154,6 +154,12 @@
     margin-left: 8%;
     margin-right: 8%;
   }
+
+  .projects_class a {
+    color: black;
+    text-decoration: none;
+  }
+
   .projects_class > img {
     margin-top: 10px;
     margin-bottom: 10px;
