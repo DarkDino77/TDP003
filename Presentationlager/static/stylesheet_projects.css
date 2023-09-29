@@ -1,22 +1,18 @@
-/* Here begins the non grid dropdowns*/
+/* Here begins the sort by dropdowns*/
 /* Style for the dropdown container */
-.dropdown-container {
+.dropdown_container {
     position: relative;
     display: inline-block;
   }
-  /* Style for the dropdown button */
-  .dropdown-button {
-    display: none;
-  }
 
   /* Style for the dropdown checkbox */
-  .dropdown-checkbox {
+  .dropdown_checkbox {
     position: absolute;
     opacity: 0;
   }
 
   /* Style for the dropdown button */
-  .dropdown-label {
+  .dropdown_label {
     background-color: white;
     border: none;
     color: #333;
@@ -30,7 +26,7 @@
   }
 
   /* Style for the dropdown content */
-  .dropdown-content {
+  .dropdown_content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
@@ -42,14 +38,70 @@
   }
 
   /* Style for the checkboxes and labels within the dropdown content */
-  .dropdown-content label {
+  .dropdown_content label {
     display: block;
     margin: 5px;
 
   }
 
   /* Show the dropdown content when the button is hovered */
-  .dropdown-checkbox:checked + .dropdown-label + .dropdown-content {
+  .dropdown_checkbox:checked + .dropdown_label + .dropdown_content {
+    display: block;
+  }
+
+
+  /* Here begins the  search fields dropdowns*/
+/* Style for the dropdown container */
+.dropdown_container_search_fields {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Style for the dropdown checkbox */
+  .dropdown_checkbox_search_fields {
+    position: absolute;
+    opacity: 0;
+  }
+
+  /* Style for the dropdown button */
+  .dropdown_label_search_fields {
+    background-color: white;
+    border: none;
+    color: #333;
+    padding: 10px;
+    text-align: left;
+    width: 300px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 38px;
+    padding-right: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Style for the dropdown content */
+  .dropdown_content_search_fields {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border: solid;
+    border-radius: 10px;
+  }
+
+  /* Style for the checkboxes and labels within the dropdown content */
+  .dropdown_content_search_fields label {
+    display: block;
+    margin: 5px;
+
+  }
+
+  /* Show the dropdown content when the button is hovered */
+  .dropdown_checkbox_search_fields:checked + .dropdown_label_search_fields + .dropdown_content_search_fields {
     display: block;
   }
 

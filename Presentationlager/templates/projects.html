@@ -19,10 +19,10 @@ Projects
          
       </div>
       <div class="sort_by">
-        <div class="dropdown-container">
-            <input type="checkbox" class="dropdown-checkbox" id="dropdownCheckbox">
-            <label class="dropdown-label" for="dropdownCheckbox">Sort</label>
-                <div class="dropdown-content">
+        <div class="dropdown_container">
+            <input type="checkbox" class="dropdown_checkbox" id="dropdown_sort_by">
+            <label class="dropdown_label" for="dropdown_sort_by">Sort</label>
+                <div class="dropdown_content">
                     <label><input type="radio" value="project_id" name="sort_by" {{"checked" if sort_by_search == "project_id"}}> Project ID</label>
                     <label><input type="radio" value="start_date" name="sort_by" {{"checked" if sort_by_search == "start_date"}}> Start Date</label>
                     <label><input type="radio" value="end_date" name="sort_by" {{"checked" if sort_by_search == "end_date"}}> End Date</label>
@@ -54,10 +54,10 @@ Projects
       </div>
       <div class="search_fields">
         
-        <div class="dropdown-container">
-            <input type="checkbox" class="dropdown-checkbox" id="dropdownCheckbox">
-            <label class="dropdown-label" for="dropdownCheckbox">Sort <div class="Delta">&Delta;</div></label> 
-          <div class="dropdown-content">
+        <div class="dropdown_container_search_fields">
+            <input type="checkbox" class="dropdown_checkbox_search_fields" id="dropdown_search_fields">
+            <label class="dropdown_label_search_fields" for="dropdown_search_fields">Search fields <div class="Delta">&Delta;</div></label>
+          <div class="dropdown_content_search_fields">
             <label><input type="checkbox" value="project_id" name="search_fields" {% if search_fields_search %} {{"checked"  if "project_id" in search_fields_search}} {% endif %}> Project ID</label>
             <label><input type="checkbox" value="start_date" name="search_fields" {% if search_fields_search %} {{"checked"  if "start_date" in search_fields_search}} {% endif %}> Start Date</label>
             <label><input type="checkbox" value="end_date" name="search_fields" {% if search_fields_search %} {{"checked"  if "end_date" in search_fields_search}} {% endif %}> End Date</label>
