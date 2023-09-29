@@ -114,6 +114,7 @@ main {
 .profile-about h2, p {
     margin: 0;
 }
+
 /* Very much optional phone friendly code */
 @media screen and (max-width: 10cm) {
     .profile {

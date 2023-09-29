@@ -11,25 +11,21 @@ body {
 header {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: space-around;
     min-height: var(--header-size);
     border-bottom: solid 2px;
     background-color: #555;
-    text-decoration: none;
-}
-
-header h3 {
-    
+    color: white;
 }
 
 header a {
     display: inline-block;
+    text-decoration: none;
     border: 5px;
+    color: white;
 }
-header h1 {
-    margin-top: 0;
-}
+
 
 main {
     /* This is required for the footer to be positioned properly */
@@ -49,36 +45,3 @@ footer {
     padding-left: 5mm;
     padding-right: 5mm;
 }
-
-body{
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-
-}
-  
-  header{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    font-size: xx-large;
-    height: 2cm;
-    border-bottom: solid 2px;
-    background-color: #555;
-  }
-
-  header a {
-    text-decoration: none;
-    display: inline-block;
-    border: 5px;
-  }
-  header h1 {
-    margin-top: 0;
-  }
-  
-a:link, a:visited {
-  text-decoration: none;
-  color: black;
-}
-  
