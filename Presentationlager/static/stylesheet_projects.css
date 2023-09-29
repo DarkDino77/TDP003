@@ -1,18 +1,18 @@
 /* Here begins the sort by dropdowns*/
 /* Style for the dropdown container */
-.dropdown_container, .dropdown_container_search_fields{
+.dropdown_container, .dropdown_container_search_fields,.dropdown_container_grid {
     position: relative;
     display: inline-block;
   }
 
   /* Style for the dropdown checkbox */
-  .dropdown_checkbox, .dropdown_checkbox_search_fields{
+  .dropdown_checkbox, .dropdown_checkbox_search_fields, .dropdown_checkbox_techniques_used{
     position: absolute;
     opacity: 0;
   }
 
   /* Style for the dropdown button */
-  .dropdown_label, .dropdown_label_search_fields {
+  .dropdown_label, .dropdown_label_search_fields, .dropdown_label_techniques_used {
     background-color: white;
     border: none;
     color: #333;
@@ -24,7 +24,7 @@
     font-size: 38px;
     padding-right: 0px;
   }
-  .dropdown_label_search_fields{
+  .dropdown_label_search_fields, .dropdown_label_techniques_used{
     min-width: 300px;
     display: flex;
     flex-direction: row;
@@ -34,7 +34,7 @@
 
 
   /* Style for the dropdown content */
-  .dropdown_content, .dropdown_content_search_fields  {
+  .dropdown_content, .dropdown_content_search_fields , .dropdown_content_techniques_used {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
@@ -46,7 +46,7 @@
   }
 
   /* Style for the checkboxes and labels within the dropdown content */
-  .dropdown_content label, .dropdown_content_search_fields label {
+  .dropdown_content label, .dropdown_content_search_fields label , .dropdown_content_techniques_used label{
     display: block;
     margin: 5px;
 
@@ -54,7 +54,8 @@
 
   /* Show the dropdown content when the button is hovered */
   .dropdown_checkbox:checked + .dropdown_label + .dropdown_content, 
-  .dropdown_checkbox_search_fields:checked + .dropdown_label_search_fields + .dropdown_content_search_fields {
+  .dropdown_checkbox_search_fields:checked + .dropdown_label_search_fields + .dropdown_content_search_fields,
+  .dropdown_checkbox_techniques_used:checked + .dropdown_label_techniques_used + .dropdown_content_techniques_used {
     display: block;
   }
 
@@ -123,7 +124,7 @@
 
 
   /* Style the grid layout for checkboxes */
-  .checkbox-grid {
+  .checkbox_grid_techniques_used  {
 
     display: grid;
     grid-template-columns: repeat(6, 1fr); /* Adjust the number of columns as needed */

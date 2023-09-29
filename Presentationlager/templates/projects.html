@@ -41,10 +41,11 @@ Projects
 
       <div class="techniques_used">
 
-        <div class="dropdown-container-grid">
-         <div class="dropdown-button-grid-text"><button class="dropdown-button-grid">Techniques </button> <div class="Delta">&Delta;</div></div>
-          <div class="dropdown-content-grid">
-            <div class="checkbox-grid">
+        <div class="dropdown_container_techniques_used">
+          <input type="checkbox" class="dropdown_checkbox_techniques_used" id="dropdown_techniques_used">
+          <label class="dropdown_label_techniques_used" for="dropdown_techniques_used">Technique <div class="Delta">&Delta;</div></label>
+          <div class="dropdown_content_techniques_used">
+            <div class="checkbox_grid_techniques_used">
           {% for technique in techniques_used %}
               <label><input type="checkbox" id="{{technique}}" name="technique_box" value="{{technique}}" class="techniques_used_checkbox" {% if techniques_search %} {{"checked"  if technique in techniques_search}} {% endif %}>{{technique}}</label>
           {% endfor %}
