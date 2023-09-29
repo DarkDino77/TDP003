@@ -43,8 +43,8 @@ def techniques():
 
     return render_template("techniques.html", techniques_information = techniques_information, techniques_used = techniques_used)
 
-@app.route("/add", methods=["POST"])
-def add():
+@app.route("/redirect_search", methods=["POST"])
+def redirect_search():
     #Läsa in från projects alla filter som search ska ha 
     # och sicka dom till projects i redirect
     sort_by = request.form.get("sort_by")
