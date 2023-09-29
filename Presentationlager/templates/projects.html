@@ -15,22 +15,23 @@ Projects
 {% block main %}
     <form action="{{ url_for('redirect_search') }}" method="POST" class="search-terms">
       <div class="search">
-          <input name="search", id="search" class="search_input">
+          <input name="search", id="search" class="search_input" placeholder="Search...">
          
       </div>
       <div class="sort_by">
         <div class="dropdown-container">
-          <button class="dropdown-button">Sort</button>
-          <div class="dropdown-content">
-            <label><input type="radio" value="project_id" name="sort_by" {{"checked" if sort_by_search == "project_id"}}> Project ID</label>
-            <label><input type="radio" value="start_date" name="sort_by" {{"checked" if sort_by_search == "start_date"}}> Start Date</label>
-            <label><input type="radio" value="end_date" name="sort_by" {{"checked" if sort_by_search == "end_date"}}> End Date</label>
-            <label><input type="radio" value="academic_credits" name="sort_by" {{"checked" if sort_by_search == "academic_credits"}}> Academic Credits</label>
-            <label><input type="radio" value="group_size" name="sort_by" {{"checked" if sort_by_search == "group_size"}}> Group Size</label>
-            <label><input type="radio" value="project_name" name="sort_by" {{"checked" if sort_by_search == "project_name"}}> Project Name</label>
-            <label><input type="radio" value="course_name" name="sort_by" {{"checked" if sort_by_search == "course_name"}}> Course Name</label>
-            <label><input type="radio" value="course_id" name="sort_by" {{"checked" if sort_by_search == "course_id"}}> Course ID</label>
-          </div>
+            <input type="checkbox" class="dropdown-checkbox" id="dropdownCheckbox">
+            <label class="dropdown-label" for="dropdownCheckbox">Sort</label>
+                <div class="dropdown-content">
+                    <label><input type="radio" value="project_id" name="sort_by" {{"checked" if sort_by_search == "project_id"}}> Project ID</label>
+                    <label><input type="radio" value="start_date" name="sort_by" {{"checked" if sort_by_search == "start_date"}}> Start Date</label>
+                    <label><input type="radio" value="end_date" name="sort_by" {{"checked" if sort_by_search == "end_date"}}> End Date</label>
+                    <label><input type="radio" value="academic_credits" name="sort_by" {{"checked" if sort_by_search == "academic_credits"}}> Academic Credits</label>
+                    <label><input type="radio" value="group_size" name="sort_by" {{"checked" if sort_by_search == "group_size"}}> Group Size</label>
+                    <label><input type="radio" value="project_name" name="sort_by" {{"checked" if sort_by_search == "project_name"}}> Project Name</label>
+                    <label><input type="radio" value="course_name" name="sort_by" {{"checked" if sort_by_search == "course_name"}}> Course Name</label>
+                    <label><input type="radio" value="course_id" name="sort_by" {{"checked" if sort_by_search == "course_id"}}> Course ID</label>
+                </div>
         </div>
         <div class="sort_order">
           <input type="checkbox" id="sort_order" name="sort_order" value="asc" {{"checked" if sort_order_search == "asc"}}>
@@ -54,7 +55,8 @@ Projects
       <div class="search_fields">
         
         <div class="dropdown-container">
-          <div class="dropdown-button-text"><button class="dropdown-button"> Search fields </button> <div class="Delta">&Delta;</div></div>
+            <input type="checkbox" class="dropdown-checkbox" id="dropdownCheckbox">
+            <label class="dropdown-label" for="dropdownCheckbox">Sort <div class="Delta">&Delta;</div></label> 
           <div class="dropdown-content">
             <label><input type="checkbox" value="project_id" name="search_fields" {% if search_fields_search %} {{"checked"  if "project_id" in search_fields_search}} {% endif %}> Project ID</label>
             <label><input type="checkbox" value="start_date" name="search_fields" {% if search_fields_search %} {{"checked"  if "start_date" in search_fields_search}} {% endif %}> Start Date</label>

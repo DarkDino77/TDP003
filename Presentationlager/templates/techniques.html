@@ -25,7 +25,7 @@ Techniques
       <h2><a href="{{url_for('redirect_techniques',index=technique)}}">{{ technique }}</a></h2>
       <div class="technique_information">
         <div>
-          <h4>Techniquen används: {{(information|length)}} {{"gånger" if (information|length) > 1}}{{"gång" if (information|length) == 1}}</h4>
+          <h4>Number of projects using this technique: {{(information|length)}} </h4>
         </div>
         <div>
           {% if techniques_information[technique] %}
