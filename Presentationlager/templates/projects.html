@@ -3,6 +3,9 @@
 Projects
 {% endblock %}
 
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheet_projects.css') }}">
+{% endblock %}
 
 {% block header %}
   <h1><a href="{{url_for('techniques')}}">TECHNIQUES</a></h1>
