@@ -1,0 +1,269 @@
+html {
+    --header-size: 2cm;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    min-height: var(--header-size);
+    border-bottom: solid 2px;
+    background-color: #555;
+    text-decoration: none;
+}
+
+header h3 {
+    
+}
+
+header a {
+    display: inline-block;
+    border: 5px;
+}
+header h1 {
+    margin-top: 0;
+}
+
+main {
+    /* This is required for the footer to be positioned properly */
+    min-height: calc(100vh - var(--header-size) - 6mm);
+    padding-bottom: 5mm;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 5mm;
+    margin-top: -5mm;
+    clear: both;
+    border-top: solid 2px;
+    padding-left: 5mm;
+    padding-right: 5mm;
+}
+
+/* Here begins the non grid dropdowns*/
+/* Style for the dropdown container */
+ .dropdown-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Style for the dropdown button */
+  .dropdown-button {
+    background-color: #f1f1f1;
+    border: none;
+    color: #333;
+    padding: 10px;
+    text-align: left;
+    width: 200px;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  /* Style for the dropdown content */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  /* Style for the checkboxes and labels within the dropdown content */
+  .dropdown-content label {
+    display: block;
+    margin: 5px;
+
+  }
+
+  /* Show the dropdown content when the button is hovered */
+  .dropdown-container:hover .dropdown-content {
+    display: block;
+  }
+
+/*Here there is checkbox that appers as grids(many of these can be made as one)*/
+  .dropdown-container-grid {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Style for the dropdown button */
+  .dropdown-button-grid {
+    background-color: #f1f1f1;
+    border: none;
+    color: #333;
+    padding: 10px;
+    text-align: left;
+    width: 200px;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  /* Style for the dropdown content */
+  .dropdown-content-grid {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  /* Style for the checkboxes and labels within the dropdown content */
+  .checkbox-grid label {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+  }
+
+  /* Style the grid layout for checkboxes */
+  .checkbox-grid {
+    
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Adjust the number of columns as needed */
+    grid-gap: 5px;
+    padding: 10px;
+  }
+
+  /* Show the dropdown content when the button is hovered */
+  .dropdown-container-grid:hover .dropdown-content-grid {
+    display: block;
+  }
+   /* Style for the checkboxes */
+  .dropdown-content-grid input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  .search-terms{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50px;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 8%;
+  }
+  
+
+  
+a:link, a:visited {
+  text-decoration: none;
+  color: black;
+}
+  .posts{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .projects_class{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    
+    column-gap: 50px;
+    border: solid 2px;
+    border-radius: 10px;
+    align-items: center;
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+  .projects_class > img {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 25px;
+  }
+  .projects_class > h2{
+    width: 15vW;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #sort_order{
+    display: none;
+  }
+
+  /* Style the label as a triangle */
+.triangle::before {
+  content: "";
+  position: absolute;
+  transform: translateY(10%) rotate(270deg);
+  
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 16px 24px 16px 0;
+  border-color: transparent #555 transparent transparent;
+  margin-right: 10px; /* Adjust as needed for spacing */
+}
+#sort_order:checked + .triangle::before{
+  transform: translateY(10%) rotate(90deg);
+}
+/* Style the checkbox label text */
+.sort_order label {
+  cursor: pointer;
+  user-select: none;
+}
+
+.sort_by{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.technique_posts{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.technique_class{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  align-items: center;
+  column-gap: 50px;
+  border: solid 2px;
+  border-radius: 10px;
+  margin-left: 8%;
+  margin-right: 8%;
+}
+.technique_class > img {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 25px;
+}
+.technique_class > h2{
+  width: 10vW;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.technique_information{
+  display: flex;
+  flex-direction: column;
+}
+.technique_information > div >h4{
+  margin: 0;
+}
+.search_input{
+  width: 40vW;
+  height: 1cm;
+}

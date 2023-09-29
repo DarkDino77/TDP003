@@ -5,25 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> {% block title %}{% endblock %} </title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
-    <style>
-        body {
-            margin: 0px;
-        }
-        header {
-            height: 2cm;
-            border-bottom: solid 2px;
-        }
-        main {
-            min-height: 45vw;
-        }
-        footer {
-            height: 5mm;
-            border-top: solid 2px;
-            padding-left: 5mm;
-            padding-right: 5mm;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheet.css') }}">
 
     {% block head %}
     {% endblock%}

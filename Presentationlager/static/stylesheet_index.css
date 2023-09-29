@@ -1,0 +1,128 @@
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.profile {
+    flex: 1 1 calc(50% - 1cm);
+    min-width: 4cm;
+    text-align: justify;
+    margin: 2mm;
+}
+
+.profile-area {
+    position: relative;
+    max-width: 15cm;
+    margin: auto;
+}
+
+.pfp-border {
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: 2mm;
+    height: 7cm;
+    border: solid 3px #000;
+    border-radius: 40px;
+    text-align: center;
+}
+
+.pfp-border img {
+    position: relative;
+    width: calc(100% - 40px);
+    height: calc(100% - 1cm);
+    top: 5mm;
+    left: -3mm;
+    border: solid 2px;
+    border-radius: 40px;
+    object-fit: cover;
+}
+
+.pfp-border span {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-size: x-large;
+    font-family: monospace;
+}
+
+.pfp-border a {
+    position: absolute;
+    left: calc(100% - 5mm);
+    width: 1cm;
+    height: 1cm;
+    border: solid 2px;
+    border-radius: 100%;
+}
+
+.pfp-border a img {
+    position: absolute;
+    top: -0.5mm;
+    left: -0.5mm;
+    width: 100%;
+    height: 100%;
+}
+
+.pfp-media-1 {
+    top: 15mm;
+}
+
+.pfp-media-2 {
+    top: 29mm;
+}
+
+.pfp-media-3 {
+    top: 43mm;
+}
+
+.pfp-border-horizontal {
+    position: absolute;
+    left: -5px;
+    width: calc(100% + 10px);
+    height: 60%;
+    top: calc((100% - 60%) / 2);
+    background-color: white;
+}
+
+.pfp-border-vertical {
+    position: absolute;
+    left: -5px;
+    width: 90%;
+    height: calc(100% + 10px);   
+    top: -5px;
+    background-color: white;
+}
+
+.pfp-name {
+    top: -8px;
+}
+
+.pfp-mail {
+    top: calc(100% - 8px);
+}
+
+.profile-about {
+    margin: 1cm;
+}
+
+.profile-about h2, p {
+    margin: 0;
+}
+
+/* Very much optional phone friendly code */
+@media screen and (max-width: 10cm) {
+    .profile {
+        flex: 1 1 100%;
+        margin: 5mm;
+    }
+
+    .pfp-border span {
+        font-size: medium;
+    }
+}

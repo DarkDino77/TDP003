@@ -2,118 +2,13 @@
 {% block title %} Portfolio {% endblock %}
 
 {% block head %}
-<style>
-    main {
-        margin-left: 2cm;
-        margin-right: 2cm;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .profile {
-        width: 45%;
-        max-width: 20cm;
-        max-height: 25cm;
-        border: solid 1px;
-        margin: 2mm;
-    }
-    .profile-area {
-        position: relative;
-        margin: 5mm;
-    }
-    .pfp-border {
-        position: relative;
-        left: 0;
-        right: 0;
-        margin: 2mm;
-        height: 7cm;
-        border: solid 3px #000;
-        border-radius: 40px;
-        text-align: center;
-    }
-    .pfp-border img {
-        position: relative;
-        width: calc(100% - 40px);
-        height: calc(100% - 1cm);
-        top: 5mm;
-        left: -3mm;
-        border: solid 2px;
-        border-radius: 40px;
-        object-fit: cover;
-    }
-    .pfp-border span {
-        position: absolute;
-        width: 100%;
-        left: 0;
-        right: 0;
-        margin: auto;
-        font-size: x-large;
-        font-family: monospace;
-    }
-    .pfp-border address {
-        position: absolute;
-        left: calc(100% - 5mm);
-        width: 1cm;
-        height: 1cm;
-        border: solid 2px;
-        border-radius: 100%;
-    }
-    .pfp-border address img {
-        position: absolute;
-        top: -0.5mm;
-        left: -0.5mm;
-        width: 100%;
-        height: 100%;
-    }
-    .pfp-media-1 {
-        top: 15mm;
-    }
-    .pfp-media-2 {
-        top: 29mm;
-    }
-    .pfp-media-3 {
-        top: 43mm;
-    }
-    .pfp-border-horizontal {
-        position: absolute;
-        left: -5px;
-        width: calc(100% + 10px);
-        height: 60%;
-        top: calc((100% - 60%) / 2);
-        background-color: white;
-    }
-    .pfp-border-vertical {
-        position: absolute;
-        left: -5px;
-        width: 90%;
-        height: calc(100% + 10px);   
-        top: -5px;
-        background-color: white;
-    }
-    .pfp-name {
-        top: -8px;
-    }
-    .pfp-mail {
-        top: calc(100% - 8px);
-    }
-
-    .profile-about {
-        margin: 1cm;
-    }
-    .profile-about h2 {
-        margin: 0;
-    }
-    .profile-about p {
-        margin: 0;
-    }
-</style>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheet_index.css') }}">
 {% endblock %}
 
 {% block header %}
-    <h1><a href="{{url_for('projects')}}">PROJECTS</a></h1>
-    <h1><a href="{{url_for('index')}}">WELCOME</a></h1>
-    <h1><a href="{{url_for('techniques')}}">TECHNIQUES</a></h1>
+    <h3><b><a href="{{url_for('projects')}}">PROJECTS</a></b></h3>
+    <h3><b><a href="{{url_for('index')}}">WELCOME</a></b></h3>
+    <h3><b><a href="{{url_for('techniques')}}">TECHNIQUES</a></b></h3>
 {% endblock %}
 
 {% block main %}
@@ -126,15 +21,15 @@
                 <span class="pfp-name"> {{developer.name}} </span>
                 <img src="{{ url_for('static', filename = 'images/'+developer.photo)}}">
                 <span class="pfp-mail"> {{developer.email}} </span>
-                <address class="pfp-media-1">
-                    <img src="{{ url_for('static', filename = 'images/discord.jpg')}}">
-                </address>
-                <address class="pfp-media-2">
-                    <img src="{{ url_for('static', filename = 'images/linkedin.png')}}">    
-                </address>
-                <address class="pfp-media-3">
-                    <img src="{{ url_for('static', filename = 'images/twitter.png')}}">
-                </address>
+                <a href="{{ developer.external_link[0] }}" class="pfp-media-1">
+                    <img src="{{ url_for('static', filename = 'images/' ~ developer.external_icon[0])}}">
+                </a>
+                <a href="{{ developer.external_link[1] }}" class="pfp-media-2">
+                    <img src="{{ url_for('static', filename = 'images/' ~ developer.external_icon[1])}}">
+                </a>
+                <a href="{{ developer.external_link[2] }}" class="pfp-media-3">
+                    <img src="{{ url_for('static', filename = 'images/' ~ developer.external_icon[2])}}">
+                </a>
             </div>
         </div>
         <div class="profile-about">
