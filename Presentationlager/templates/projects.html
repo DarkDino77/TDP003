@@ -13,16 +13,18 @@ Projects
   <h1><a href="{{url_for('index')}}">HOME</a></h1>
 {% endblock %}
 {% block main %}
-    <form action="{{ url_for('redirect_search') }}" method="POST" class="search-terms">
+
+    <form action="{{ url_for('redirect_search') }}" method="POST" class="forms">
+      <div class="search-terms">
       <div class="search">
           <input name="search", id="search" class="search_input" placeholder="Search...">
          
       </div>
       <div class="sort_by">
-        <div class="dropdown_container">
-            <input type="checkbox" class="dropdown_checkbox" id="dropdown_sort_by">
-            <label class="dropdown_label" for="dropdown_sort_by">Sort</label>
-                <div class="dropdown_content">
+        <div class="dropdown_container_sort_by">
+            <input type="checkbox" class="dropdown_checkbox_sort_by" id="dropdown_sort_by">
+            <label class="dropdown_label_sort_by" for="dropdown_sort_by">Sort</label>
+                <div class="dropdown_content_sort_by">
                     <label><input type="radio" value="project_id" name="sort_by" {{"checked" if sort_by_search == "project_id"}}> Project ID</label>
                     <label><input type="radio" value="start_date" name="sort_by" {{"checked" if sort_by_search == "start_date"}}> Start Date</label>
                     <label><input type="radio" value="end_date" name="sort_by" {{"checked" if sort_by_search == "end_date"}}> End Date</label>
@@ -40,18 +42,9 @@ Projects
       </div>  
 
       <div class="techniques_used">
-
-        <div class="dropdown_container_techniques_used">
-          <input type="checkbox" class="dropdown_checkbox_techniques_used" id="dropdown_techniques_used">
+        <input type="checkbox" class="dropdown_checkbox_techniques_used" id="dropdown_techniques_used">
           <label class="dropdown_label_techniques_used" for="dropdown_techniques_used">Technique <div class="Delta">&Delta;</div></label>
-          <div class="dropdown_content_techniques_used">
-            <div class="checkbox_grid_techniques_used">
-          {% for technique in techniques_used %}
-              <label><input type="checkbox" id="{{technique}}" name="technique_box" value="{{technique}}" class="techniques_used_checkbox" {% if techniques_search %} {{"checked"  if technique in techniques_search}} {% endif %}>{{technique}}</label>
-          {% endfor %}
-         </div>
-        </div>
-      </div>
+        
       </div>
       <div class="search_fields">
         
@@ -73,10 +66,18 @@ Projects
         </div>
               
       </div>
+    </div>
+    <label class="dropdown_container_techniques_used" for="dropdown_techniques_used">
       
-    </form>
+      <div class="dropdown_content_techniques_used">
+        <div class="checkbox_grid_techniques_used">
+      {% for technique in techniques_used %}
+          <label><input type="checkbox" id="{{technique}}" name="technique_box" value="{{technique}}" class="techniques_used_checkbox" {% if techniques_search %} {{"checked"  if technique in techniques_search}} {% endif %}>{{technique}}</label>
+      {% endfor %}
+     </div>
+    </div>
+    </label>
   
-
   <div class="posts">
     
     {% for data in data_base %}
@@ -89,6 +90,8 @@ Projects
       </li>
     {% endfor %}
   </div>
+  
+</form>
 {% endblock %}
 
 

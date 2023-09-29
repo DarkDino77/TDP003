@@ -1,18 +1,21 @@
 /* Here begins the sort by dropdowns*/
 /* Style for the dropdown container */
-.dropdown_container, .dropdown_container_search_fields,.dropdown_container_grid {
+.dropdown_container_sort_by, .dropdown_container_search_fields{
     position: relative;
     display: inline-block;
   }
+  .dropdown_container_techniques_used{
+    display: none;
+  }
 
   /* Style for the dropdown checkbox */
-  .dropdown_checkbox, .dropdown_checkbox_search_fields, .dropdown_checkbox_techniques_used{
+  .dropdown_checkbox_sort_by, .dropdown_checkbox_search_fields, .dropdown_checkbox_techniques_used{
     position: absolute;
     opacity: 0;
   }
 
   /* Style for the dropdown button */
-  .dropdown_label, .dropdown_label_search_fields, .dropdown_label_techniques_used {
+  .dropdown_label_sort_by, .dropdown_label_search_fields, .dropdown_label_techniques_used {
     background-color: white;
     border: none;
     color: #333;
@@ -25,16 +28,18 @@
     padding-right: 0px;
   }
   .dropdown_label_search_fields, .dropdown_label_techniques_used{
-    min-width: 300px;
+    width: 300px;
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 10px;
   }
-
+  .dropdown_label_techniques_used{
+    width: 200px;
+  }
 
   /* Style for the dropdown content */
-  .dropdown_content, .dropdown_content_search_fields , .dropdown_content_techniques_used {
+  .dropdown_content_sort_by, .dropdown_content_search_fields {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
@@ -44,103 +49,47 @@
     border: solid;
     border-radius: 10px;
   }
+  .dropdown_content_techniques_used{
+    position: static;
+    
+    border-radius: 10px;
+    border: solid;
+ 
 
+  }
+
+  
   /* Style for the checkboxes and labels within the dropdown content */
-  .dropdown_content label, .dropdown_content_search_fields label , .dropdown_content_techniques_used label{
+  .dropdown_content_sort_by label, .dropdown_content_search_fields label , .dropdown_content_techniques_used label{
     display: block;
     margin: 5px;
 
   }
 
   /* Show the dropdown content when the button is hovered */
-  .dropdown_checkbox:checked + .dropdown_label + .dropdown_content, 
-  .dropdown_checkbox_search_fields:checked + .dropdown_label_search_fields + .dropdown_content_search_fields,
-  .dropdown_checkbox_techniques_used:checked + .dropdown_label_techniques_used + .dropdown_content_techniques_used {
+  .dropdown_container_sort_by:hover .dropdown_content_sort_by, 
+  .dropdown_container_search_fields:hover .dropdown_content_search_fields{
+    display: block;
+  }
+  .dropdown_checkbox_techniques_used:checked .dropdown_label_techniques_used .dropdown_container_techniques_used{
     display: block;
   }
 
-
-
-/*Here there is checkbox that appers as grids(many of these can be made as one)*/
-  .dropdown-container-grid {
-    position: relative;
-    display: inline-block;
-  }
-
-  /* Style for the dropdown button */
-  .dropdown-button-grid {
-    background-color: white;
-    border: none;
-    color: #333;
-    padding: 10px;
-    text-align: left;
-    width: 250px;
-    cursor: pointer;
-    text-align: center;
-    font-size: 38px;
-    padding-right: 0;
-
-  }
-  .dropdown-button-grid-text {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 0px;
-  }
-  .dropdown-button-text {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-  }
   .Delta{
     text-align: center;
     font-size: 38px;
     transform: rotate(180deg) scaleX(-1) ;
   }
 
-
-  /* Style for the dropdown content */
-  .dropdown-content-grid {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    
-    left: 50%;
-    transform: translate(-50%);
-    border-radius: 10px;
-    border: solid;
-  }
-
-  /* Style for the checkboxes and labels within the dropdown content */
-  .checkbox-grid label {
-    display: flex;
-    align-items: center;
-    margin: 5px;
-  }
-
-
   /* Style the grid layout for checkboxes */
   .checkbox_grid_techniques_used  {
-
+    
     display: grid;
     grid-template-columns: repeat(6, 1fr); /* Adjust the number of columns as needed */
     grid-gap: 5px;
     padding: 10px;
   }
 
-  /* Show the dropdown content when the button is hovered */
-  .dropdown-container-grid:hover .dropdown-content-grid {
-    display: block;
-  }
-   /* Style for the checkboxes */
-  .dropdown-content-grid input[type="checkbox"] {
-    margin-right: 5px;
-  }
-  
   .search-terms{
     display: flex;
     flex-direction: row;
@@ -152,18 +101,18 @@
     margin-right: 8%;
   }
   
-  .posts{
+  .posts{    
     display: flex;
     flex-direction: column;
     gap: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
   }
+
   .projects_class{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    
     column-gap: 50px;
     border: solid 2px;
     border-radius: 10px;
@@ -195,28 +144,20 @@
 .triangle::before {
   content: "";
   position: absolute;
-  transform: translateY(40%) rotate(270deg);
-  
-  
-  width: 0;
-  height: 0;
+  transform: translateY(30%) rotate(270deg);
   border-style: solid;
-  border-width: 16px 24px 16px 0;
-  border-color: transparent #555 transparent transparent;
-  margin-right: 10px; /* Adjust as needed for spacing */
+  border-width: calc(8px * 2) calc(12px * 2) calc(8px * 2) 0;
+  border-color: transparent black transparent transparent;
 }
 #sort_order:checked + .triangle::before{
-  transform: translateY(35%) rotate(90deg);
+  transform: translateY(30%) rotate(90deg);
 }
-/* Style the checkbox label text */
-.sort_order label {
-  cursor: pointer;
-  user-select: none;
-}
+
 
 .sort_by{
   display: flex;
   flex-direction: row;
+  gap: 10px;
 }
 
 .search_input{
@@ -225,4 +166,8 @@
   border-radius: 10px;
   border: solid;
   font-size: 22px;
+}
+.forms{
+  display: flex;
+  flex-direction: column;
 }
