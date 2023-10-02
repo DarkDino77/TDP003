@@ -14,28 +14,29 @@ Techniques
 {% endblock %}
 
 {% block main %}
-  <div class="technique_posts">
-  {% for technique, information in techniques_used.items() %}
-    <div class="technique_class">
+<section>
+    <div class="technique_posts">
+        {% for technique, information in techniques_used.items() %}
+            <div class="technique_class">
         
-      {% if techniques_information[technique] %}
-        <img src="{{ url_for('static', filename = 'images/'+techniques_information[technique].photo)}}" height="100" width="100">
-      {% endif %}
+                {% if techniques_information[technique] %}
+                    <img src="{{ url_for('static', filename = 'images/'+techniques_information[technique].photo)}}" height="100" width="100">
+                {% endif %}
         
-      <h2><a href="{{url_for('redirect_techniques',index=technique)}}">{{ technique }}</a></h2>
-      <div class="technique_information">
-        <div>
-          <h4>Number of projects using this technique: {{(information|length)}} </h4>
-        </div>
-        <div>
-          {% if techniques_information[technique] %}
-          <h4>Description: {{ techniques_information[technique].description }}</h4>
-          {% endif %}
-        </div>
-      </div>
+                <h2><a href="{{url_for('redirect_techniques',index=technique)}}">{{ technique }}</a></h2>
+                <div class="technique_information">
+                    <div>
+                        <h4>Number of projects using this technique: {{(information|length)}} </h4>
+                    </div>
+                    <div>
+                        {% if techniques_information[technique] %}
+                            <h4>Description: {{ techniques_information[technique].description }}</h4>
+                        {% endif %}
+                    </div>
+                </div>
       
+            </div>
+        {% endfor %}
     </div>
-  {% endfor %}
-</div>
-
+</section>
 {% endblock %}   
