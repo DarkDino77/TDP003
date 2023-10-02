@@ -31,7 +31,7 @@
 	flex-wrap: nowrap;
 	align-items: center;
 	gap: 20px;
-	width: 15%;
+	width: 15vW;
 	
   }
   .name_icon_container > img {
@@ -47,7 +47,7 @@
   .technique_information{
     display: flex;
     flex-direction: column;
-	width: calc(100% - 15%);
+	width: calc(100vW - 15vW);
   }
   .technique_information > div >h4{
     margin: 0;
