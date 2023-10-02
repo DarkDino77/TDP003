@@ -1,22 +1,24 @@
 [
     {
         "project_id": 1,
-        "python": {"description":"kapp", "photo": "placeholder.jpg"},
-        "flask": {"description":"kapp", "photo": "placeholder.jpg"},
-        "jinja2": {"description":"kapp", "photo": "placeholder.jpg"},
-        "gimp": {"description":"kapp", "photo": "placeholder.jpg"},
-        "LateX":{"description":"kapp", "photo": "placeholder.jpg"},
-        "html":{"description":"kapp", "photo": "placeholder.jpg"},
-        "ada":{"description":"kapp", "photo": "placeholder.jpg"},
-        "c++":{"description":"kapp", "photo": "placeholder.jpg"},
-        "csv":{"description":"kapp", "photo": "placeholder.jpg"},
-        "css":{"description":"kapp", "photo": "placeholder.jpg"},
-        "java": {"description":"kapp", "photo": "placeholder.jpg"},
-        "javascript": {"description":"kapp", "photo": "placeholder.jpg"},
-        "tensorflow": {"description":"kapp", "photo": "placeholder.jpg"},
-        "numpy": {"description":"kapp", "photo": "placeholder.jpg"},
-        "sql": {"description":"kapp", "photo": "placeholder.jpg"},
-        "mysql": {"description":"kapp", "photo": "placeholder.jpg"},
-        "android": {"description":"kapp", "photo": "placeholder.jpg"}
+        "python": {"description": "Python is a versatile and high-level programming language known for its readability and extensive library support, widely used for web development, data analysis, and artificial intelligence projects.", "photo": "placeholder.jpg"},
+        "flask": {"description": "Flask is a lightweight and micro web framework for building web applications in Python, known for its simplicity and flexibility.", "photo": "placeholder.jpg"},
+        "jinja2": {"description": "Jinja2 is a templating engine for Python, often used with web frameworks like Flask to create dynamic and customizable web pages.", "photo": "placeholder.jpg"},
+        "gimp": {"description": "GIMP (GNU Image Manipulation Program) is a free and open-source raster graphics editor suitable for tasks like photo editing, image manipulation, and graphic design.", "photo": "placeholder.jpg"},
+        "LateX": {"description": "LaTeX is a typesetting system commonly used in academia and research to create documents with complex formatting, particularly in fields like mathematics and science.", "photo": "placeholder.jpg"},
+        "html": {"description": "HTML (Hypertext Markup Language) is the standard markup language for creating web pages, defining their structure and content.", "photo": "html.png"},
+        "ada": {"description": "Ada is a statically typed programming language known for its reliability and safety features, often used in critical systems where safety is paramount.", "photo": "placeholder.jpg"},
+        "c++": {"description": "C++ is a powerful and versatile programming language widely used for system programming, game development, and high-performance applications.", "photo": "placeholder.jpg"},
+        "csv": {"description": "CSV (Comma-Separated Values) is a simple file format used to store tabular data, commonly employed for data exchange between different software applications.", "photo": "placeholder.jpg"},
+        "css": {"description": "CSS (Cascading Style Sheets) is a stylesheet language used to control the presentation and layout of web pages, enhancing their visual appeal and usability.", "photo": "css.png"},
+        "java": {"description": "Java is a widely-used, object-oriented programming language known for its portability and compatibility, frequently employed in web and mobile app development.", "photo": "placeholder.jpg"},
+        "javascript": {"description": "JavaScript is a popular scripting language used for adding interactivity and dynamic behavior to web pages, making them more engaging and user-friendly.", "photo": "placeholder.jpg"},
+        "tensorflow": {"description": "TensorFlow is an open-source machine learning framework developed by Google, extensively used for building and training machine learning models for a wide range of applications.", "photo": "placeholder.jpg"},
+        "numpy": {"description": "NumPy is a fundamental package for scientific computing in Python, providing support for multidimensional arrays and mathematical functions, essential for data manipulation and analysis.", "photo": "placeholder.jpg"},
+        "sql": {"description": "SQL (Structured Query Language) is a domain-specific language used for managing and querying relational databases, crucial for organizing and retrieving data efficiently.", "photo": "placeholder.jpg"},
+        "mysql": {"description": "MySQL is a popular open-source relational database management system, frequently used in web applications to store and retrieve structured data.", "photo": "placeholder.jpg"},
+        "android": {"description": "Android is a mobile operating system developed by Google, powering a vast array of smartphones and tablets, and serving as the foundation for mobile app development.", "photo": "placeholder.jpg"}
     }
 ]
+
+
