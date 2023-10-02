@@ -18,7 +18,6 @@ Projects
       <div class="search-terms">
       <div class="search">
           <input name="search", id="search" class="search_input" placeholder="Search...">
-         
       </div>
       <div class="sort_by">
         <div class="dropdown_container_sort_by">
@@ -40,16 +39,17 @@ Projects
           <label for="sort_order" class="triangle"></label>
         </div>
       </div>  
-
+      <div class="dropdown_container_techniques_used" >
       <div class="techniques_used">
-        <input type="checkbox" class="dropdown_checkbox_techniques_used" id="dropdown_techniques_used">
+          <input type="checkbox" class="dropdown_checkbox_techniques_used" id="dropdown_techniques_used">
           <label class="dropdown_label_techniques_used" for="dropdown_techniques_used">Technique <div class="Delta">&Delta;</div></label>
         
       </div>
+    </div>
       <div class="search_fields">
         
         <div class="dropdown_container_search_fields">
-            <input type="checkbox" class="dropdown_checkbox_search_fields" id="dropdown_search_fields">
+            <input type="checkbox" class="dropdown_checkbox_search_fields" id="dropdown_search_fields" >
             <label class="dropdown_label_search_fields" for="dropdown_search_fields">Search fields <div class="Delta">&Delta;</div></label>
           <div class="dropdown_content_search_fields">
             <label><input type="checkbox" value="project_id" name="search_fields" {% if search_fields_search %} {{"checked"  if "project_id" in search_fields_search}} {% endif %}> Project ID</label>
@@ -67,7 +67,7 @@ Projects
               
       </div>
     </div>
-    <label class="dropdown_container_techniques_used" for="dropdown_techniques_used">
+    <div class="dropdown_container_content_techniques_used" >
       
       <div class="dropdown_content_techniques_used">
         <div class="checkbox_grid_techniques_used">
@@ -76,7 +76,7 @@ Projects
       {% endfor %}
      </div>
     </div>
-    </label>
+  </div>
   
   <div class="posts">
     
@@ -92,6 +92,21 @@ Projects
   </div>
   
 </form>
+
+
+<script>
+  const checkbox = document.getElementById("dropdown_techniques_used");
+  const content = document.querySelector(".dropdown_container_content_techniques_used");
+
+  checkbox.addEventListener("click", function () {
+    if (checkbox.checked) {
+      content.style.display = "block";
+    } else {
+      content.style.display = "none";
+    }
+  });
+</script>
+
 {% endblock %}
 
 

@@ -1,12 +1,11 @@
 /* Here begins the sort by dropdowns*/
 /* Style for the dropdown container */
-.dropdown_container_sort_by, .dropdown_container_search_fields{
+
+.dropdown_container_sort_by, .dropdown_container_search_fields, .dropdown_container_techniques_used{
     position: relative;
     display: inline-block;
   }
-  .dropdown_container_techniques_used{
-    display: none;
-  }
+
 
   /* Style for the dropdown checkbox */
   .dropdown_checkbox_sort_by, .dropdown_checkbox_search_fields, .dropdown_checkbox_techniques_used{
@@ -39,7 +38,7 @@
   }
 
   /* Style for the dropdown content */
-  .dropdown_content_sort_by, .dropdown_content_search_fields {
+  .dropdown_content_sort_by, .dropdown_content_search_fields  {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
@@ -49,15 +48,15 @@
     border: solid;
     border-radius: 10px;
   }
-  .dropdown_content_techniques_used{
+
+  .dropdown_container_content_techniques_used{
+    display: none;
     position: static;
-    
-    border-radius: 10px;
+    margin-left: 8%;
+    margin-right: 8%;
     border: solid;
- 
-
+    border-radius: 10px;
   }
-
   
   /* Style for the checkboxes and labels within the dropdown content */
   .dropdown_content_sort_by label, .dropdown_content_search_fields label , .dropdown_content_techniques_used label{
@@ -71,9 +70,7 @@
   .dropdown_container_search_fields:hover .dropdown_content_search_fields{
     display: block;
   }
-  .dropdown_checkbox_techniques_used:checked .dropdown_label_techniques_used .dropdown_container_techniques_used{
-    display: block;
-  }
+ 
 
   .Delta{
     text-align: center;
