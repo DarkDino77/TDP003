@@ -7,7 +7,7 @@ body {
     display: flex;
     flex-direction: column;
     background-image: url("../static/images/red_tree_background.jpeg");
-    backdrop-filter: blur(10px) contrast(85%) brightness(100%);
+    backdrop-filter: blur(7px) contrast(100%) brightness(85%);
     background-size: 100%;
 }
 
@@ -42,7 +42,7 @@ footer {
     left: 0;
     right: 0;
     height: 5mm;
-    margin-top: -5mm;
+    margin-top: -5mm; /* Attempts to make sure the footer is visible without scrolling */
     clear: both;
     border-top: solid 2px #111;
     padding-left: 5mm;

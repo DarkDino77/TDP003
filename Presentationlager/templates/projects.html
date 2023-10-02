@@ -18,100 +18,102 @@ Projects
   <h1><a href="{{url_for('index')}}">HOME</a></h1>
 {% endblock %}
 {% block main %}
-
-    <form action="{{ url_for('redirect_search') }}" method="POST" class="forms">
-      <div class="search-terms">
-      <div class="search">
-          <input name="search", id="search" class="search_input" placeholder="Search...">
-      </div>
-      <div class="sort_by">
-        <div class="dropdown_container_sort_by">
-            <input type="checkbox" class="dropdown_checkbox_sort_by" id="dropdown_sort_by">
-            <label class="dropdown_label_sort_by" for="dropdown_sort_by">Sort</label>
-                <div class="dropdown_content_sort_by">
-                    <label><input type="radio" value="project_id" name="sort_by" {{"checked" if sort_by_search == "project_id"}}> Project ID</label>
-                    <label><input type="radio" value="start_date" name="sort_by" {{"checked" if sort_by_search == "start_date"}}> Start Date</label>
-                    <label><input type="radio" value="end_date" name="sort_by" {{"checked" if sort_by_search == "end_date"}}> End Date</label>
-                    <label><input type="radio" value="academic_credits" name="sort_by" {{"checked" if sort_by_search == "academic_credits"}}> Academic Credits</label>
-                    <label><input type="radio" value="group_size" name="sort_by" {{"checked" if sort_by_search == "group_size"}}> Group Size</label>
-                    <label><input type="radio" value="project_name" name="sort_by" {{"checked" if sort_by_search == "project_name"}}> Project Name</label>
-                    <label><input type="radio" value="course_name" name="sort_by" {{"checked" if sort_by_search == "course_name"}}> Course Name</label>
-                    <label><input type="radio" value="course_id" name="sort_by" {{"checked" if sort_by_search == "course_id"}}> Course ID</label>
-                </div>
-        </div>
-        <div class="sort_order">
-          <input type="checkbox" id="sort_order" name="sort_order" value="asc" {{"checked" if sort_order_search == "asc"}}>
-          <label for="sort_order" class="triangle"></label>
-        </div>
-      </div>  
-      <div class="dropdown_container_techniques_used" >
-      <div class="techniques_used">
-          <input type="checkbox" class="dropdown_checkbox_techniques_used" id="dropdown_techniques_used">
-          <label class="dropdown_label_techniques_used" for="dropdown_techniques_used">Technique <div class="Delta">&Delta;</div></label>
-        
-      </div>
-    </div>
-      <div class="search_fields">
-        
-        <div class="dropdown_container_search_fields">
-            <input type="checkbox" class="dropdown_checkbox_search_fields" id="dropdown_search_fields" >
-            <label class="dropdown_label_search_fields" for="dropdown_search_fields">Search fields <div class="Delta">&Delta;</div></label>
-          <div class="dropdown_content_search_fields">
-            <label><input type="checkbox" value="project_id" name="search_fields" {% if search_fields_search %} {{"checked"  if "project_id" in search_fields_search}} {% endif %}> Project ID</label>
-            <label><input type="checkbox" value="start_date" name="search_fields" {% if search_fields_search %} {{"checked"  if "start_date" in search_fields_search}} {% endif %}> Start Date</label>
-            <label><input type="checkbox" value="end_date" name="search_fields" {% if search_fields_search %} {{"checked"  if "end_date" in search_fields_search}} {% endif %}> End Date</label>
-            <label><input type="checkbox" value="short_description" name="search_fields" {% if search_fields_search %} {{"checked"  if "short_description" in search_fields_search}} {% endif %}> Short Description</label>
-            <label><input type="checkbox" value="long_description" name="search_fields" {% if search_fields_search %} {{"checked"  if "long_description" in search_fields_search}} {% endif %}> Long Description</label>
-            <label><input type="checkbox" value="academic_credits" name="search_fields" {% if search_fields_search %} {{"checked"  if "academic_credits" in search_fields_search}} {% endif %}> Academic Credits</label>
-            <label><input type="checkbox" value="group_size" name="search_fields" {% if search_fields_search %} {{"checked"  if "group_size" in search_fields_search}} {% endif %}> Group Size</label>
-            <label><input type="checkbox" value="project_name" name="search_fields" {% if search_fields_search %} {{"checked"  if "project_name" in search_fields_search}} {% endif %}> Project Name</label>
-            <label><input type="checkbox" value="course_name" name="search_fields" {% if search_fields_search %} {{"checked"  if "course_name" in search_fields_search}} {% endif %}> Course Name</label>
-            <label><input type="checkbox" value="course_id" name="search_fields" {% if search_fields_search %} {{"checked"  if "course_id" in search_fields_search}} {% endif %}> Course ID</label>
-          </div>
-        </div>
-              
-      </div>
-    </div>
-    <div class="dropdown_container_content_techniques_used" >
-      
-      <div class="dropdown_content_techniques_used">
-        <div class="checkbox_grid_techniques_used">
-      {% for technique in techniques_used %}
-          <label><input type="checkbox" id="{{technique}}" name="technique_box" value="{{technique}}" class="techniques_used_checkbox" {% if techniques_search %} {{"checked"  if technique in techniques_search}} {% endif %}>{{technique}}</label>
-      {% endfor %}
-     </div>
-    </div>
-  </div>
-  
-  <div class="posts">
+    <section>
+        <form action="{{ url_for('redirect_search')}}" method="POST">
+            <section id="search-terms">
+                <input name="search", id="search" placeholder="Search...">
+                <div id="sort_by"> <!-- CURSED AND DISGUSTING! -->
+                    <div class="dropdown_container_sort_by">
+                        <input type="checkbox" class="dropdown_checkbox_sort_by" id="dropdown_sort_by">
+                        <label class="dropdown_label_sort_by" for="dropdown_sort_by">Sort</label>
+                        <div class="dropdown_content_sort_by dropdown-content">
+                            <label><input type="radio" value="project_id" name="sort_by" {{"checked" if sort_by_search == "project_id"}}> Project ID</label>
+                            <label><input type="radio" value="start_date" name="sort_by" {{"checked" if sort_by_search == "start_date"}}> Start Date</label>
+                            <label><input type="radio" value="end_date" name="sort_by" {{"checked" if sort_by_search == "end_date"}}> End Date</label>
+                            <label><input type="radio" value="academic_credits" name="sort_by" {{"checked" if sort_by_search == "academic_credits"}}> Academic Credits</label>
+                            <label><input type="radio" value="group_size" name="sort_by" {{"checked" if sort_by_search == "group_size"}}> Group Size</label>
+                            <label><input type="radio" value="project_name" name="sort_by" {{"checked" if sort_by_search == "project_name"}}> Project Name</label>
+                            <label><input type="radio" value="course_name" name="sort_by" {{"checked" if sort_by_search == "course_name"}}> Course Name</label>
+                            <label><input type="radio" value="course_id" name="sort_by" {{"checked" if sort_by_search == "course_id"}}> Course ID</label>
+                        </div>
+                    </div>
     
-    {% for data in data_base %}
-      <li>
-        <div class="projects_class">
-            <img src="{{ url_for('static', filename = 'images/projects/' ~ data.project_id + '/' ~ data.small_image)}}" height="100" width="100">
-            <h2><a href="{{url_for('id', index = data.project_id)}}">{{data.project_name}}</a> </h2>
-            <h4>{{data.short_description}} </h4>
-        </div>  
-      </li>
-    {% endfor %}
-  </div>
-  
-</form>
+                    <div class="sort_order"> <!-- Sort by triangle -->
+                        <input type="checkbox" id="sort_order" name="sort_order" value="asc" {{"checked" if sort_order_search == "asc"}}>
+                        <label for="sort_order" class="triangle"></label>
+                    </div>
+                </div>
+    
+                <div class="dropdown_container_techniques_used">
+                    <div class="techniques_used">
+                        <input type="checkbox" class="dropdown_checkbox_techniques_used" id="dropdown_techniques_used">
+                        <label class="dropdown_label_techniques_used" for="dropdown_techniques_used">
+                            Technique
+                            <div class="Delta">&Delta;</div>
+                        </label>
+                    </div>
+                </div>
+    
+                <div class="search_fields">
+                    <div class="dropdown_container_search_fields">
+                        <input type="checkbox" class="dropdown_checkbox_search_fields" id="dropdown_search_fields">
+                        <label class="dropdown_label_search_fields" for="dropdown_search_fields">
+                            Search fields
+                            <div class="Delta">&Delta;</div>
+                        </label>
+                        <div class="dropdown_content_search_fields dropdown-content">
+                            <label><input type="checkbox" value="project_id" name="search_fields" {% if search_fields_search %} {{"checked"  if "project_id" in search_fields_search}} {% endif %}> Project ID</label>
+                            <label><input type="checkbox" value="start_date" name="search_fields" {% if search_fields_search %} {{"checked"  if "start_date" in search_fields_search}} {% endif %}> Start Date</label>
+                            <label><input type="checkbox" value="end_date" name="search_fields" {% if search_fields_search %} {{"checked"  if "end_date" in search_fields_search}} {% endif %}> End Date</label>
+                            <label><input type="checkbox" value="short_description" name="search_fields" {% if search_fields_search %} {{"checked"  if "short_description" in search_fields_search}} {% endif %}> Short Description</label>
+                            <label><input type="checkbox" value="long_description" name="search_fields" {% if search_fields_search %} {{"checked"  if "long_description" in search_fields_search}} {% endif %}> Long Description</label>
+                            <label><input type="checkbox" value="academic_credits" name="search_fields" {% if search_fields_search %} {{"checked"  if "academic_credits" in search_fields_search}} {% endif %}> Academic Credits</label>
+                            <label><input type="checkbox" value="group_size" name="search_fields" {% if search_fields_search %} {{"checked"  if "group_size" in search_fields_search}} {% endif %}> Group Size</label>
+                            <label><input type="checkbox" value="project_name" name="search_fields" {% if search_fields_search %} {{"checked"  if "project_name" in search_fields_search}} {% endif %}> Project Name</label>
+                            <label><input type="checkbox" value="course_name" name="search_fields" {% if search_fields_search %} {{"checked"  if "course_name" in search_fields_search}} {% endif %}> Course Name</label>
+                            <label><input type="checkbox" value="course_id" name="search_fields" {% if search_fields_search %} {{"checked"  if "course_id" in search_fields_search}} {% endif %}> Course ID</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+            <div class="dropdown_container_content_techniques_used" >
+                <div class="dropdown_content_techniques_used">
+                    <div class="checkbox_grid_techniques_used">
+                        {% for technique in techniques_used %}
+                            <label>
+                                <input type="checkbox" id="{{technique}}" name="technique_box" value="{{technique}}" class="techniques_used_checkbox" {% if techniques_search %} {{"checked"  if technique in techniques_search}} {% endif %}>
+                                {{technique}}
+                            </label>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </form>
+        
+        <section class="posts">
+            {% for data in data_base %}
+                <div class="projects_class">
+                    <img src="{{ url_for('static', filename = 'images/projects/' ~ data.project_id + '/' ~ data.small_image)}}" height="100" width="100">
+                    <h2><a href="{{url_for('id', index = data.project_id)}}">{{data.project_name}}</a> </h2>
+                    <h4>{{data.short_description}} </h4>
+                </div>
+            {% endfor %}
+        </section>
+    </section>
 
+    <script>
+        const checkbox = document.getElementById("dropdown_techniques_used");
+        const content = document.querySelector(".dropdown_container_content_techniques_used");
 
-<script>
-  const checkbox = document.getElementById("dropdown_techniques_used");
-  const content = document.querySelector(".dropdown_container_content_techniques_used");
-
-  checkbox.addEventListener("click", function () {
-    if (checkbox.checked) {
-      content.style.display = "block";
-    } else {
-      content.style.display = "none";
-    }
-  });
-</script>
-
+        checkbox.addEventListener("click", function () {
+            if (checkbox.checked) {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        });
+    </script>
 {% endblock %}
 
 

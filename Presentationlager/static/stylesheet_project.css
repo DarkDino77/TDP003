@@ -8,7 +8,12 @@ main > p {
 }
 
 main > section {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 5mm;
     margin-bottom: 2cm;
+
+    border-bottom-left-radius: 1cm;
+    border-bottom-right-radius: 1cm;
 }
 
 #projects-arrow {
