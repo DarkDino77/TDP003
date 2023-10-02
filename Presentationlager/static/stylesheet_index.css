@@ -57,8 +57,10 @@ main {
     left: calc(100% - 5mm);
     width: 1cm;
     height: 1cm;
-    border: solid 2px;
+    border: solid 2px black;
     border-radius: 100%;
+    text-decoration: none;
+    color: black;
 }
 
 .pfp-border a img {
