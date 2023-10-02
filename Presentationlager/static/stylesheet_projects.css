@@ -85,7 +85,7 @@
     grid-template-columns: repeat(6, 1fr); /* Adjust the number of columns as needed */
     grid-gap: 5px;
     padding: 10px;
-  }
+}
 
   .search-terms{
     display: flex;

@@ -7,3 +7,4 @@ LOFI*.png
 *.fdb_latexmk
 *.xdv
 *.pyc
+__pycache__
