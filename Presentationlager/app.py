@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 import data
+from os import getcwd
 
 app = Flask(__name__)
 app.static_folder = 'static' 

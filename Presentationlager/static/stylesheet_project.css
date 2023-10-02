@@ -3,6 +3,14 @@ main {
     margin-right: 15%;
 }
 
+main > p {
+    text-align: justify;
+}
+
+main > section {
+    margin-bottom: 2cm;
+}
+
 #projects-arrow {
     content: "";
     position: relative;
@@ -15,7 +23,8 @@ main {
 }
 
 #big-image {
-    margin: 1cm;
+    margin: 5mm;
+    margin-right: 15mm;
     width: 35%;
     height: auto;
     border: solid 1mm;
@@ -26,10 +35,11 @@ main {
 
 #fact-frame {
     position: relative;
-    margin: 1cm;
+    margin-top: 5mm;
+    margin-bottom: 2mm;
     min-height: 2cm;
     min-width: 4cm;
-    width: calc(65% - 4cm - 12mm);
+    width: calc(65% - 4cm);
     border: solid 1mm;
     border-radius: 5mm;
     padding: 3mm;

@@ -111,15 +111,17 @@
     flex-direction: row;
     flex-wrap: nowrap;
     column-gap: 50px;
-    border: solid 2px;
+    border: solid 1mm #037;
     border-radius: 10px;
     align-items: center;
     margin-left: 8%;
     margin-right: 8%;
+    background-color: rgba(20, 140, 240, 0.4);
+    color: antiquewhite;
   }
 
   .projects_class a {
-    color: black;
+    color: antiquewhite;
     text-decoration: none;
   }
 
@@ -127,6 +129,7 @@
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 25px;
+    border: double 1.5mm black;
   }
   .projects_class > h2{
     width: 15vW;

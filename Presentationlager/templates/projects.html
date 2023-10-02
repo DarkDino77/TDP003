@@ -5,6 +5,11 @@ Projects
 
 {% block head %}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheet_projects.css') }}">
+<style>
+    main {
+        background-image: "{{url_for('static', filename='images/background.jpeg') }}";
+    }
+</style>
 {% endblock %}
 
 {% block header %}
@@ -83,7 +88,7 @@ Projects
     {% for data in data_base %}
       <li>
         <div class="projects_class">
-            <img src="{{ url_for('static', filename = 'images/'+data.small_image)}}" height="100" width="100">
+            <img src="{{ url_for('static', filename = 'images/projects/' ~ data.project_id + '/' ~ data.small_image)}}" height="100" width="100">
             <h2><a href="{{url_for('id', index = data.project_id)}}">{{data.project_name}}</a> </h2>
             <h4>{{data.short_description}} </h4>
         </div>  
