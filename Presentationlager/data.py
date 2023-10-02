@@ -94,7 +94,7 @@ def search(db, sort_by = 'start_date', sort_order = 'desc', techniques = None, s
                         filtered_db.append(project)
                         break
         db = filtered_db # Update db with filtered db
-        
+    
     try:
         db = sorted(db, key= lambda x: x[sort_by],reverse = False if sort_order == "asc" else True)
     except:
@@ -146,7 +146,8 @@ def print_db(db):
 # Debug main function
 def main():
     db = load("data.json")
-    print_db(db)
+    #print_db(db)
+    print_db(search(db, search="+"))
     #print_db(search(db, techniques=[], search="okänt", search_fields=["project_id","project_name","course_name"]))
     #print_db(search(db, sort_by="end_date", search='okänt', search_fields=['project_id','project_name','course_name']))
     #print_db(search(db,sort_order='asc',techniques=["python", "c++"]))
