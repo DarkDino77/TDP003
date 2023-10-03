@@ -72,7 +72,9 @@ def id(index):
     except Exception as err:
         return render_template("404_error.html", type_err=type(err), err= str(err))
 
-
+@app.errorhandler(404)
+def not_found(err):
+    return render_template("404_error.html", type_err=type(err), err= str(err))
 
 if __name__ == '__main__':
    app.run(debug = True)
