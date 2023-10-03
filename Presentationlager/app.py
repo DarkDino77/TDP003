@@ -5,15 +5,16 @@ from os import getcwd
 app = Flask(__name__)
 app.static_folder = 'static' 
 
+# Funktion index loads the infromation from info.json using the database function load.
+# Retruns a rederder template of index.html with the insent infromation extracted from info.json as infromation_developers
 @app.route("/")
 def index():
     information_developers = data.load("info.json")
     return render_template("index.html", information_developers = information_developers)
 
+#
 @app.route("/projects")
-#ta in alla search filter
 def projects():
-    # Läser in alla filter och deras naturliga värde
     sort_by = request.args.get("sort_by", 'start_date')
     sort_order = request.args.get("sort_order", 'desc') 
     techniques = request.args.getlist("techniques")
@@ -23,6 +24,7 @@ def projects():
     search_fields = request.args.getlist("search_fields")
     if not search_fields:
         search_fields = None
+
     #print("Pass")
     #print(f"sort_by {sort_by}")
     #print(f"sort_order {sort_order}")

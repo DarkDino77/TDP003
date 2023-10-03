@@ -175,6 +175,7 @@
 #search {
   flex: 1;
   border: none;
+  margin-left: 1mm;
   padding: 2mm 10px 2mm 10px;
   border-radius: 10px;
 }
