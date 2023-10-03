@@ -12,7 +12,8 @@ def index():
     information_developers = data.load("info.json")
     return render_template("index.html", information_developers = information_developers)
 
-#
+# The funktion projects reads search arguments sent to it
+# It then 
 @app.route("/projects")
 def projects():
     sort_by = request.args.get("sort_by", 'start_date')
