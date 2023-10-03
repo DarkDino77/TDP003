@@ -16,7 +16,8 @@ def index():
 # If no input arguments can be read, a relevent standard value is given.
 # It then loads the entire database through the data function load
 # It then gets all the techniques used in the data base through the data function get_techniques
-# it the searches through 
+# it the searches through the data base for the relevant serach argument
+# Then it returns a rederd template based on projects.html with the given searchd database technique used and relevent search terms
 @app.route("/projects")
 def projects():
     sort_by = request.args.get("sort_by", 'start_date')
