@@ -13,7 +13,10 @@ def index():
     return render_template("index.html", information_developers = information_developers)
 
 # The funktion projects reads search arguments sent to it
-# It then 
+# If no input arguments can be read, a relevent standard value is given.
+# It then loads the entire database through the data function load
+# It then gets all the techniques used in the data base through the data function get_techniques
+# it the searches through 
 @app.route("/projects")
 def projects():
     sort_by = request.args.get("sort_by", 'start_date')

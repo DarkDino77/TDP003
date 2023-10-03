@@ -192,7 +192,12 @@
     "small_image": "android-development.jpg",
     "techniques_used": [
       "java",
-      "android"
+      "android",
+      "latex",
+      "flask",
+      "jinja2",
+      "git",
+      "python"
     ],
     "project_name": "Android To-Do App",
     "course_id": "MOB201",
