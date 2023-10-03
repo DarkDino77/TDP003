@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %} 404 {% endblock %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheet_404_error.css') }}">
+{% endblock %}
+
+{% block header %}
+    <h1>404 ERROR</h1>
+{% endblock %}
+{% block main %}
+    <section>
+        {% if err == "pop from empty list" %}
+            <h1>Error this project dose not exist</h1>
+        {% else %}
+            <h1>The error, {{err}}</h1>
+            <h1>Had type error {{type_err}}</h1>
+        {% endif %}
+    </section>
+{% endblock %}  

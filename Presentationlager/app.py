@@ -64,10 +64,14 @@ def redirect_techniques(index):
 
 @app.route("/project/<index>", methods=["GET"])
 def id(index):
-    data_base = data.load("data.json")
-    project = data.search(data_base, search=index, search_fields=["project_id"])
-    project = project.pop()
-    return render_template("id.html", project=project)
+    try:
+        data_base = data.load("data.json")
+        project = data.search(data_base, search=index, search_fields=["project_id"])
+        project = project.pop()
+        return render_template("id.html", project=project)
+    except Exception as err:
+        return render_template("404_error.html", type_err=type(err), err= str(err))
+
 
 
 if __name__ == '__main__':
