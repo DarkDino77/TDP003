@@ -75,12 +75,12 @@ def id(index):
         project = data.search(data_base, search=index, search_fields=["project_id"])
         project = project.pop()
         return render_template("id.html", project=project)
-    except Exception as err:
-        return render_template("404_error.html", type_err=type(err), err= str(err))
+    except:
+        return render_template("error.html", err= "404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.")
 
-@app.errorhandler(404)
+@app.errorhandler(Exception)
 def not_found(err):
-    return render_template("404_error.html", type_err=type(err), err= str(err))
+    return render_template("error.html", err= str(err))
 
 if __name__ == '__main__':
    app.run(debug = True)
