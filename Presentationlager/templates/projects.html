@@ -16,7 +16,14 @@ Projects
     <section>
         <form action="{{ url_for('redirect_search')}}" method="POST">
             <section id="search-terms">
-                <input name="search", id="search" placeholder="Search...">
+
+                <div id="search-container">
+                    <input name="search" id="search" placeholder="Search...">
+                    <button type="submit" id="search-button">
+                      <img src="{{ url_for('static', filename='images/search_icon.png') }}" alt="Search Icon">
+                    </button>
+                </div>
+                  
                 <div id="sort_by"> <!-- CURSED AND DISGUSTING! -->
                     <div class="dropdown_container_sort_by">
                         <input type="checkbox" class="dropdown_checkbox_sort_by" id="dropdown_sort_by">
@@ -64,7 +71,7 @@ Projects
                             <label><input type="checkbox" value="long_description" name="search_fields" {% if search_fields_search %} {{"checked"  if "long_description" in search_fields_search}} {% endif %}> Long Description</label>
                             <label><input type="checkbox" value="academic_credits" name="search_fields" {% if search_fields_search %} {{"checked"  if "academic_credits" in search_fields_search}} {% endif %}> Academic Credits</label>
                             <label><input type="checkbox" value="group_size" name="search_fields" {% if search_fields_search %} {{"checked"  if "group_size" in search_fields_search}} {% endif %}> Group Size</label>
-                            <label><input type="checkbox" value="project_name" name="search_fields" {% if search_fields_search %} {{"checked"  if "project_name" in search_fields_search}} {% endif %}> Project Name</label>
+                            <label><input type="cimageheckbox" value="project_name" name="search_fields" {% if search_fields_search %} {{"checked"  if "project_name" in search_fields_search}} {% endif %}> Project Name</label>
                             <label><input type="checkbox" value="course_name" name="search_fields" {% if search_fields_search %} {{"checked"  if "course_name" in search_fields_search}} {% endif %}> Course Name</label>
                             <label><input type="checkbox" value="course_id" name="search_fields" {% if search_fields_search %} {{"checked"  if "course_id" in search_fields_search}} {% endif %}> Course ID</label>
                         </div>
