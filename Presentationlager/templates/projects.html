@@ -89,8 +89,10 @@ Projects
         <section class="posts">
             {% for data in data_base %}
                 <div class="projects_class">
-                    <img src="{{ url_for('static', filename = 'images/projects/' ~ data.project_id + '/' ~ data.small_image)}}" height="100" width="100">
-                    <h2><a href="{{url_for('id', index = data.project_id)}}">{{data.project_name}}</a> </h2>
+                    <div class="name_icon_container">
+                        <img src="{{ url_for('static', filename = 'images/projects/' ~ data.project_id + '/' ~ data.small_image)}}" height="100" width="100">
+                        <h2><a href="{{url_for('id', index = data.project_id)}}">{{data.project_name}}</a> </h2>
+                    </div>
                     <h4>{{data.short_description}} </h4>
                 </div>
             {% endfor %}

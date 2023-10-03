@@ -85,6 +85,8 @@
     grid-template-columns: repeat(6, 1fr); /* Adjust the number of columns as needed */
     grid-gap: 5px;
     padding: 10px;
+    color: white;
+    border-color: black;
 }
 
 
@@ -96,7 +98,7 @@
     margin-bottom: 10px;
   }
 
-  .projects_class {
+.projects_class {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -106,23 +108,34 @@
     align-items: center;
     margin: 2mm;
 }
-
-  .projects_class a {
-    color: antiquewhite;
-    text-decoration: none;
+.name_icon_container{ 
+	  display: flex;
+	  flex-direction: row;
+	  flex-wrap: nowrap;
+	  align-items: center;
+	  gap: 50px;
+	  min-width: 375px;
+	
   }
 
-  .projects_class > img {
+.name_icon_container a {
+    color: antiquewhite;
+    text-decoration: none;
+}
+
+.name_icon_container > img {
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 25px;
     border: double 1.5mm black;
-  }
-  .projects_class > h2{
+}
+
+.name_icon_container > h2{
     width: 15vW;
     display: flex;
     flex-wrap: wrap;
-  }
+}
+
   #sort_order {
     display: none;
   }

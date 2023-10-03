@@ -1,7 +1,7 @@
 [
     {
         "project_id": 1,
-        "python": {"description": "Python is a versatile and high-level programming language known for its readability and extensive library support, widely used for web development, data analysis, and artificial intelligence projects.", "photo": "placeholder.jpg"},
+        "python": {"description": "Python is a versatile and high-level programming language known for its readability and extensive library support, widely used for web development, data analysis, and artificial intelligence projects.", "photo": "python.png"},
         "flask": {"description": "Flask is a lightweight and micro web framework for building web applications in Python, known for its simplicity and flexibility.", "photo": "placeholder.jpg"},
         "jinja2": {"description": "Jinja2 is a templating engine for Python, often used with web frameworks like Flask to create dynamic and customizable web pages.", "photo": "placeholder.jpg"},
         "gimp": {"description": "GIMP (GNU Image Manipulation Program) is a free and open-source raster graphics editor suitable for tasks like photo editing, image manipulation, and graphic design.", "photo": "placeholder.jpg"},
@@ -12,12 +12,13 @@
         "csv": {"description": "CSV (Comma-Separated Values) is a simple file format used to store tabular data, commonly employed for data exchange between different software applications.", "photo": "placeholder.jpg"},
         "css": {"description": "CSS (Cascading Style Sheets) is a stylesheet language used to control the presentation and layout of web pages, enhancing their visual appeal and usability.", "photo": "css.png"},
         "java": {"description": "Java is a widely-used, object-oriented programming language known for its portability and compatibility, frequently employed in web and mobile app development.", "photo": "placeholder.jpg"},
-        "javascript": {"description": "JavaScript is a popular scripting language used for adding interactivity and dynamic behavior to web pages, making them more engaging and user-friendly.", "photo": "placeholder.jpg"},
+        "javascript": {"description": "JavaScript is a popular scripting language used for adding interactivity and dynamic behavior to web pages, making them more engaging and user-friendly.", "photo": "javascript.png"},
         "tensorflow": {"description": "TensorFlow is an open-source machine learning framework developed by Google, extensively used for building and training machine learning models for a wide range of applications.", "photo": "placeholder.jpg"},
         "numpy": {"description": "NumPy is a fundamental package for scientific computing in Python, providing support for multidimensional arrays and mathematical functions, essential for data manipulation and analysis.", "photo": "placeholder.jpg"},
         "sql": {"description": "SQL (Structured Query Language) is a domain-specific language used for managing and querying relational databases, crucial for organizing and retrieving data efficiently.", "photo": "placeholder.jpg"},
         "mysql": {"description": "MySQL is a popular open-source relational database management system, frequently used in web applications to store and retrieve structured data.", "photo": "placeholder.jpg"},
         "android": {"description": "Android is a mobile operating system developed by Google, powering a vast array of smartphones and tablets, and serving as the foundation for mobile app development.", "photo": "placeholder.jpg"}
+        
     }
 ]
 
