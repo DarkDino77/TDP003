@@ -111,6 +111,12 @@ main {
 
 .profile-about {
     margin: 1cm;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 5mm;
+    margin-bottom: 2cm;
+
+    border-bottom-left-radius: 1cm;
+    border-bottom-right-radius: 1cm;
 }
 
 .profile-about h2, p {
@@ -127,4 +133,22 @@ main {
     .pfp-border span {
         font-size: medium;
     }
+}
+
+.profile-area{
+    background-color: white;
+}
+#identety_1 > .profile-area {
+    rotate: 180deg;
+}
+#identety_1 > .profile-area > .pfp-border > span, 
+#identety_1 > .profile-area > .pfp-border > img,
+#identety_1 > .profile-area > .pfp-border > a {
+    rotate: 180deg;
+}
+#identety_1 > .profile-area > .pfp-border > .pfp-name{
+    transform: translateY(-260px);
+}
+#identety_1 > .profile-area > .pfp-border > .pfp-mail{
+    transform: translateY(260px);
 }

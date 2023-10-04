@@ -12,9 +12,10 @@
 {% endblock %}
 
 {% block main %}
+
     {% for developer in information_developers %}
-    <section class="profile">
-        <div class="profile-area">
+    <section class="profile" id="identety_{{developer.project_id}}">
+        <div class="profile-area" >
             <div class="pfp-border">
                 <div class="pfp-border-horizontal"></div>
                 <div class="pfp-border-vertical"></div>
@@ -38,4 +39,5 @@
         </div>
     </section>
     {% endfor %}
+
 {% endblock %}
