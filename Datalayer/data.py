@@ -146,18 +146,32 @@ def print_db(db):
 
 # Debug main function
 def main():
-    db = load("data.json")
-    #print_db(db)
+    db = load("data.json") #clears
+    #print_db(db) #clears
+    #print(get_project_count(db))   #clears
+    #print(get_project(db, 0))      #clears
+    #print(get_project(db, 1))      #clears
+    #print(get_project(db, 2))      #clears
+    #print(get_techniques(db))      #clears
+    #print(get_technique_stats(db)) #clears
     #print_db(search(db, sort_by="nisse"))
     #print_db(search(db, techniques=[], search="okänt", search_fields=["project_id","project_name","course_name"]))
-    #print_db(search(db, sort_by="end_date", search='okänt', search_fields=['project_id','project_name','course_name']))
-    #print_db(search(db, "start_date", "desc", None, "e", ["lulz_had"]))
-    #print(get_project_count(db))
-    #print(get_project(db, 0))
-    #print(get_project(db, 1))
-    #print(get_project(db, 2))
-    #print(get_techniques(db))
-    print(get_technique_stats(db))
+    #print_db(search(db, sort_by="end_date", search='okänt', search_fields=['project_id','project_name','course_name'])) #clears
+    #print_db(search(db, "start_date", "desc", None, "e", ["lulz_had"])) #????
+    #print_db(search(db))           #clears
+    #print_db(search(db, sort_by="end_date"))       #clears
+    #print_db(search(db, sort_by="end_date", sort_order="asc")) #clears
+    #print_db(search(db, search_fields=[]))     #clears
+    #print_db(search(db, techniques=[]))        #clears
+    #print_db(search(db, techniques=["ada", "python"]))  #clears
+    #print_db(search(db, search="okänt"))     #clears
+    #print_db(search(db, search="no"))      #clears
+    #print_db(search(db, search="+")) #klarar inte 
+    #print_db(search(db, search=1))  #klarar inte #kanske inte ska göra det ?
+    #print_db(search(db, search="1", search_fields=["project_id"]))     #clears
+    #print_db(search(db, search=1, search_fields=["project_id"])) #klarar inte #kanske inte ska göra det ?
+    #print_db(search(db, search="no", techniques=["python"]))  #clears
+
 
 if __name__ == "__main__":
     main()
