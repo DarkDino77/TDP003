@@ -10,13 +10,13 @@
     "small_image": "TDP003_big_image.png",
     "techniques_used": [
       "python",
-       "flask",
-        "css",
-        "html",
-        "jinja2",
-        "latex", 
-        "git", 
-        "javascript"
+      "flask",
+      "css",
+      "html",
+      "jinja2",
+      "latex", 
+      "git", 
+      "javascript"
     ],
     "project_name": "TDP003: Egna datormiljön ",
     "course_id": "TDP003",
