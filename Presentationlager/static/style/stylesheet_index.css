@@ -34,7 +34,7 @@ main {
     left: 0;
     right: 0;
     margin: 2mm;
-    height: 12cm;
+    height: 100%;
     border: solid 3px #000;
     border-radius: 40px;
     text-align: center;
@@ -43,8 +43,8 @@ main {
 /* Profile Picture */
 .pfp-border > img {
     position: relative;
-    width: calc(100% - 40px);
-    height: calc(100% - 1cm);
+    width: calc(100% - 1cm);
+    margin-bottom: 1cm;
     top: 5mm;
     left: -3mm;
     border: solid 2px;
