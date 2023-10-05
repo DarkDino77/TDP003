@@ -63,18 +63,12 @@ def redirect_search():
     #print(techniques)
     return redirect(url_for("projects",sort_by=sort_by, sort_order=sort_order, techniques=techniques, search=search, search_fields=search_fields))
 
-@app.route("/redirect/<index>", methods=["GET"])
-def redirect_techniques(index):
-    technique = [index]
-    return redirect(url_for("projects",techniques=technique))
 
-
-@app.route("/project/<index>", methods=["GET"])
+@app.route("/project/<int:index>", methods=["GET"])
 def id(index):
     try:
         data_base = data.load("data.json")
-        project = data.search(data_base, search=index, search_fields=["project_id"])
-        project = project.pop()
+        project = data.get_project(data_base, index)        
         return render_template("id.html", project=project)
     except:
         return render_template("error.html", err= "404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.")
