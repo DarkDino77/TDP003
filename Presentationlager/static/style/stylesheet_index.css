@@ -17,10 +17,11 @@ main {
     flex: 1 1 calc(50% - 1cm);
     min-width: 4cm;
     text-align: justify;
-    margin: 2mm;
+    
 }
 
 .profile-area {
+    margin-top: 2mm;
     position: relative;
     max-width: 15cm;
     margin: auto;
@@ -161,4 +162,35 @@ main {
     .pfp-border span {
         font-size: medium;
     }
+}
+
+.profile-area{
+    background-color: white;
+}
+#identety_1{
+    border-left: solid;
+}
+#identety_2{
+    border-right: solid;
+}
+#identety_1 > .profile-area {
+    rotate: 180deg;
+}
+#identety_1 > .profile-area > .pfp-border > span, 
+#identety_1 > .profile-area > .pfp-border > img,
+#identety_1 > .profile-area > .pfp-border > a {
+    rotate: 180deg;
+}
+#identety_1 > .profile-area > .pfp-border > .pfp-name{
+    transform: translateY(-260px);
+}
+#identety_1 > .profile-area > .pfp-border > .pfp-mail{
+    transform: translateY(260px);
+}
+
+#identety_1 > .profile-area > .pfp-border > .pfp-media-1{
+    transform: translateY(-106px)
+}
+#identety_1 > .profile-area > .pfp-border > .pfp-media-3{
+    transform: translateY(106px)
 }

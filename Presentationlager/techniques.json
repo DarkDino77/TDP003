@@ -2,10 +2,10 @@
     {
         "project_id": 1,
         "python": {"description": "Python is a versatile and high-level programming language known for its readability and extensive library support, widely used for web development, data analysis, and artificial intelligence projects.", "photo": "python.png"},
-        "flask": {"description": "Flask is a lightweight and micro web framework for building web applications in Python, known for its simplicity and flexibility.", "photo": "placeholder.jpg"},
-        "jinja2": {"description": "Jinja2 is a templating engine for Python, often used with web frameworks like Flask to create dynamic and customizable web pages.", "photo": "placeholder.jpg"},
+        "flask": {"description": "Flask is a lightweight and micro web framework for building web applications in Python, known for its simplicity and flexibility.", "photo": "flask.png"},
+        "jinja2": {"description": "Jinja2 is a templating engine for Python, often used with web frameworks like Flask to create dynamic and customizable web pages.", "photo": "jinja2.png"},
         "gimp": {"description": "GIMP (GNU Image Manipulation Program) is a free and open-source raster graphics editor suitable for tasks like photo editing, image manipulation, and graphic design.", "photo": "placeholder.jpg"},
-        "LateX": {"description": "LaTeX is a typesetting system commonly used in academia and research to create documents with complex formatting, particularly in fields like mathematics and science.", "photo": "placeholder.jpg"},
+        "latex": {"description": "LaTeX is a typesetting system commonly used in academia and research to create documents with complex formatting, particularly in fields like mathematics and science.", "photo": "latex.png"},
         "html": {"description": "HTML (Hypertext Markup Language) is the standard markup language for creating web pages, defining their structure and content.", "photo": "html.png"},
         "ada": {"description": "Ada is a statically typed programming language known for its reliability and safety features, often used in critical systems where safety is paramount.", "photo": "placeholder.jpg"},
         "c++": {"description": "C++ is a powerful and versatile programming language widely used for system programming, game development, and high-performance applications.", "photo": "placeholder.jpg"},
@@ -17,6 +17,7 @@
         "numpy": {"description": "NumPy is a fundamental package for scientific computing in Python, providing support for multidimensional arrays and mathematical functions, essential for data manipulation and analysis.", "photo": "placeholder.jpg"},
         "sql": {"description": "SQL (Structured Query Language) is a domain-specific language used for managing and querying relational databases, crucial for organizing and retrieving data efficiently.", "photo": "placeholder.jpg"},
         "mysql": {"description": "MySQL is a popular open-source relational database management system, frequently used in web applications to store and retrieve structured data.", "photo": "placeholder.jpg"},
+        "git": {"description": "kapp", "photo": "git.png"},
         "android": {"description": "Android is a mobile operating system developed by Google, powering a vast array of smartphones and tablets, and serving as the foundation for mobile app development.", "photo": "placeholder.jpg"}
         
     }

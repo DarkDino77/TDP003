@@ -1,22 +1,28 @@
 [
   {
-    "start_date": "2009-09-05",
-    "short_description": "no",
-    "course_name": "OK\u00c4NT",
-    "long_description": "no no no",
+    "start_date": "2023-08-28",
+    "short_description": "Creation of a portfolio website",
+    "course_name": "TDP003 Projekt: Egna datormiljön ",
+    "long_description": "10.html",
     "group_size": 2,
-    "academic_credits": "WUT?",
-    "lulz_had": "many",
-    "external_link": "YY",
-    "small_image": "X",
+    "academic_credits": "6hp",
+    "external_link": "https://www.ida.liu.se/~TDP003/2023/index.sv.shtml",
+    "small_image": "TDP003_big_image.png",
     "techniques_used": [
-      "python"
+      "python",
+      "flask",
+      "css",
+      "html",
+      "jinja2",
+      "latex", 
+      "git", 
+      "javascript"
     ],
-    "project_name": "python data-module test script",
+    "project_name": "TDP003: Egna datormiljön ",
     "course_id": "TDP003",
-    "end_date": "2009-09-06",
+    "end_date": "2023-10-22",
     "project_id": 1,
-    "big_image": "XXX"
+    "big_image": "TDP003_big_image.png"
   },
   {
     "start_date": "2009-09-07",
@@ -192,7 +198,12 @@
     "small_image": "android-development.jpg",
     "techniques_used": [
       "java",
-      "android"
+      "android",
+      "latex",
+      "flask",
+      "jinja2",
+      "git",
+      "python"
     ],
     "project_name": "Android To-Do App",
     "course_id": "MOB201",

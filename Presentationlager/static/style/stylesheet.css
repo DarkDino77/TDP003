@@ -5,10 +5,14 @@ html {
 body {
     margin: 0;
     display: flex;
-    background-image: url("../static/images/red_tree_background.jpeg");
-    backdrop-filter: blur(7px) contrast(100%) brightness(85%);
     flex-direction: column;
+    background-image: url("red_tree_background.jpeg");
     background-size: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(7px) contrast(100%) brightness(85%);
 }
 
 header {
@@ -23,6 +27,7 @@ header {
 }
 
 header a {
+    margin-left: 20mm;
     display: inline-block;
     text-decoration: none;
     border: 5px;

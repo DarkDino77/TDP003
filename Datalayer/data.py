@@ -12,6 +12,7 @@ def load(file):
         with open(file) as json_file:
             data = json.load(json_file)
             #Sorts Database by project_id
+            
             return search(data, sort_by="project_id")
         
     # If path is invalid return none     
@@ -68,7 +69,7 @@ def get_technique_stats(db):
     return technique_stats
 
 def search(db, sort_by = 'start_date', sort_order = 'desc', techniques = None, search = None, search_fields = None):
-
+    
     # Cheap workaround for empty search fields
     if search_fields == []:
         return []
@@ -84,56 +85,23 @@ def search(db, sort_by = 'start_date', sort_order = 'desc', techniques = None, s
                 filtered_db.append(project)
         db = filtered_db # Update the working database to only contain the filtered db
 
-
+    
     # Only search the free text if there is anything to search for
     if search != None:
-        filtered_db = [] # A new list of projects with qualified search results
-        for project in db:
-            for attribute in range(len(project)): # Iterate over attributes to find any qualified attribute
-                if search_fields == None or list(project.keys())[attribute] in search_fields: # Utilizing lazy evaluation to not search through 'None'
-                    if len(re.findall(search.lower(), str(project.get(list(project.keys())[attribute])).lower())) > 0: # Parse the attribute with RegEx
-                        filtered_db.append(project)
-                        break
-        db = filtered_db # Update db with filtered db
-    try:
-        db = sorted(db, key= lambda x: x[sort_by],reverse = False if sort_order == "asc" else True)
-    except:
-        db = sorted(db, key= lambda x: x["start_date"],reverse = False if sort_order == "asc" else True)
+        if search != "": # Make sure we're not searching on an empty string after sanitizing it
+            filtered_db = [] # A new list of projects with qualified search results
+            for project in db:
+                for attribute in range(len(project)): # Iterate over attributes to find any qualified attribute
+                    if search_fields == None or list(project.keys())[attribute] in search_fields: # Utilizing lazy evaluation to not search through 'None'
+                        if len(re.findall(re.escape(str(search).lower()), str(project.get(list(project.keys())[attribute])).lower())) > 0: # Parse the attribute with RegEx
+                            filtered_db.append(project)
+                            break
+            db = filtered_db # Update db with filtered db
     
-    """
-    # This is Ungabonga mode
-    # Sort the list in ascending or descending order
-    # First create a new dictionary with project ID as key and sort attribute as value
-    db_unsorted_metadata = {}
-    for project in db:
-        key = ""
-        value = ""
-        for attribute_iterator in range(len(project)):
-            if list(project.keys())[attribute_iterator] == "project_id":
-                key = project.get(list(project.keys())[attribute_iterator])
-            if list(project.keys())[attribute_iterator] == sort_by:
-                value = project.get(list(project.keys())[attribute_iterator])
-        db_unsorted_metadata[key] = value
-    
-    # Now sort the meta dictionary
-    db_sorted_metadata = dict(sorted(
-        db_unsorted_metadata.items(),
-        key = lambda input : input[1],
-        reverse = False if sort_order == "asc" else True))
-    # IMPORTANT: The use of sorted dictionaries requires minimum Python version of 3.7 !
-
-    # Cross-reference the data to the metadata to place the projects correctly
-    filtered_db = []
-    for meta_project in db_sorted_metadata: # Iterate through all sorted projects
-        for project in db: # Iterate through all unsorted projects
-            for attribute in range(len(project)):
-                if list(project.keys())[attribute] == "project_id":
-                    if project.get(list(project.keys())[attribute]) == meta_project:
-                        filtered_db.append(project)
-                        break
-
-    db = filtered_db # Finally place filtered db back into db
-    """
+    try: # Sort the Database before returning
+        db = sorted(db, key= lambda x: x[sort_by], reverse = False if sort_order == "asc" else True)
+    except: # If sort_by is invalid then use default "start_date" instead
+        db = sorted(db, key= lambda x: x["start_date"], reverse = False if sort_order == "asc" else True)
     return db
     
 
@@ -146,18 +114,34 @@ def print_db(db):
 
 # Debug main function
 def main():
-    db = load("data.json")
-    #print_db(db)
-    #print_db(search(db, sort_by="nisse"))
-    #print_db(search(db, techniques=[], search="okänt", search_fields=["project_id","project_name","course_name"]))
-    #print_db(search(db, sort_by="end_date", search='okänt', search_fields=['project_id','project_name','course_name']))
-    #print_db(search(db, "start_date", "desc", None, "e", ["lulz_had"]))
-    #print(get_project_count(db))
-    #print(get_project(db, 0))
-    #print(get_project(db, 1))
-    #print(get_project(db, 2))
-    #print(get_techniques(db))
-    print(get_technique_stats(db))
+    db = load("data.json") #clears
+    #print(db)
+    #print_db(search(db, search="[++^*")) # clears
+    #print_db(db) #clears
+    #print(get_project_count(db))   #clears
+    #print(get_project(db, 0))      #clears
+    #print(get_project(db, 1))      #clears
+    #print(get_project(db, 2))      #clears
+    #print(get_techniques(db))      #clears
+    #print(get_technique_stats(db)) #clears
+    #print_db(search(db, sort_by="nisse")) #clears
+    #print_db(search(db, techniques=[], search="okänt", search_fields=["project_id","project_name","course_name"])) #clears
+    #print_db(search(db, sort_by="end_date", search='okänt', search_fields=['project_id','project_name','course_name'])) #clears
+    #print_db(search(db, "start_date", "desc", None, "e", ["lulz_had"])) #????
+    #print_db(search(db))           #clears
+    #print_db(search(db, sort_by="end_date"))       #clears
+    #print_db(search(db, sort_by="end_date", sort_order="asc")) #clears
+    #print_db(search(db, search_fields=[]))     #clears
+    #print_db(search(db, techniques=[]))        #clears
+    #print_db(search(db, techniques=["ada", "python"]))  #clears
+    #print_db(search(db, search="okänt"))     #clears
+    #print_db(search(db, search="no"))      #clears
+    #print_db(search(db, search="+")) #clears
+    #print_db(search(db, search=1))  #clears
+    #print_db(search(db, search="1", search_fields=["project_id"]))     #clears
+    #print_db(search(db, search=1, search_fields=["project_id"])) #clears
+    #print_db(search(db, search="no", techniques=["python"]))  #clears
+
 
 if __name__ == "__main__":
     main()
@@ -166,4 +150,5 @@ if __name__ == "__main__":
     
  
     # Print the data of dictionary
-   
+#else:
+    #print("Starting back-end!")
