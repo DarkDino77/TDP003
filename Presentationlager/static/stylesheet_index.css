@@ -1,10 +1,16 @@
+html {
+    --icon-margin: 4mm;
+    --icon-dispersion: 12.75mm;
+    --background-color: #999;
+}
+
 main {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    margin-left: 1%;
-    margin-right: 1%;
+    padding-left: 1%;
+    padding-right: 1%;
 }
 
 .profile {
@@ -18,6 +24,10 @@ main {
     position: relative;
     max-width: 15cm;
     margin: auto;
+    background-color: var(--background-color);
+    padding: 5mm;
+    border: outset 3mm gray;
+    border-radius: 7mm;
 }
 
 .pfp-border {
@@ -31,7 +41,8 @@ main {
     text-align: center;
 }
 
-.pfp-border img {
+/* Profile Picture */
+.pfp-border > img {
     position: relative;
     width: calc(100% - 40px);
     height: calc(100% - 1cm);
@@ -54,7 +65,6 @@ main {
 
 .pfp-border a {
     position: absolute;
-    left: calc(100% - 5mm);
     width: 1cm;
     height: 1cm;
     border: solid 2px black;
@@ -63,42 +73,60 @@ main {
     color: black;
 }
 
-.pfp-border a img {
+/* Media icon images */
+.pfp-border > div > a > img {
     position: absolute;
-    top: -0.5mm;
-    left: -0.5mm;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    border-radius: 100%;
+}
+
+.media-container {
+    position: absolute;
+    top: 0;
 }
 
 .pfp-media-1 {
-    top: 15mm;
+    top: calc(var(--icon-margin) + var(--icon-dispersion));
 }
 
 .pfp-media-2 {
-    top: 29mm;
+    top: calc(var(--icon-margin) + var(--icon-dispersion) * 2);
 }
 
 .pfp-media-3 {
-    top: 43mm;
+    top: calc(var(--icon-margin) + var(--icon-dispersion) * 3)
 }
 
+/* The block that covers on the middle part */
 .pfp-border-horizontal {
     position: absolute;
     left: -5px;
     width: calc(100% + 10px);
     height: 60%;
     top: calc((100% - 60%) / 2);
-    background-color: white;
+    background-color: var(--background-color);
 }
 
+/* The block covering up the top and bottom */
+/* This block requires two classes depending on which side it's on */
 .pfp-border-vertical {
     position: absolute;
-    left: -5px;
-    width: 90%;
     height: calc(100% + 10px);   
     top: -5px;
-    background-color: white;
+    background-color: var(--background-color);
+}
+
+.pfp-border-vertical-left {
+    left: -5px;
+    width: 90%;
+}
+
+.pfp-border-vertical-right {
+    right: -5px;
+    width: 90%;
 }
 
 .pfp-name {
@@ -110,7 +138,13 @@ main {
 }
 
 .profile-about {
-    margin: 1cm;
+    padding: 1cm;
+    padding-top: 5mm;
+    margin-left: 5mm;
+    margin-right: 5mm;
+    border-bottom-left-radius: 1cm;
+    border-bottom-right-radius: 1cm;
+    background-color: rgba(255, 255, 255, 0.6);
 }
 
 .profile-about h2, p {
