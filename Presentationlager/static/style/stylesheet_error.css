@@ -1,13 +1,13 @@
 main {
-	margin-left: 8%;
-	margin-right: 8%;
+    min-width: max-content;
+    width: 30%;
+    margin: auto;
 }
 
 main > section {
     background-color: rgba(255, 255, 255, 0.6);
     padding: 5mm;
     margin-bottom: 2cm;
-
     border-bottom-left-radius: 1cm;
     border-bottom-right-radius: 1cm;
     text-align: center;

@@ -1,23 +1,17 @@
 from flask import Flask, render_template, request, redirect, url_for
-import data, re, os
+import data, re, os, logging
 
 app = Flask(__name__)
-app.static_folder = 'static' 
+app.static_folder = 'static'
 
-# Converts an absolute path into a relative path from a project
-# To be used when files are located outside a project which the project must access
-# E.g. placeholder images
-def absolute_to_project_path(project, path):
-    pass
-
-# Funktion index loads the infromation from info.json using the database function load.
+# Function index loads the infromation from info.json using the database function load.
 # Retruns a rederder template of index.html with the insent infromation extracted from info.json as infromation_developers
 @app.route("/")
 def index():
     information_developers = data.load("info.json")
     return render_template("index.html", information_developers = information_developers)
 
-# The funktion projects reads search arguments sent to it
+# The function projects reads search arguments sent to it
 # If no input arguments can be read, a relevent standard value is given.
 # It then loads the entire database through the data function load
 # It then gets all the techniques used in the data base through the data function get_techniques
@@ -31,6 +25,7 @@ def projects():
         search = request.form.get("search", None)
         search_fields = request.form.getlist("search_fields")
         techniques = request.form.getlist("technique_box")
+
     else:
         sort_by = request.args.get("sort_by", 'start_date')
         sort_order = request.args.get("sort_order", 'desc') 
@@ -67,22 +62,41 @@ def techniques():
 
 
 @app.route("/project/<int:index>", methods=["GET"])
-def id(index):
+def project(index):
     try:
         data_base = data.load("data.json")
-        project = data.get_project(data_base, index)      
-        if not project["long_description"] or re.search(".html", project["long_description"]) == None:
-            project["long_description"] = "does_not_exist.html"
-        print(url_for('id(index)', project["big_image"]))
-        #if not os.path.isfile(url_for('id(index)', project["big_image"])):
-        #    project["big_image"] = url_for('static', "style/placeholder.jpg")
-        return render_template("id.html", project = project)
-    except:
-        return render_template("error.html", err = "404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.")
+        project = data.get_project(data_base, index)
+        project_folder = app.static_folder + "/projects/" + str(project["project_id"]) + "/"
+        project_static = "projects/" + str(project["project_id"]) + "/"
+        
+        # Not very elegant :<
+        # Check if the entry has content and replace it with a notice if not
+        if os.path.isfile(app.template_folder + "/project_templates/" + project["long_description"]):
+            project["long_description"] = "/project_templates/" + project["long_description"]
+        else:
+            project["long_description"] = "/project_templates/does_not_exist.html"
+        
+        # Check if the entry has a big or small image to display, otherwise display a placeholder image
+        if not os.path.isfile(project_folder + project["big_image"]):
+            if os.path.isfile(project_folder + project["small_image"]):
+                project["big_image"] = url_for('static', filename = (project_static + project["small_image"]))
+            else:
+                project["big_image"] = url_for('static', filename = "style/placeholder.jpg")
+        else:
+            project["big_image"] = url_for('static', filename = (project_static + project["big_image"]))
+        
+        return render_template("project.html", project = project)
+    except: # Fallback error page
+        return not_found("You seem a little lost. This project does not exist in our files. Did you enter the correct URL?")
+
+# Error handling
+@app.errorhandler(404)
+def not_found(err_message):
+    return render_template("error.html", err_header = "404 Not found!", err_message = str(err_message), image = url_for('static', filename = "style/404_not_found.png"))
 
 @app.errorhandler(Exception)
-def not_found(err):
-    return render_template("error.html", err = str(err))
+def generic_error(err_message):
+    return render_template("error.html", err_message = str(err_message))
 
 if __name__ == '__main__':
    app.run(debug = True)

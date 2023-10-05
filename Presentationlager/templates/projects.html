@@ -14,9 +14,9 @@ Projects
     <h1><a href="{{url_for('index')}}">HOME</a></h1>
 {% endblock %}
 {% block main %}
-    <!--section over enterire page-->
+    <!-- Section-container for the entire page -->
     <section>
-        <!--Form for data proccesing request from user for diffrent search terms-->
+        <!-- Form for data proccesing request from user for different search terms -->
         <form action="{{ url_for('projects')}}" method="POST">
             <!--Section for search terms-->
             <section id="search-terms">
@@ -52,41 +52,41 @@ Projects
                         </div>
                     </div>
 
-                    <!--This choses wether the project should be orderd as ascending or decsnding in the output-->
-                    <div class="sort_order"> <!-- Sort by triangle -->
-                        <!--The previusly chosen or defalut option will be cheacked-->
+                    <!-- This choses wether the project should be orderd as ascending or decsnding in the output -->
+                    <div class="sort_order"> <!-- Sort-by Triangle -->
+                        <!-- The previously chosen or default option will be checked -->
                         <input type="checkbox" id="sort_order" name="sort_order" value="asc" {{"checked" if sort_order_search == "asc"}}>
                         <label for="sort_order" class="triangle"></label>
                     </div>
                 </div>
 
-                <!--This is the dropdown checkbox for tecniques where when it is pressed the content of techniques is reveled-->
+                <!-- This is the dropdown checkbox for tecniques where when it is pressed the content of techniques is reveled -->
                 <div class="dropdown_container_techniques_used">
                     <div class="techniques_used">
                         <input type="checkbox" class="dropdown_checkbox_techniques_used" id="dropdown_techniques_used">
-                        <!--Label for techniqus when pressed the content for the dropdown is reveled -->
+                        <!-- Label for techniqus when pressed the content for the dropdown is reveled -->
                         <label class="dropdown_label_techniques_used" for="dropdown_techniques_used">
                             Technique
-                            <!--Upside down delta symbol-->
+                            <!-- Upside down delta symbol -->
                             <div class="Delta">&Delta;</div>
                         </label>
                     </div>
                 </div>
 
-                <!--This is the drop down for chosing what search fields to search through-->
+                <!-- This is the drop down for chosing what search fields to search through -->
                 <div class="search_fields">
                     <div class="dropdown_container_search_fields">
                         <input type="checkbox" class="dropdown_checkbox_search_fields" id="dropdown_search_fields">
-                        <!--Label for search fields when hoverd to display content-->
+                        <!-- Label for search fields when hoverd to display content -->
                         <label class="dropdown_label_search_fields" for="dropdown_search_fields">
                             Search fields
-                            <!--Upside down delta-->
+                            <!-- Upside-down delta -->
                             <div class="Delta">&Delta;</div>
                         </label>
-                        <!--dropdown content for search fields-->
+                        <!-- Dropdown content for search_fields -->
                         <div class="dropdown_content_search_fields dropdown-content">
-                            <!--options to chose from in the searchfields-->
-                            <!--The previusly chosen or defalut option will be cheacked-->
+                            <!-- Options to chioose from in the search_fields -->
+                            <!-- The previusly chosen or default option will be checked-->
                             <label><input type="checkbox" value="project_id" name="search_fields" {% if search_fields_search %} {{"checked"  if "project_id" in search_fields_search}} {% endif %}> Project ID</label>
                             <label><input type="checkbox" value="start_date" name="search_fields" {% if search_fields_search %} {{"checked"  if "start_date" in search_fields_search}} {% endif %}> Start Date</label>
                             <label><input type="checkbox" value="end_date" name="search_fields" {% if search_fields_search %} {{"checked"  if "end_date" in search_fields_search}} {% endif %}> End Date</label>
@@ -102,15 +102,15 @@ Projects
                 </div>
             </section>
 
-            <!--This is the drop down content for when the techniques checkbox is checked-->
+            <!-- This is the drop down content for when the techniques checkbox is checked -->
             <div class="dropdown_container_content_techniques_used" >
                 <div class="dropdown_content_techniques_used">
                     <div class="checkbox_grid_techniques_used">
-                        <!--goes through all techniques that projects have used by data base function get_techniques-->
+                        <!-- Goes through all techniques that projects have used by data base function get_techniques -->
                         {% for technique in techniques_used %}
                             <label>
-                                <!--options to chose from in the searchfields-->
-                                <!--The previusly chosen or defalut option will be cheacked-->
+                                <!-- Options to chose from in the search_fields -->
+                                <!-- The previously chosen or default option will be checked -->
                                 <input type="checkbox" id="{{technique}}" name="technique_box" value="{{technique}}" class="techniques_used_checkbox" {% if techniques_search %} {{"checked"  if technique in techniques_search}} {% endif %}>
                                 {{technique}}
                             </label>
@@ -127,17 +127,17 @@ Projects
                 <div class="projects_class">
                     <!--This div contains the name of the project as a link to it's project page as well as its small piucture-->
                     <div class="name_icon_container">
-                        <img src="{{ url_for('static', filename = 'images/projects/' ~ data.project_id + '/' ~ data.small_image)}}" height="100" width="100">
-                        <h2><a href="{{url_for('id', index = data.project_id)}}">{{data.project_name}}</a> </h2>
+                        <img src="{{ url_for('static', filename = 'projects/' ~ data.project_id + '/' ~ data.small_image)}}" height="100" width="100">
+                        <h2><a href="{{url_for('project', index = data.project_id)}}">{{ data.project_name }}</a> </h2>
                     </div>
-                    <!--This is the short description for the relavent project-->
+                    <!-- This is the short description for the relavent project -->
                     <h4>{{data.short_description}} </h4>
                 </div>
             {% endfor %}
         </section>
     </section>
 
-    <!--This scripts displays the dropdown content for techniques-->
+    <!-- This scripts displays the dropdown content for techniques -->
     <script>    
         const checkbox = document.getElementById("dropdown_techniques_used");
         const content = document.querySelector(".dropdown_container_content_techniques_used");

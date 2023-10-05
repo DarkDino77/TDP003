@@ -22,7 +22,7 @@
                     {% if loop.index % 2 == 0 %}pfp-border-vertical-right 
                     {% else %}pfp-border-vertical-left{% endif %}"></div>
                 <span class="pfp-name"> {{developer.name}} </span>
-                <img src="{{ url_for('static', filename = 'images/'+developer.photo)}}"
+                <img src="{{ url_for('static', filename = 'style/' + developer.photo)}}"
                     {% if loop.index % 2 == 0 %} style="left: 3mm;"
                     {% else %} style="left: -3mm;" {% endif %}>
                 <span class="pfp-mail"> {{developer.email}} </span>
