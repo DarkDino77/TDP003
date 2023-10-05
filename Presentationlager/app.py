@@ -1,9 +1,14 @@
 from flask import Flask, render_template, request, redirect, url_for
-import data
-from os import getcwd
+import data, re, os
 
 app = Flask(__name__)
 app.static_folder = 'static' 
+
+# Converts an absolute path into a relative path from a project
+# To be used when files are located outside a project which the project must access
+# E.g. placeholder images
+def absolute_to_project_path(project, path):
+    pass
 
 # Funktion index loads the infromation from info.json using the database function load.
 # Retruns a rederder template of index.html with the insent infromation extracted from info.json as infromation_developers
@@ -47,8 +52,8 @@ def projects():
 
     data_base = data.load("data.json")
     techniques_used = data.get_techniques(data_base)
-    data_base = data.search(data_base, sort_by=sort_by, sort_order=sort_order, techniques=techniques, search=search, search_fields=search_fields)
-    return render_template("projects.html", data_base = data_base, techniques_used=techniques_used , sort_by_search=sort_by, sort_order_search=sort_order, techniques_search=techniques, search_search=search, search_fields_search=search_fields)
+    data_base = data.search(data_base, sort_by = sort_by, sort_order = sort_order, techniques = techniques, search = search, search_fields = search_fields)
+    return render_template("projects.html", data_base = data_base, techniques_used = techniques_used , sort_by_search = sort_by, sort_order_search = sort_order, techniques_search = techniques, search_search = search, search_fields_search = search_fields)
 
 @app.route("/techniques")
 def techniques():
@@ -65,15 +70,19 @@ def techniques():
 def id(index):
     try:
         data_base = data.load("data.json")
-        project = data.get_project(data_base, index)        
-        return render_template("id.html", project=project)
+        project = data.get_project(data_base, index)      
+        if not project["long_description"] or re.search(".html", project["long_description"]) == None:
+            project["long_description"] = "does_not_exist.html"
+        print(url_for('id(index)', project["big_image"]))
+        #if not os.path.isfile(url_for('id(index)', project["big_image"])):
+        #    project["big_image"] = url_for('static', "style/placeholder.jpg")
+        return render_template("id.html", project = project)
     except:
-        return render_template("error.html", err= "404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.")
+        return render_template("error.html", err = "404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.")
 
 @app.errorhandler(Exception)
 def not_found(err):
-    return render_template("error.html", err= str(err))
+    return render_template("error.html", err = str(err))
 
 if __name__ == '__main__':
    app.run(debug = True)
-

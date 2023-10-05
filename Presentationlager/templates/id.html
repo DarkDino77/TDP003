@@ -16,9 +16,9 @@
     </a></h1>
 {% endblock %}
 {% block main %}
-    <img id="big-image" src="{{url_for('static', filename = 'images/projects/' ~ project.project_id + '/' ~ project.big_image)}}"/>
+    {{ project.big_image }}    
+    <img id="big-image" src=""/>
     <div id="fact-frame">
-
     </div>
     <section>
         {% include project.long_description %}

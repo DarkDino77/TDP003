@@ -5,7 +5,7 @@
     "course_name": "TDP003 Projekt: Egna datormiljön ",
     "long_description": "10.html",
     "group_size": 2,
-    "academic_credits": "6hp",
+    "academic_credits": "6",
     "external_link": "https://www.ida.liu.se/~TDP003/2023/index.sv.shtml",
     "small_image": "TDP003_big_image.png",
     "techniques_used": [
@@ -27,7 +27,7 @@
   {
     "start_date": "2009-09-07",
     "short_description": "no",
-    "course_name": "OK\u00c4NT",
+    "course_name": "OKÄNT",
     "long_description": "no no no",
     "group_size": 4,
     "academic_credits": "WUT?",
@@ -48,7 +48,7 @@
   {
     "start_date": "2009-09-08",
     "short_description": "no",
-    "course_name": "OK\u00c4NT",
+    "course_name": "OKÄNT",
     "long_description": "no no no",
     "group_size": 6,
     "academic_credits": "WUT?",
