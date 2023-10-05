@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %} {{project.project_name}} {% endblock %}
 {% block head %}
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheet_project.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/stylesheet_project.css') }}">
 {% endblock %}
 
 {% block header %}
@@ -17,7 +17,9 @@
 {% endblock %}
 {% block main %}
     <img id="big-image" src="{{url_for('static', filename = 'images/projects/' ~ project.project_id + '/' ~ project.big_image)}}"/>
-    <div id="fact-frame"></div>
+    <div id="fact-frame">
+
+    </div>
     <section>
         {% include project.long_description %}
     </section>
