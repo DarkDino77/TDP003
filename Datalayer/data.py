@@ -12,6 +12,7 @@ def load(file):
         with open(file) as json_file:
             data = json.load(json_file)
             #Sorts Database by project_id
+            
             return search(data, sort_by="project_id")
         
     # If path is invalid return none     
@@ -68,7 +69,7 @@ def get_technique_stats(db):
     return technique_stats
 
 def search(db, sort_by = 'start_date', sort_order = 'desc', techniques = None, search = None, search_fields = None):
-
+    
     # Cheap workaround for empty search fields
     if search_fields == []:
         return []
@@ -84,17 +85,15 @@ def search(db, sort_by = 'start_date', sort_order = 'desc', techniques = None, s
                 filtered_db.append(project)
         db = filtered_db # Update the working database to only contain the filtered db
 
-
+    
     # Only search the free text if there is anything to search for
     if search != None:
-        for character in "[+^*]": # Sanitize the search string
-            search = search.replace(character, '')
         if search != "": # Make sure we're not searching on an empty string after sanitizing it
             filtered_db = [] # A new list of projects with qualified search results
             for project in db:
                 for attribute in range(len(project)): # Iterate over attributes to find any qualified attribute
                     if search_fields == None or list(project.keys())[attribute] in search_fields: # Utilizing lazy evaluation to not search through 'None'
-                        if len(re.findall('[' + search.lower() + ']', str(project.get(list(project.keys())[attribute])).lower())) > 0: # Parse the attribute with RegEx
+                        if len(re.findall(re.escape(str(search).lower()), str(project.get(list(project.keys())[attribute])).lower())) > 0: # Parse the attribute with RegEx
                             filtered_db.append(project)
                             break
             db = filtered_db # Update db with filtered db
@@ -116,7 +115,8 @@ def print_db(db):
 # Debug main function
 def main():
     db = load("data.json") #clears
-    print(search(db, search="[++^*"))
+    #print(db)
+    print_db(search(db, search="[++^*")) # klarar inte 
     #print_db(db) #clears
     #print(get_project_count(db))   #clears
     #print(get_project(db, 0))      #clears
@@ -124,8 +124,8 @@ def main():
     #print(get_project(db, 2))      #clears
     #print(get_techniques(db))      #clears
     #print(get_technique_stats(db)) #clears
-    #print_db(search(db, sort_by="nisse"))
-    #print_db(search(db, techniques=[], search="okänt", search_fields=["project_id","project_name","course_name"]))
+    #print_db(search(db, sort_by="nisse")) #clears
+    #print_db(search(db, techniques=[], search="okänt", search_fields=["project_id","project_name","course_name"])) #clears
     #print_db(search(db, sort_by="end_date", search='okänt', search_fields=['project_id','project_name','course_name'])) #clears
     #print_db(search(db, "start_date", "desc", None, "e", ["lulz_had"])) #????
     #print_db(search(db))           #clears
@@ -136,10 +136,10 @@ def main():
     #print_db(search(db, techniques=["ada", "python"]))  #clears
     #print_db(search(db, search="okänt"))     #clears
     #print_db(search(db, search="no"))      #clears
-    #print_db(search(db, search="+")) #klarar inte 
-    #print_db(search(db, search=1))  #klarar inte #kanske inte ska göra det ?
+    #print_db(search(db, search="+")) #clears
+    #print_db(search(db, search=1))  #clears
     #print_db(search(db, search="1", search_fields=["project_id"]))     #clears
-    #print_db(search(db, search=1, search_fields=["project_id"])) #klarar inte #kanske inte ska göra det ?
+    #print_db(search(db, search=1, search_fields=["project_id"])) #clears
     #print_db(search(db, search="no", techniques=["python"]))  #clears
 
 
@@ -150,5 +150,5 @@ if __name__ == "__main__":
     
  
     # Print the data of dictionary
-else:
-    print("Starting back-end!")
+#else:
+    #print("Starting back-end!")

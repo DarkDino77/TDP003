@@ -147,7 +147,7 @@ def print_db(db):
 def main():
     db = load("data.json")
     #print_db(db)
-    print_db(search(db, search="+"))
+    #print_db(search(db, search="+"))
     #print_db(search(db, techniques=[], search="okänt", search_fields=["project_id","project_name","course_name"]))
     #print_db(search(db, sort_by="end_date", search='okänt', search_fields=['project_id','project_name','course_name']))
     #print_db(search(db,sort_order='asc',techniques=["python", "c++"]))
