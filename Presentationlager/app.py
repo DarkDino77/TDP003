@@ -18,18 +18,26 @@ def index():
 # It then gets all the techniques used in the data base through the data function get_techniques
 # it the searches through the data base for the relevant serach argument
 # Then it returns a rederd template based on projects.html with the given searchd database technique used and relevent search terms
-@app.route("/projects")
+@app.route("/projects", methods=["POST", "GET"])
 def projects():
-    sort_by = request.args.get("sort_by", 'start_date')
-    sort_order = request.args.get("sort_order", 'desc') 
-    techniques = request.args.getlist("techniques")
-    if not techniques:
-        techniques = None
-    search = request.args.get("search", None)
-    search_fields = request.args.getlist("search_fields")
+    if request.method == "POST":
+        sort_by = request.form.get("sort_by", 'start_date')
+        sort_order = request.form.get("sort_order", 'desc') 
+        search = request.form.get("search", None)
+        search_fields = request.form.getlist("search_fields")
+        techniques = request.form.getlist("technique_box")
+    else:
+        sort_by = request.args.get("sort_by", 'start_date')
+        sort_order = request.args.get("sort_order", 'desc') 
+        techniques = request.args.getlist("techniques")
+        search = request.args.get("search", None)
+        search_fields = request.args.getlist("search_fields")
+    
     if not search_fields:
         search_fields = None
-
+    if not techniques:
+        techniques = None
+    
     #print("Pass")
     #print(f"sort_by {sort_by}")
     #print(f"sort_order {sort_order}")
@@ -51,17 +59,6 @@ def techniques():
 
     return render_template("techniques.html", techniques_information = techniques_information, techniques_used = techniques_used)
 
-@app.route("/redirect_search", methods=["POST"])
-def redirect_search():
-    #Läsa in från projects alla filter som search ska ha 
-    # och sicka dom till projects i redirect
-    sort_by = request.form.get("sort_by")
-    sort_order = request.form.get("sort_order") 
-    search = request.form.get("search")
-    search_fields = request.form.getlist("search_fields")
-    techniques = request.form.getlist("technique_box")
-    #print(techniques)
-    return redirect(url_for("projects",sort_by=sort_by, sort_order=sort_order, techniques=techniques, search=search, search_fields=search_fields))
 
 
 @app.route("/project/<int:index>", methods=["GET"])

@@ -9,7 +9,14 @@
     "external_link": "https://www.ida.liu.se/~TDP003/2023/index.sv.shtml",
     "small_image": "TDP003_big_image.png",
     "techniques_used": [
-      "python", "flask", "css","html","jinja2","latex", "git"
+      "python",
+       "flask",
+        "css",
+        "html",
+        "jinja2",
+        "latex", 
+        "git", 
+        "javascript"
     ],
     "project_name": "TDP003: Egna datormiljön ",
     "course_id": "TDP003",
