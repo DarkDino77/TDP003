@@ -11,10 +11,11 @@ main {
     flex: 1 1 calc(50% - 1cm);
     min-width: 4cm;
     text-align: justify;
-    margin: 2mm;
+    
 }
 
 .profile-area {
+    margin-top: 2mm;
     position: relative;
     max-width: 15cm;
     margin: auto;
@@ -137,6 +138,12 @@ main {
 
 .profile-area{
     background-color: white;
+}
+#identety_1{
+    border-left: solid;
+}
+#identety_2{
+    border-right: solid;
 }
 #identety_1 > .profile-area {
     rotate: 180deg;

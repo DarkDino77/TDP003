@@ -27,6 +27,7 @@ header {
 }
 
 header a {
+    margin-left: 20mm;
     display: inline-block;
     text-decoration: none;
     border: 5px;
