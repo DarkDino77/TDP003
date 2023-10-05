@@ -20,16 +20,16 @@
                 <div class="pfp-border-horizontal"></div>
                 <div class="pfp-border-vertical"></div>
                 <span class="pfp-name"> {{developer.name}} </span>
-                <img src="{{ url_for('static', filename = 'images/'+developer.photo)}}">
+                <img src="{{ url_for('static', filename = 'style/'+developer.photo)}}">
                 <span class="pfp-mail"> {{developer.email}} </span>
                 <a href="{{ developer.external_link[0] }}" class="pfp-media-1">
-                    <img src="{{ url_for('static', filename = 'images/' ~ developer.external_icon[0])}}">
+                    <img src="{{ url_for('static', filename = 'style/' ~ developer.external_icon[0])}}">
                 </a>
                 <a href="{{ developer.external_link[1] }}" class="pfp-media-2" >
-                    <img src="{{ url_for('static', filename = 'images/' ~ developer.external_icon[1])}}">
+                    <img src="{{ url_for('static', filename = 'style/' ~ developer.external_icon[1])}}">
                 </a>
                 <a href="{{ developer.external_link[2] }}" class="pfp-media-3" >
-                    <img src="{{ url_for('static', filename = 'images/' ~ developer.external_icon[2])}}">
+                    <img src="{{ url_for('static', filename = 'style/' ~ developer.external_icon[2])}}">
                 </a>
             </div>
         </div>

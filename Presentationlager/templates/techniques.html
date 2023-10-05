@@ -26,7 +26,9 @@ Techniques
                     <!-- check if the relavante technique exists in techniques.json-->
                     {% if techniques_information[technique] %}
                         <!--Displays the image of the relavat technique-->
-                        <img src="{{ url_for('static', filename = 'images/techniques/'+techniques_information[technique].photo)}}" height="100" width="100">
+                        <a href="{{url_for('redirect_techniques',index=technique)}}">
+                            <img src="{{ url_for('static', filename = 'style/techniques/'+techniques_information[technique].photo)}}" height="100" width="100">
+                        </a>
                     {% endif %}
                     <!--If the technique name is pressed the page is moved to the searchpage with the relavnt technique checkbox checkd
                     and the projects filterd to only be visable if the project is using the relavant technique-->
