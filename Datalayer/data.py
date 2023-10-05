@@ -116,7 +116,7 @@ def print_db(db):
 def main():
     db = load("data.json") #clears
     #print(db)
-    print_db(search(db, search="[++^*")) # klarar inte 
+    #print_db(search(db, search="[++^*")) # clears
     #print_db(db) #clears
     #print(get_project_count(db))   #clears
     #print(get_project(db, 0))      #clears

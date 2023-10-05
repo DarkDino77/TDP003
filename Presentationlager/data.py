@@ -86,14 +86,15 @@ def search(db, sort_by = 'start_date', sort_order = 'desc', techniques = None, s
 
     # Only search the free text if there is anything to search for
     if search != None:
-        filtered_db = [] # A new list of projects with qualified search results
-        for project in db:
-            for attribute in range(len(project)): # Iterate over attributes to find any qualified attribute
-                if search_fields == None or list(project.keys())[attribute] in search_fields: # Utilizing lazy evaluation to not search through 'None'
-                    if len(re.findall(search.lower(), str(project.get(list(project.keys())[attribute])).lower())) > 0: # Parse the attribute with RegEx
-                        filtered_db.append(project)
-                        break
-        db = filtered_db # Update db with filtered db
+        if search != "": # Make sure we're not searching on an empty string after sanitizing it
+            filtered_db = [] # A new list of projects with qualified search results
+            for project in db:
+                for attribute in range(len(project)): # Iterate over attributes to find any qualified attribute
+                    if search_fields == None or list(project.keys())[attribute] in search_fields: # Utilizing lazy evaluation to not search through 'None'
+                        if len(re.findall(re.escape(str(search).lower()), str(project.get(list(project.keys())[attribute])).lower())) > 0: # Parse the attribute with RegEx
+                            filtered_db.append(project)
+                            break
+            db = filtered_db # Update db with filtered db
     
     try:
         db = sorted(db, key= lambda x: x[sort_by],reverse = False if sort_order == "asc" else True)
