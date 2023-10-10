@@ -8,6 +8,7 @@ app.static_folder = 'static'
 # Retruns a rederder template of index.html with the insent infromation extracted from info.json as infromation_developers
 @app.route("/")
 def index():
+    log("DEBUG", "Fetching index", request)
     information_developers = data.load("info.json")
     return render_template("index.html", information_developers = information_developers)
 
@@ -19,7 +20,7 @@ def index():
 # Then it returns a rederd template based on projects.html with the given searchd database technique used and relevent search terms
 @app.route("/projects", methods=["POST", "GET"])
 def projects():
-    log(0, "Fetching projects", request)
+    log("DEBUG", "Fetching projects", request)
     if request.method == "POST":
         sort_by = request.form.get("sort_by", 'start_date')
         sort_order = request.form.get("sort_order", 'desc') 
@@ -46,6 +47,7 @@ def projects():
 
 @app.route("/techniques")
 def techniques():
+    log("DEBUG", "Fetching techniques", request)
     techniques_information_list = data.load("techniques.json")
     techniques_information = techniques_information_list.pop()
     data_base = data.load("data.json")
@@ -57,6 +59,7 @@ def techniques():
 
 @app.route("/project/<int:index>", methods=["GET"])
 def project(index):
+    log("DEBUG", "Fetching a project", request)
     try:
         data_base = data.load("data.json")
         project = data.get_project(data_base, index)
@@ -81,16 +84,18 @@ def project(index):
         
         return render_template("project.html", project = project)
     except: # Fallback error page
+        log("WARNING", f"Failed to fetch a project ({index})", request)
         return not_found("You seem a little lost. This project does not exist in our files. Did you enter the correct URL?")
 
 # Error handling
 @app.errorhandler(404)
 def not_found(err_message):
-    log(2, "404 Not found")
+    log("WARNING", "404 Not found", request)
     return render_template("error.html", err_header = "404 Not found!", err_message = str(err_message), image = url_for('static', filename = "style/404_not_found.png"))
 
 @app.errorhandler(Exception)
-def generic_error(err_message):
+def generic_error(err_message = ""):
+    log("ERROR", "Unhandled exception", request)
     return render_template("error.html", err_message = str(err_message))
 
 # Server logging
