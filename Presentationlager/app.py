@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
-import data, re, os, logging
+import data, re, os, logging, datetime
 
 app = Flask(__name__)
 app.static_folder = 'static'
@@ -19,6 +19,7 @@ def index():
 # Then it returns a rederd template based on projects.html with the given searchd database technique used and relevent search terms
 @app.route("/projects", methods=["POST", "GET"])
 def projects():
+    log(0, "Fetching projects", request)
     if request.method == "POST":
         sort_by = request.form.get("sort_by", 'start_date')
         sort_order = request.form.get("sort_order", 'desc') 
@@ -37,13 +38,6 @@ def projects():
         search_fields = None
     if not techniques:
         techniques = None
-    
-    #print("Pass")
-    #print(f"sort_by {sort_by}")
-    #print(f"sort_order {sort_order}")
-    #print(f"techniques {techniques}")
-    #print(f"search {search}")
-    #print(f"search_fields {search_fields}")
 
     data_base = data.load("data.json")
     techniques_used = data.get_techniques(data_base)
@@ -69,7 +63,7 @@ def project(index):
         project_folder = app.static_folder + "/projects/" + str(project["project_id"]) + "/"
         project_static = "projects/" + str(project["project_id"]) + "/"
         
-        # Not very elegant :<
+        # Not very elegant :v
         # Check if the entry has content and replace it with a notice if not
         if os.path.isfile(app.template_folder + "/project_templates/" + project["long_description"]):
             project["long_description"] = "/project_templates/" + project["long_description"]
@@ -92,11 +86,45 @@ def project(index):
 # Error handling
 @app.errorhandler(404)
 def not_found(err_message):
+    log(2, "404 Not found")
     return render_template("error.html", err_header = "404 Not found!", err_message = str(err_message), image = url_for('static', filename = "style/404_not_found.png"))
 
 @app.errorhandler(Exception)
 def generic_error(err_message):
     return render_template("error.html", err_message = str(err_message))
+
+# Server logging
+# Parameters:
+# level: A fully capitlized string with the error level (DEBUG, INFO, WARNING, ERROR)
+    # If level is invalid, it defaults to info
+# message: A string literal containing the log message
+# source: The connection metadata (contains e.g. host IP)
+# Returns: nothing
+def log(level: str, message: str, source: request = ""):
+    # Define colors
+    # Info is white
+    color_debug = '\033[96m'
+    color_warning = '\033[93m'
+    color_error = '\033[91m'
+    color_end = '\033[0m'
+    text_bold = '\033[1m'
+
+    # Extract client IP adress
+    source_string = ""
+    if source != "":
+        source_string = f" [{source.remote_addr}]"
+
+    match (level): # Print error message
+        case 'DEBUG': print(f"{text_bold}{color_debug}DEBUG{source_string}: {color_end}"     + color_debug   + message + color_end)
+        case 'WARNING': print(f"{text_bold}{color_warning}WARNING{source_string}: {color_end}" + color_warning + message + color_end)
+        case 'ERROR': print(f"{text_bold}{color_error}ERROR{source_string}: {color_end}"     + color_error   + message + color_end)
+        case _: print(f"INFO{source_string}: {message}"); level = "INFO" # Default and info level
+    
+    # Print error to file
+        # Format is: [DATE & TIME] LOGLEVEL [HOST IP]: MESSAGE
+    with open("log.md", 'a') as logfile:
+        logfile.write(f"[{datetime.datetime.now().isoformat(' ', 'seconds')}] {level}{source_string}: {message}\n")
+        logfile.close()
 
 if __name__ == '__main__':
    app.run(debug = True)
