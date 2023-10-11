@@ -18,17 +18,25 @@
         <div class="profile-area" >
             <div class="pfp-border">
                 <div class="pfp-border-horizontal"></div>
-                <div class="pfp-border-vertical 
-                    {% if loop.index % 2 == 0 %}pfp-border-vertical-right 
-                    {% else %}pfp-border-vertical-left{% endif %}"></div>
-                <span class="pfp-name"> {{developer.name}} </span>
-                <img src="{{ url_for('static', filename = 'style/' + developer.photo)}}"
+                <div class="pfp-border-vertical"
+                    {% if loop.index % 2 == 0 %} style="right: -5px;"
+                    {% else %}style="left: -5px;"{% endif %}></div>
+                <span class="pfp-name"
+                    {% if loop.index % 2 == 0 %} style="margin-left: 2cm;"
+                    {% else %} style="margin-right: 2cm;" {% endif %}>
+                    <b> {{developer.name}} </b>
+                </span>
+                <img src="{{ url_for('static', filename = 'style/developers/' + developer.photo)}}"
                     {% if loop.index % 2 == 0 %} style="left: 3mm;"
                     {% else %} style="left: -3mm;" {% endif %}>
-                <span class="pfp-mail"> {{developer.email}} </span>
+                <span class="pfp-mail"
+                    {% if loop.index % 2 == 0 %} style="margin-left: 2cm;"
+                    {% else %} style="margin-right: 2cm;" {% endif %}>
+                    <b> {{developer.email}} </b>
+                </span>
                 <div class="media-container"
                     {% if loop.index % 2 == 0 %} style="left: -6mm;"
-                    {% else %} style="left: calc(100% - 5mm);" {% endif %}>    
+                    {% else %} style="left: calc(100% - 5mm);" {% endif %}>
                     <a href="{{ developer.external_link[0] }}" class="pfp-media-1">
                         <img src="{{ url_for('static', filename = 'style/' ~ developer.external_icon[0])}}">
                     </a>

@@ -4,7 +4,7 @@
         "name": "Dennis Abrikossov",
         "email": "denab905@student.liu.se",
         "about_me": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "photo": "placeholder.jpg",
+        "photo": "../placeholder.jpg",
         "external_link": ["https://twitter.com/","https://www.linkedin.com/","https://discord.com/"],
         "external_icon": ["twitter.png", "linkedin.png", "discord.jpg"]
     },
@@ -12,8 +12,8 @@
         "project_id": 2,
         "name": "Philip Bromander",
         "email": "phibr608@student.liu.se",
-        "about_me": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "photo": "placeholder.jpg",
+        "about_me": "I'm a student at Linköping University and a co-author on this portfolio webproject made for a course. I enjoy working on programmatic problems and have a strong general interest in computers. Specifically, computer graphics interests me the most.",
+        "photo": "philip.jpg",
         "external_link": ["https://twitter.com/","https://www.linkedin.com/","https://discord.com/"],
         "external_icon": ["twitter.png", "linkedin.png", "discord.jpg"]
     }

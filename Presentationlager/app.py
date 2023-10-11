@@ -73,8 +73,7 @@ def techniques():
 def project(index):
     log("DEBUG", "Fetching a project", request)
     try:
-        data_base = data.load("data.json")
-        project = data.get_project(data_base, index)
+        project = data.get_project(data.load("data.json"), index)
         project_folder = app.static_folder + "/projects/" + str(project["project_id"]) + "/"
         project_static = "projects/" + str(project["project_id"]) + "/"
         
@@ -103,7 +102,10 @@ def project(index):
 @app.errorhandler(404)
 def not_found(err_message):
     log("WARNING", "404 Not found", request)
-    return render_template("error.html", err_header = "404 Not found!", err_message = str(err_message), image = url_for('static', filename = "style/404_not_found.png"))
+    return render_template("error.html",
+                           err_header = "404 Not found!",
+                           err_message = str(err_message),
+                           image = url_for('static', filename = "style/404_not_found.png"))
 
 @app.errorhandler(Exception)
 def generic_error(err_message = ""):
