@@ -15,8 +15,8 @@ def index():
 # If no input arguments can be read, a relevent standard value is given.
 # It then loads the entire database through the data function load
 # It then gets all the techniques used in the data base through the data function get_techniques
-# it the searches through the data base for the relevant serach argument
-# Then it returns a rederd template based on projects.html with the given searchd database technique used and relevent search terms
+# It then searches through the database for the relevant serach argument
+# Then it returns a rendered template based on projects.html with the given searched database, techniques used and relevent search terms
 @app.route("/projects", methods=["POST", "GET"])
 def projects():
     if request.method == "POST":
@@ -37,18 +37,23 @@ def projects():
         search_fields = None
     if not techniques:
         techniques = None
-    
-    #print("Pass")
-    #print(f"sort_by {sort_by}")
-    #print(f"sort_order {sort_order}")
-    #print(f"techniques {techniques}")
-    #print(f"search {search}")
-    #print(f"search_fields {search_fields}")
 
-    data_base = data.load("data.json")
+    data_base = data.search(data.load("data.json"),
+                            sort_by = sort_by, 
+                            sort_order = sort_order, 
+                            techniques = techniques, 
+                            search = search, 
+                            search_fields = search_fields)
+    
     techniques_used = data.get_techniques(data_base)
-    data_base = data.search(data_base, sort_by = sort_by, sort_order = sort_order, techniques = techniques, search = search, search_fields = search_fields)
-    return render_template("projects.html", data_base = data_base, techniques_used = techniques_used , sort_by_search = sort_by, sort_order_search = sort_order, techniques_search = techniques, search_search = search, search_fields_search = search_fields)
+    return render_template("projects.html",
+                           data_base = data_base,
+                           techniques_used = techniques_used,
+                           sort_by_search = sort_by,
+                           sort_order_search = sort_order,
+                           techniques_search = techniques,
+                           search_search = search,
+                           search_fields_search = search_fields)
 
 @app.route("/techniques")
 def techniques():
