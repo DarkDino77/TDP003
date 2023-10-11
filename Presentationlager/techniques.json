@@ -8,7 +8,7 @@
         "latex": {"description": "LaTeX is a typesetting system commonly used in academia and research to create documents with complex formatting, particularly in fields like mathematics and science.", "photo": "latex.png"},
         "html": {"description": "HTML (Hypertext Markup Language) is the standard markup language for creating web pages, defining their structure and content.", "photo": "html.png"},
         "ada": {"description": "Ada is a statically typed programming language known for its reliability and safety features, often used in critical systems where safety is paramount.", "photo": "placeholder.jpg"},
-        "c++": {"description": "C++ is a powerful and versatile programming language widely used for system programming, game development, and high-performance applications.", "photo": "placeholder.jpg"},
+        "c++": {"description": "C++ is a powerful and versatile programming language widely used for system programming, game development, and high-performance applications.", "photo": "C++.png"},
         "csv": {"description": "CSV (Comma-Separated Values) is a simple file format used to store tabular data, commonly employed for data exchange between different software applications.", "photo": "placeholder.jpg"},
         "css": {"description": "CSS (Cascading Style Sheets) is a stylesheet language used to control the presentation and layout of web pages, enhancing their visual appeal and usability.", "photo": "css.png"},
         "java": {"description": "Java is a widely-used, object-oriented programming language known for its portability and compatibility, frequently employed in web and mobile app development.", "photo": "placeholder.jpg"},

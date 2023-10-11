@@ -32,11 +32,11 @@
 	min-width: 325px;
 	
   }
-  .name_icon_container > a >img {
+  .name_icon_container > a > img {
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 25px;
-   
+    object-fit: scale-down;
   }
   .name_icon_container > h2{
 	margin: 3mm;
