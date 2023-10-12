@@ -2,7 +2,7 @@
   {
     "start_date": "2023-08-28",
     "short_description": "Creation of a portfolio website",
-    "course_name": "TDP003 Projekt: Egna datormiljön ",
+    "course_name": "TDP003 Projekt: Egna datormiljön",
     "long_description": "10.html",
     "group_size": 2,
     "academic_credits": "6",
@@ -14,8 +14,8 @@
       "css",
       "html",
       "jinja2",
-      "latex", 
-      "git", 
+      "latex",
+      "git",
       "javascript"
     ],
     "project_name": "TDP003: Egna datormiljön ",
@@ -23,192 +23,5 @@
     "end_date": "2023-10-22",
     "project_id": 1,
     "big_image": "TDP003_big_image.png"
-  },
-  {
-    "start_date": "2009-09-07",
-    "short_description": "no",
-    "course_name": "OKÄNT",
-    "long_description": "no no no",
-    "group_size": 4,
-    "academic_credits": "WUT?",
-    "lulz_had": "few",
-    "external_link": "YY",
-    "small_image": "X",
-    "techniques_used": [
-      "c++",
-      "csv",
-      "python"
-    ],
-    "project_name": "NEJ",
-    "course_id": "TDP003",
-    "end_date": "2009-09-08",
-    "project_id": 3,
-    "big_image": "XXX"
-  },
-  {
-    "start_date": "2009-09-08",
-    "short_description": "no",
-    "course_name": "OKÄNT",
-    "long_description": "no no no",
-    "group_size": 6,
-    "academic_credits": "WUT?",
-    "lulz_had": "medium",
-    "external_link": "YY",
-    "small_image": "X",
-    "techniques_used": [
-      "ada",
-      "python"
-    ],
-    "project_name": "2007",
-    "course_id": "TDP003",
-    "end_date": "2009-09-09",
-    "project_id": 2,
-    "big_image": "XXX"
-  },
-  {
-    "start_date": "2009-09-06",
-    "short_description": "no",
-    "course_name": "HOHO",
-    "long_description": "no no no",
-    "group_size": 8,
-    "academic_credits": "WUT?",
-    "lulz_had": "over 9000",
-    "external_link": "YY",
-    "small_image": "X",
-    "techniques_used": [
-
-    ],
-    "project_name": ",",
-    "course_id": " \"",
-    "end_date": "2009-09-07",
-    "project_id": 4,
-    "big_image": "XXX"
-  },
-  {
-    "start_date": "2010-01-15",
-    "short_description": "no",
-    "course_name": "Computer Science Basics",
-    "long_description": "An introductory course to computer science concepts.",
-    "group_size": 3,
-    "academic_credits": "3",
-    "lulz_had": "some",
-    "external_link": "ZZ",
-    "small_image": "Y",
-    "techniques_used": [
-      "java"
-    ],
-    "project_name": "Java Programming Assignment",
-    "course_id": "CS101",
-    "end_date": "2010-01-25",
-    "project_id": 5,
-    "big_image": "YYY"
-  },
-  {
-    "start_date": "2010-02-10",
-    "short_description": "no",
-    "course_name": "Data Structures and Algorithms",
-    "long_description": "A course on advanced data structures and algorithms.",
-    "group_size": 5,
-    "academic_credits": "4",
-    "lulz_had": "few",
-    "external_link": "XX",
-    "small_image": "Z",
-    "techniques_used": [
-      "java",
-      "c++"
-    ],
-    "project_name": "Sorting Algorithm Implementation",
-    "course_id": "CS201",
-    "end_date": "2010-02-25",
-    "project_id": 6,
-    "big_image": "ZZZ"
-  },
-  {
-    "start_date": "2010-03-05",
-    "short_description": "no",
-    "course_name": "Web Development Fundamentals",
-    "long_description": "An introductory course to web development technologies.",
-    "group_size": 6,
-    "academic_credits": "3",
-    "lulz_had": "medium",
-    "external_link": "YY",
-    "small_image": "X",
-    "techniques_used": [
-      "html",
-      "css",
-      "javascript"
-    ],
-    "project_name": "Simple Website Creation",
-    "course_id": "WEB101",
-    "end_date": "2010-03-15",
-    "project_id": 7,
-    "big_image": "XXX"
-  },
-  {
-    "start_date": "2010-04-01",
-    "short_description": "no",
-    "course_name": "Artificial Intelligence",
-    "long_description": "A course on AI and machine learning techniques.",
-    "group_size": 4,
-    "academic_credits": "4",
-    "lulz_had": "many",
-    "external_link": "AA",
-    "small_image": "W",
-    "techniques_used": [
-      "python",
-      "tensorflow",
-      "numpy"
-    ],
-    "project_name": "Image Classification using CNN",
-    "course_id": "AI202",
-    "end_date": "2010-04-15",
-    "project_id": 8,
-    "big_image": "WWW"
-  },
-  {
-    "start_date": "2010-05-10",
-    "short_description": "no",
-    "course_name": "Database Management",
-    "long_description": "A course on database design and management.",
-    "group_size": 3,
-    "academic_credits": "3",
-    "lulz_had": "few",
-    "external_link": "BB",
-    "small_image": "V",
-    "techniques_used": [
-      "sql",
-      "mysql"
-    ],
-    "project_name": "Database Schema Design",
-    "course_id": "DB101",
-    "end_date": "2010-05-25",
-    "project_id": 9,
-    "big_image": "VVV"
-  },
-  {
-    "start_date": "2010-06-05",
-    "short_description": "no",
-    "course_name": "Mobile App Development",
-    "long_description": "10.html",
-    "title": "",
-    "group_size": 5,
-    "academic_credits": "4",
-    "lulz_had": "medium",
-    "external_link": "CC",
-    "small_image": "android-development.jpg",
-    "techniques_used": [
-      "java",
-      "android",
-      "latex",
-      "flask",
-      "jinja2",
-      "git",
-      "python"
-    ],
-    "project_name": "Android To-Do App",
-    "course_id": "MOB201",
-    "end_date": "2010-06-20",
-    "project_id": 10,
-    "big_image": "android-development.jpg"
   }
 ]
