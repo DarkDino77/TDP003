@@ -6,13 +6,13 @@
 
 {% block header %}
     <h1><a href="{{url_for('projects')}}">
-      <div id="projects-arrow"></div>Back to projects
+        <div id="projects-arrow"></div>Back to projects
     </a></h1>
     <h1><a href="{{url_for('project', index = project.project_id)}}">
-      You are Viewing {{ project.project_name }}
+        You are Viewing {{ project.project_name }}
     </a></h1>
     <h1><a href="{{url_for('index')}}">
-      HOME
+        HOME
     </a></h1>
 {% endblock %}
 
@@ -26,7 +26,7 @@
       <span><b>Academic credits: </b>{{ project.academic_credits }}</span>
       <span><b>Group size: </b>{{ project.group_size }}</span><br>
       <span><b>External link: </b><a href="{{ project.external_link }}">{{ project.external_link }}</a></span><br>
-      <span><b>Techniques used: </b>{{ project.techniques_used }}</span>
+      <span><b>Techniques used: </b>{% for technique in project.techniques_used %}{{technique}} {% endfor %}</span>
     </div>
     <section>
         {% include project.long_description %}

@@ -3,11 +3,11 @@
     "start_date": "2023-08-28",
     "short_description": "Creation of a portfolio website",
     "course_name": "TDP003 Projekt: Egna datormiljön",
-    "long_description": "10.html",
+    "long_description": "1.html",
     "group_size": 2,
     "academic_credits": "6",
     "external_link": "https://www.ida.liu.se/~TDP003/2023/index.sv.shtml",
-    "small_image": "TDP003_big_image.png",
+    "small_image": "portfolio-logo.jpeg",
     "techniques_used": [
       "python",
       "flask",
@@ -22,7 +22,7 @@
     "course_id": "TDP003",
     "end_date": "2023-10-22",
     "project_id": 1,
-    "big_image": "TDP003_big_image.png"
+    "big_image": "homepage.png"
   },
   {
     "start_date": "2023-08-28",
@@ -32,7 +32,7 @@
     "group_size": 2,
     "academic_credits": "6",
     "external_link": "https://www.ida.liu.se/~TDP002/2023/index.sv.shtml",
-    "small_image": "TDP003_big_image.png",
+    "small_image": "python_logo.png",
     "techniques_used": [
       "python",
       "git"
@@ -41,17 +41,17 @@
     "course_id": "TDP002",
     "end_date": "2023-10-22",
     "project_id": 2,
-    "big_image": "TDP003_big_image.png"
+    "big_image": "python_image.jpg"
   },
   {
     "start_date": "2023-08-28",
     "short_description": "Creation of a Blogg with content solving coures mails",
-    "course_name": "TDP001: Handhavande av datormiljö ",
+    "course_name": "TDP001: Handhavande av datormiljö",
     "long_description": "10.html",
     "group_size": 1,
     "academic_credits": "4",
     "external_link": "https://www.ida.liu.se/~TDP001/2023/index.sv.shtml",
-    "small_image": "TDP001_picture.png",
+    "small_image": "liu-logo.png",
     "techniques_used": [
       "css",
       "html",

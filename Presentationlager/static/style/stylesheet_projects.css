@@ -127,7 +127,10 @@
     margin-top: 10px;
     margin-bottom: 10px;
     margin-left: 25px;
-    border: double 1.5mm black;
+    padding: 1mm;
+    border: solid 2px black;
+    border-radius: 1mm;
+    background-color: white;
 }
 
 .name_icon_container > h2{

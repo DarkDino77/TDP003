@@ -30,7 +30,7 @@ main > section {
 #big-image {
     margin: 5mm;
     margin-right: 15mm;
-    width: 35%;
+    width: 45%;
     height: auto;
     border: solid 1mm;
     border-radius: 5mm;
@@ -44,7 +44,7 @@ main > section {
     margin-bottom: 2mm;
     min-height: 2cm;
     min-width: 4cm;
-    width: calc(65% - 4cm);
+    width: calc(55% - 4cm);
     border: solid 1mm;
     border-radius: 5mm;
     padding: 3mm;
