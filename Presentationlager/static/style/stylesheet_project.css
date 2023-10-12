@@ -50,3 +50,7 @@ main > section {
     padding: 3mm;
     float: left;
 }
+
+#fact-frame span {
+    margin: 2mm;
+}

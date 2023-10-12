@@ -37,12 +37,12 @@ header a {
 
 main {
     /* This is required for the footer to be positioned properly */
-    min-height: calc(100vh - var(--header-size) - 7mm);
+    min-height: 30cm;
     padding-bottom: 5mm;
 }
 
 footer {
-    position: relative;
+    position: absolute;
     bottom: 0;
     left: 0;
     right: 0;

@@ -19,6 +19,14 @@
 {% block main %}
     <img id="big-image" src="{{ project.big_image }}"/>
     <div id="fact-frame">
+      <span><b>Project ID: </b>{{ project.project_id }}</span>
+      <span><b>Course name: </b>{{ project.course_name }}</span><br>
+      <span><b>Start date: </b>{{ project.start_date }}</span>
+      <span><b>End date: </b>{{ project.end_date }}</span><br>
+      <span><b>Academic credits: </b>{{ project.academic_credits }}</span>
+      <span><b>Group size: </b>{{ project.group_size }}</span><br>
+      <span><b>External link: </b><a href="{{ project.external_link }}">{{ project.external_link }}</a></span><br>
+      <span><b>Techniques used: </b>{{ project.techniques_used }}</span>
     </div>
     <section>
         {% include project.long_description %}
