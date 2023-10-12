@@ -13,22 +13,23 @@ def index():
     return render_template("index.html", information_developers = information_developers)
 
 # The function projects reads search arguments sent to it
-# If no input arguments can be read, a relevent standard value is given.
+# If no input arguments can be read, a relevant standard value is given.
 # It then loads the entire database through the data function load
-# It then gets all the techniques used in the data base through the data function get_techniques
-# It then searches through the database for the relevant serach argument
-# Then it returns a rendered template based on projects.html with the given searched database, techniques used and relevent search terms
+# It then gets all the techniques used in the database through the data function get_techniques
+# It then searches through the database for the relevant search argument
+# Then it returns a rendered template based on projects.html with the given searched database, techniques used and relevant search terms
 @app.route("/projects", methods=["POST", "GET"])
 def projects():
     log("DEBUG", "Fetching projects", request)
     if request.method == "POST":
+        # Read search arguments from a POST request
         sort_by = request.form.get("sort_by", 'start_date')
         sort_order = request.form.get("sort_order", 'desc') 
         search = request.form.get("search", None)
         search_fields = request.form.getlist("search_fields")
         techniques = request.form.getlist("technique_box")
-
     else:
+        # Read search arguments from a GET request
         sort_by = request.args.get("sort_by", 'start_date')
         sort_order = request.args.get("sort_order", 'desc') 
         techniques = request.args.getlist("techniques")
@@ -40,32 +41,42 @@ def projects():
     if not techniques:
         techniques = None
 
+    # Load the data from a JSON file and apply search filters
     data_base = data.search(data.load("data.json"),
-                            sort_by = sort_by, 
-                            sort_order = sort_order, 
-                            techniques = techniques, 
-                            search = search, 
-                            search_fields = search_fields)
+                            sort_by=sort_by, 
+                            sort_order=sort_order, 
+                            techniques=techniques, 
+                            search=search, 
+                            search_fields=search_fields)
     
+    # Get a list of techniques used in the filtered data
     techniques_used = data.get_techniques(data_base)
-    return render_template("projects.html",
-                           data_base = data_base,
-                           techniques_used = techniques_used,
-                           sort_by_search = sort_by,
-                           sort_order_search = sort_order,
-                           techniques_search = techniques,
-                           search_search = search,
-                           search_fields_search = search_fields)
 
+    # Render a template with the filtered data and search parameters
+    return render_template("projects.html",
+                           data_base=data_base,
+                           techniques_used=techniques_used,
+                           sort_by_search=sort_by,
+                           sort_order_search=sort_order,
+                           techniques_search=techniques,
+                           search_search=search,
+                           search_fields_search=search_fields)
+
+# The techniques route
 @app.route("/techniques")
 def techniques():
     log("DEBUG", "Fetching techniques", request)
+    # Load information about techniques from a JSON file
     techniques_information_list = data.load("techniques.json")
     techniques_information = techniques_information_list.pop()
     data_base = data.load("data.json")
+
+    # Get statistics about the techniques used in the data
     techniques_used = data.get_technique_stats(data_base)
 
-    return render_template("techniques.html", techniques_information = techniques_information, techniques_used = techniques_used)
+    # Render a template with the technique information and statistics
+    return render_template("techniques.html", techniques_information=techniques_information, techniques_used=techniques_used)
+
 
 
 
