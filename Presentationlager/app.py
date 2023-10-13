@@ -131,6 +131,7 @@ def generic_error(err_message = ""):
 # source: The connection metadata (contains e.g. host IP)
 # Returns: nothing
 def log(level: str, message: str, source: request = ""):
+    pass
     # Define colors
     # Info is white
  #   color_debug = '\033[96m'
@@ -157,4 +158,4 @@ def log(level: str, message: str, source: request = ""):
       #  logfile.close()
 
 if __name__ == '__main__':
-   app.run(debug = True)
+    app.run(debug = True)
