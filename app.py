@@ -145,11 +145,11 @@ def log(level: str, message: str, source: request = ""):
     if source != "":
         source_string = f" [{source.remote_addr}]"
 
-    if level is "DEBUG":# Print error message
+    if level == "DEBUG":# Print error message
         print(f"{text_bold}{color_debug}DEBUG{source_string}: {color_end}"     + color_debug   + message + color_end)
-    elif level is "WARNING":
+    elif level == "WARNING":
         print(f"{text_bold}{color_warning}WARNING{source_string}: {color_end}" + color_warning + message + color_end)
-    elif level is "ERROR":
+    elif level == "ERROR":
         print(f"{text_bold}{color_error}ERROR{source_string}: {color_end}"     + color_error   + message + color_end)
     else:
         print(f"INFO{source_string}: {message}"); level = "INFO" # Default and info level
