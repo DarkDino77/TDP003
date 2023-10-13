@@ -134,28 +134,31 @@ def log(level: str, message: str, source: request = ""):
     pass
     # Define colors
     # Info is white
- #   color_debug = '\033[96m'
-  #  color_warning = '\033[93m'
-   # color_error = '\033[91m'
-   # color_end = '\033[0m'
-   # text_bold = '\033[1m'
+    color_debug = '\033[96m'
+    color_warning = '\033[93m'
+    color_error = '\033[91m'
+    color_end = '\033[0m'
+    text_bold = '\033[1m'
 
     # Extract client IP adress
-    #source_string = ""
-    #if source != "":
-     #   source_string = f" [{source.remote_addr}]"
+    source_string = ""
+    if source != "":
+        source_string = f" [{source.remote_addr}]"
 
-   # match (level): # Print error message
-    #    case 'DEBUG': print(f"{text_bold}{color_debug}DEBUG{source_string}: {color_end}"     + color_debug   + message + color_end)
-     #   case 'WARNING': print(f"{text_bold}{color_warning}WARNING{source_string}: {color_end}" + color_warning + message + color_end)
-      #  case 'ERROR': print(f"{text_bold}{color_error}ERROR{source_string}: {color_end}"     + color_error   + message + color_end)
-       # case _: print(f"INFO{source_string}: {message}"); level = "INFO" # Default and info level
+    if level is "DEBUG":# Print error message
+        print(f"{text_bold}{color_debug}DEBUG{source_string}: {color_end}"     + color_debug   + message + color_end)
+    elif level is "WARNING":
+        print(f"{text_bold}{color_warning}WARNING{source_string}: {color_end}" + color_warning + message + color_end)
+    elif level is "ERROR":
+        print(f"{text_bold}{color_error}ERROR{source_string}: {color_end}"     + color_error   + message + color_end)
+    else:
+        print(f"INFO{source_string}: {message}"); level = "INFO" # Default and info level
     
     # Print error to file
         # Format is: [DATE & TIME] LOGLEVEL [HOST IP]: MESSAGE
-    #with open("log.md", 'a') as logfile:
-     #   logfile.write(f"[{datetime.datetime.now().isoformat(' ', 'seconds')}] {level}{source_string}: {message}\n")
-      #  logfile.close()
+    with open("log.md", 'a') as logfile:
+        logfile.write(f"[{datetime.datetime.now().isoformat(' ', 'seconds')}] {level}{source_string}: {message}\n")
+        logfile.close()
 
 if __name__ == '__main__':
     app.run(debug = True)
