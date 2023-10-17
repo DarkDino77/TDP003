@@ -17,7 +17,7 @@
         "numpy": {"description": "NumPy is a fundamental package for scientific computing in Python, providing support for multidimensional arrays and mathematical functions, essential for data manipulation and analysis.", "photo": "placeholder.jpg"},
         "sql": {"description": "SQL (Structured Query Language) is a domain-specific language used for managing and querying relational databases, crucial for organizing and retrieving data efficiently.", "photo": "placeholder.jpg"},
         "mysql": {"description": "MySQL is a popular open-source relational database management system, frequently used in web applications to store and retrieve structured data.", "photo": "placeholder.jpg"},
-        "git": {"description": "kapp", "photo": "git.png"},
+        "git": {"description": "Git is a distributed version control system that empowers developers to efficiently manage, collaborate on, and track changes in source code, enhancing code quality and facilitating teamwork.", "photo": "git.png"},
         "android": {"description": "Android is a mobile operating system developed by Google, powering a vast array of smartphones and tablets, and serving as the foundation for mobile app development.", "photo": "placeholder.jpg"}
         
     }
