@@ -19,7 +19,8 @@
         "mysql": {"description": "MySQL is a popular open-source relational database management system, frequently used in web applications to store and retrieve structured data.", "photo": "placeholder.jpg"},
         "git": {"description": "Git is a distributed version control system that empowers developers to efficiently manage, collaborate on, and track changes in source code, enhancing code quality and facilitating teamwork.", "photo": "git.png"},
         "android": {"description": "Android is a mobile operating system developed by Google, powering a vast array of smartphones and tablets, and serving as the foundation for mobile app development.", "photo": "placeholder.jpg"},
-        "sfml": {"description": "SFML (Simple and Fast Multimedia Library) is a C++ framework designed for 2D games and multimedia applications, providing a clean API for graphics rendering, window management, audio functionality, and network capabilities. Its focus on simplicity and efficiency makes it accessible to developers of all levels, offering a versatile solution for cross-platform development.", "photo": "sfml.png"}
+        "sfml": {"description": "SFML (Simple and Fast Multimedia Library) is a C++ framework designed for 2D games and multimedia applications, providing a clean API for graphics rendering, window management, audio functionality, and network capabilities. Its focus on simplicity and efficiency makes it accessible to developers of all levels, offering a versatile solution for cross-platform development.", "photo": "sfml.png"},
+        "doxygen" : {"description": "Doxygen is a documentation generator tool that parses source code written in various programming languages and produces consistent and comprehensive documentation in formats such as HTML, LaTeX, and RTF.", "photo": "Doxygen.png"}
         
     }
 ]
