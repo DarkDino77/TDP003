@@ -77,7 +77,8 @@
       "c++",
       "sfml",
       "latex", 
-      "git"
+      "git",
+      "doxygen"
     ],
     "project_name": "Game: The Grand Arena",
     "course_id": "TDP005",
